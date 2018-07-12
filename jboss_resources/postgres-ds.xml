@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+<!--  Datasource config for Postgres                                      -->
+<!-- ==================================================================== -->
+
+
+<datasources>
+  <local-tx-datasource>
+    <jndi-name>eProtDS</jndi-name>
+    <connection-url>jdbc:postgresql://localhost:5432/db_fenice</connection-url>
+    <!-- connection-url>jdbc:postgresql://localhost:5432/db_eprot_jpa</connection-url -->
+    <driver-class>org.postgresql.Driver</driver-class>
+    <user-name>fenice</user-name>
+    <password>fenice</password>
+      <metadata>
+         <type-mapping>PostgreSQL 8.0</type-mapping>
+      </metadata>
+  </local-tx-datasource>
+
+</datasources>

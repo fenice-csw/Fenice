@@ -1,0 +1,36 @@
+BODY {
+	BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: white
+}
+TD {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: sans-serif
+}
+TH {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: sans-serif
+}
+A:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: #ff9900; FONT-STYLE: normal; FONT-FAMILY: sans-serif
+}
+A:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: #ff9900; FONT-STYLE: normal; FONT-FAMILY: sans-serif
+}
+A:active {
+	
+}
+.titolo1 {
+	FONT-SIZE: 16pt; COLOR: maroon
+}
+.titolo2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12pt; COLOR: navy
+}
+.titolo3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: brown
+}
+.titolo4 {
+	FONT-SIZE: 10pt; COLOR: brown
+}
+#displayFieldNetscape {
+	Z-INDEX: 200; LEFT: 575px; POSITION: absolute; TOP: 140px
+}
+#displayFieldIE {
+	Z-INDEX: 200; POSITION: relative
+}

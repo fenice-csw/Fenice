@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+	
+	<!-- STDOUT: Outputs log information to the standard output/console -->
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+		<param name="Threshold" value="INFO"/>
+		<param name="File" value="fenice_console.log"/>	
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p - [%C{1}] %m%n"/>
+		</layout>
+	</appender>
+	
+	<!-- DAILY: Outputs log information to a file -->
+	
+	<appender name="ERROR_DAILY" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Threshold" value="ERROR"/>
+		<param name="File" value="fenice_error.log"/>
+		<param name="DatePattern" value=".yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p - [%C{1}] %m%n"/>
+		</layout>
+	</appender>
+	
+  
+	<appender name="EVENT_DAILY" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Threshold" value="DEBUG"/>
+		<param name="File" value="fenice_debug.log"/>
+  		<param name="DatePattern" value=".yyyy-MM-dd"/> 
+ 		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p - [%C{1}] %m%n"/>
+		</layout>
+	</appender>
+
+<!--  
+	<appender name="EVENT_DAILY" class="org.apache.log4j.FileAppender">
+		<param name="Threshold" value="DEBUG"/>
+		<param name="File" value="fenice_debug.log"/>
+  		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p - [%C{1}] %m%n"/>
+		</layout>
+	</appender>
+-->
+<!--  
+	<appender name="ERROR_DAILY_MIGRATION" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Threshold" value="ERROR"/>
+		<param name="File" value="fenice_error.log"/>
+		<param name="DatePattern" value=".yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p - [%C{1}] %m%n"/>
+		</layout>
+	</appender>
+	
+	<appender name="EVENT_DAILY_MIGRATION" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Threshold" value="DEBUG"/>
+		<param name="File" value="fenice_debug.log"/>
+		<param name="DatePattern" value=".yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p - [%C{1}] %m%n"/>
+		</layout>
+	</appender>
+-->
+<!--
+
+	
+	<logger name="it.finsiel.siged.mvc.business.MigrazioneDatiDelegate">
+		<level value="DEBUG"/>
+		 <appender-ref ref="ERROR_DAILY_MIGRATION"/>
+		 <appender-ref ref="EVENT_DAILY_MIGRATION"/>
+	</logger>
+-->
+
+	<logger name="it.compit">
+		<level value="ALL"/>
+		 <appender-ref ref="ERROR_DAILY"/>
+		 <appender-ref ref="EVENT_DAILY"/>
+	</logger>
+	
+	<logger name="it.flosslab">
+		<level value="ALL"/>
+		 <appender-ref ref="ERROR_DAILY"/>
+		 <appender-ref ref="EVENT_DAILY"/>
+	</logger>
+	
+	<logger name="it.finsiel">
+		<level value="ALL"/>
+		 <appender-ref ref="ERROR_DAILY"/>
+		 <appender-ref ref="EVENT_DAILY"/>
+	</logger>
+	
+	<root>
+		<level value="OFF"/>
+		<!--appender-ref ref="HTML"/-->
+	</root>
+
+</log4j:configuration>

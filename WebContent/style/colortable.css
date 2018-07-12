@@ -1,0 +1,19 @@
+#colortable
+
+.white {
+	
+	background-color: #ffffff;
+        font-family: Verdana, Arial; text-align:left; color: white; font-size: 14px;
+
+}
+.center {
+	border-bottom-style: solid;	
+	background-color: #afbbe0;
+	font-family: Verdana, Arial; text-align:right; color: white; font-size: 14px;
+}
+.down {
+	border-bottom-style: solid;	
+	background-color: #afbbe0;
+	font-family: Verdana, Arial; text-align:left; color: white; font-size: 14px;
+}
+

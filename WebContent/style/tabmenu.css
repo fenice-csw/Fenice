@@ -1,0 +1,50 @@
+#tabmenu {
+    border-style: solid;
+    border-width: 0px;
+    border-color: white;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 0px;
+	clear: both;
+}
+
+#tabmenu a {
+	display: block;
+	float: left;
+	font-family: "Verdana", Arial;
+	font-size: 70%;
+	font-weight: bold;
+	color: #ffffff;
+	background-image: url('../images/menu/topleft.gif');
+	background-repeat: no-repeat;
+	background-color: #006666;
+	padding: 4px 12px;
+	border: 0px solid #ffffff;
+	border-right-color: #2f2f2f;
+	border-bottom-color: #cccccc;
+	margin: 0px;
+}
+
+#tabmenu a.selected {
+	border-bottom: 0px solid #cccccc;
+	background-color: #cccccc;
+	color: #333333;
+}
+
+#tabmenu a.logout {
+	display: block;
+	float: right;
+	color: #006666;
+	background-image: none;
+	background-color: white;
+	border-style: none;
+}
+
+#tabmenu a.logout:hover {
+	display: block;
+	float: right;
+	color: #cc3300;
+	background-image: none;
+	background-color: white;
+	border-style: none;
+}

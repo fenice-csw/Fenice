@@ -1,0 +1,94 @@
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<!--
+	This is the Struts configuration file for the example application,
+	using the proposed new syntax.
+-->
+<struts-config>
+		<!-- ========== HELP ================================ -->
+	<action-mappings>		
+		<action path="/page/help/hlp-pro/hlpregingresso"
+			forward="/WEB-INF/pages/help/hlp-pro/hlpregingresso.jsp" />
+		<action path="/page/help/hlp-pro/hlpreguscita"
+			forward="/WEB-INF/pages/help/hlp-pro/hlpreguscita.jsp" />
+		<action path="/page/help/hlp-pro/hlpemailingresso"
+			forward="/WEB-INF/pages/help/hlp-pro/hlpemailingresso.jsp" />
+		<action path="/page/help/hlp-pro/hlpemaillog"
+			forward="/WEB-INF/pages/help/hlp-pro/hlpemaillog.jsp" />
+		<action path="/page/help/hlp-pro/hlpdocumentidaarchivio"
+			forward="/WEB-INF/pages/help/hlp-pro/hlpdocumentidaarchivio.jsp" />
+		<action path="/page/help/hlp-pro/hlpfascicolidaarchivio"
+			forward="/WEB-INF/pages/help/hlp-pro/hlpfascicolidaarchivio.jsp" />
+		<action path="/page/help/hlp-pro/hlpricerca"
+			forward="/WEB-INF/pages/help/hlp-pro/hlpricerca.jsp" />
+		<action path="/page/help/hlp-pro/hlppresaincarico"
+			forward="/WEB-INF/pages/help/hlp-pro/hlppresaincarico.jsp" />
+		<action path="/page/help/hlp-pro/hlpscarico"
+			forward="/WEB-INF/pages/help/hlp-pro/hlpscarico.jsp" />
+	    <action path="/page/help/hlp-pro/hlpanagrafica"
+			forward="/WEB-INF/pages/help/hlp-pro/hlpanagrafica.jsp" />
+		<action path="/page/help/hlp-pro/hlpriassegnazione"
+			forward="/WEB-INF/pages/help/hlp-pro/hlpriassegnazione.jsp" />
+		<action path="/page/help/hlp-pro/hlpgestioneregistro"
+			forward="/WEB-INF/pages/help/hlp-pro/hlpgestioneregistro.jsp" />
+		<action path="/page/help/hlp-pro/hlpregistroemergenza"
+			forward="/WEB-INF/pages/help/hlp-pro/hlpregistroemergenza.jsp" />
+		<action path="/page/help/hlp-amm/hlpregistro"
+			forward="/WEB-INF/pages/help/hlp-amm/hlpregistro.jsp" />
+		<action path="/page/help/hlp-amm/hlptitolario"
+			forward="/WEB-INF/pages/help/hlp-amm/hlptitolario.jsp" />
+		<action path="/page/help/hlp-amm/hlpmezzispedizione"
+			forward="/WEB-INF/pages/help/hlp-amm/hlpmezzispedizione.jsp" />
+		<action path="/page/help/hlp-amm/hlpaoo"
+			forward="/WEB-INF/pages/help/hlp-amm/hlpaoo.jsp" />
+		<action path="/page/help/hlp-amm/hlpuffici"
+			forward="/WEB-INF/pages/help/hlp-amm/hlpuffici.jsp" />
+		<action path="/page/help/hlp-amm/hlputenti"
+			forward="/WEB-INF/pages/help/hlp-amm/hlputenti.jsp" />
+		<action path="/page/help/hlp-amm/hlpprofili"
+			forward="/WEB-INF/pages/help/hlp-amm/hlpprofili.jsp" />
+		<action path="/page/help/hlp-amm/hlpricaricaorganizzazione"
+			forward="/WEB-INF/pages/help/hlp-amm/hlpricaricaorganizzazione.jsp" />
+		<action path="/page/help/hlp-amm/hlpacquisizioneMassiva"
+			forward="/WEB-INF/pages/help/hlp-amm/hlpacquisizioneMassiva.jsp" />
+		<action path="/page/help/hlp-amm/hlptipidocumento"
+			forward="/WEB-INF/pages/help/hlp-amm/hlptipidocumento.jsp" />
+		<action path="/page/help/hlp-amm/hlpdatiamministrazione"
+			forward="/WEB-INF/pages/help/hlp-amm/hlpdatiamministrazione.jsp" />	
+		<action path="/page/help/hlp-amm/hlpscartaprotocolli"
+			forward="/WEB-INF/pages/help/hlp-amm/hlpscartaprotocolli.jsp" />
+		<action path="/page/help/hlp-amm/hlparchivioscarti"
+			forward="/WEB-INF/pages/help/hlp-amm/hlparchivioscarti.jsp" />
+		<action path="/page/help/hlp-amm/hlpimportalistaCA"
+			forward="/WEB-INF/pages/help/hlp-amm/hlpimportalistaCA.jsp" />	
+		<action path="/page/help/hlp-amm/hlpelencoCA"
+			forward="/WEB-INF/pages/help/hlp-amm/hlpelencoCA.jsp" />
+		<action path="/page/help/hlp-amm/hlpnuovaCA"
+			forward="/WEB-INF/pages/help/hlp-amm/hlpnuovaCA.jsp" />					
+		<action path="/page/help/hlp-rpt/hlp-pro/hlpregistro"
+			forward="/WEB-INF/pages/help/hlp-rpt/hlp-pro/hlpregistro.jsp" />
+		<action path="/page/help/hlp-rpt/hlp-pro/hlpscarico"
+			forward="/WEB-INF/pages/help/hlp-rpt/hlp-pro/hlpscarico.jsp" />	
+		<action path="/page/help/hlp-rpt/hlp-pro/hlplavorazione"
+			forward="/WEB-INF/pages/help/hlp-rpt/hlp-pro/hlplavorazione.jsp" />	
+		<action path="/page/help/hlp-rpt/hlp-pro/hlpspediti"
+			forward="/WEB-INF/pages/help/hlp-rpt/hlp-pro/hlpspediti.jsp" />	
+		<action path="/page/help/hlp-rpt/hlp-pro/hlpassegnati"
+			forward="/WEB-INF/pages/help/hlp-rpt/hlp-pro/hlpassegnati.jsp" />	
+		<action path="/page/help/hlp-rpt/hlp-pro/hlpstatistiche"
+			forward="/WEB-INF/pages/help/hlp-rpt/hlp-pro/hlpstatistiche.jsp" />	
+		<action path="/page/help/hlp-rpt/hlp-pro/hlpannullati"
+			forward="/WEB-INF/pages/help/hlp-rpt/hlp-pro/hlpannullati.jsp" />	
+		<action path="/page/help/hlp-rpt/hlpanagrafica"
+			forward="/WEB-INF/pages/help/hlp-rpt/hlpanagrafica.jsp" />	
+		<action path="/page/help/hlp-rpt/hlporganigramma"
+			forward="/WEB-INF/pages/help/hlp-rpt/hlporganigramma.jsp" />
+		<action path="/page/help/hlp-doc/archivioDocumenti"
+			forward="/WEB-INF/pages/help/hlp-doc/hlparchiviodocumenti.jsp" />
+		<action path="/page/help/hlp-doc/documentiCondivisi"
+			forward="/WEB-INF/pages/help/hlp-doc/hlpdocumenticondivisi.jsp" />
+		<action path="/page/help/hlp-doc/cerca"
+			forward="/WEB-INF/pages/help/hlp-doc/hlpcercainarchivio.jsp" />
+		<action path="/page/help/hlp-doc/fascicoli"
+			forward="/WEB-INF/pages/help/hlp-doc/hlpfascicoli.jsp" />
+	</action-mappings>		
+</struts-config>

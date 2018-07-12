@@ -1,0 +1,83 @@
+table.simple {
+	border: 1px solid #006666;
+	border-collapse: collapse;
+}
+
+table.simple ul {
+	margin: 0;
+	padding: 0;
+}
+
+table.nocol tbody td,table.nocol tbody th{
+	border-left: none;
+	border-right: none;
+}
+
+table.simple thead tr {
+  background-color: #eee;
+}
+table.simple tr.even {
+  background-color: #fff;
+}
+
+table.simple td {
+	border: 1px solid #ccc;
+	font-size: 80%;
+}
+
+table.simple th.sorted{
+	background-color: orange;
+}
+
+table.simple th{
+	font-size: 80%;
+	font-weight: bold;
+	border: 1px solid #ccc;
+	padding: 3px;
+	text-align: left;
+}
+table.simple th.sortable{
+	font-size: 80%;
+	font-weight: bold;
+	border: 1px solid #ccc;
+	text-align: left;
+}
+
+table.simple th a, table.simple th a:visited {
+  color: black;
+}
+table.simple th a:hover {
+  text-decoration: underline;
+  color: black;
+}
+table.simple th.sorted a {
+	background-position: right;
+	display: block;
+	width: 100%;
+}
+table.simple th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+}
+
+table.simple th.sortable a {
+	
+}
+table.simple th.order1 a {
+	
+}
+table.simple th.order2 a {
+	
+}
+
+table.simple td ul {
+	margin: 0;
+	margin-left: 20px;
+}
+
+div.exportlinks {
+	font-size: 80%;
+	color: grey;
+	font-family: sans-serif;
+}

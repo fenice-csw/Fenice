@@ -1,0 +1,134 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+  
+ <link rel='stylesheet' type='text/css' href='$ctxPath/style/template/bbccaa.css' />
+
+  <title>TEMPLATE</title>
+ 
+</head>
+<body>
+
+<div id="wrapper" style="font-family:arial, helvetica, sans-serif;font-size:12px">
+	<div id="header">
+		<div id="col_1" style="font-family:arial, helvetica, sans-serif;font-size:11px"> 
+			<div id="col_1_1"> 
+				<strong>Regione Siciliana</strong> 
+				<br />
+					Assessorato dei Beni Culturali <br />
+					e dell'Identità Siciliana 
+			</div>	
+			<div id="col_1_2"> 
+			<strong>Dipartimento dei Beni Culturali <br />e dell 'Identità Siciliana</strong> 
+				<br />
+					90139 Palermo - via delle Croci, 8<br />
+					Tel. 091 7071823 - 824 - 737
+				<br />
+				<strong>www.regione.sicilia.it/beniculturali</strong>
+			</div>		
+		</div>
+		
+		<div id="col_2">
+			<div id="col_2_1"> 
+			</div>
+			<div id="col_2_2"> 
+				<strong>$ufficio.description
+				</strong> 
+				<br />
+				$ufficio.teleFax <br />
+				$ufficio.email 
+			</div>
+		</div>
+		
+		<div id="col_3"> 
+			<div id="col_3_1" >
+			<span style="font-family: sansserif; font-size: 8.0px;">
+ 				Partita Iva 0271107827<br />
+				Codice Fiscale 80012000826 
+			</span>
+			</div>
+		</div>
+		<div id="n_prot"> Palermo, Prot $prot del $data </div> 
+		<div id="allaccio"> rif. prot. n. $protAllaccio del $dataAllaccio</div>	
+		<div id="clear"> </div>
+	</div>
+	
+	<div id="content">	
+		<div id="allegati">Allegati n. </div>
+		<div id="oggetto">Oggetto: $editor.oggetto</div>
+		
+		<div id="destinatari">
+			<ul>	
+				#foreach( $pg in $editor.destinatari )
+					<li>
+						$pg.destinatarioBBCCAATemplate	
+					</li>
+				#end
+			</ul>
+		</div>
+		<div id="clear"> </div>
+		<div id="testo">$editor.testo</div>
+	</div>
+	</div>
+	
+	<div id="footer">
+	<div style="margin-top:10px;">
+		<div style="font-size: 7.0px; text-align:left;float:left;">Responsabile Procedimento</div> 
+		<div style="font-size: 6.0px;text-align:right;float:right;">(se non compliato il responsabile è il dirigente preposto alla struttura organizzativa)</div>
+	</div>
+	<br />
+	<div>
+        <div style="font-size:7.0px;text-align:left;float:left;width:50px;">Stanza <strong><em>$utente.getUfficioVOInUso().stanza</em></strong></div> 
+		<div style="font-size:7.0px;text-align:left;float:left;width:50px;">Piano <strong><em>$ufficio.piano°</em></strong> </div>
+        <div style="font-size:7.0px;text-align:left;float:left;width:100px;">Tel <strong><em>$ufficio.telefono</em></strong> </div>
+		<div style="font-size:7.0px;text-align:left;float:left;width:100px;">Durata Procedimento</div>
+		<div style="font-size:6.0px;text-align:right;float:right;">(ove non previsto da leggi o regolamenti é di 30 giorni)</div>
+	</div>
+	<br />
+	<div>
+		<div style="font-size:7.0px;text-align:left;float:left;width:150px;">Ufficio Relazioni con il pubblico(URP)</div> 
+		<div style="font-size:7.0px;text-align:left;float:left;width:150px;">e mail urpbci@regione.sicilia.it</div>
+		<div style="font-size:7.0px;text-align:right;float:right;">Responsabile Dirigente: Franco Fidelio - Incaricato: Giuseppe Scuderi</div>
+	</div>
+	<br />
+	<div>
+		<div style="font-size:7.0px;text-align:left;float:left;width:50px;">Stanza 10</div> 
+		<div style="font-size:7.0px;text-align:left;float:left;width:50px;">Piano 4°</div>
+		<div style="font-size:7.0px;text-align:left;float:left;width:200px;">Tel. +39.0917071736 - +39.0917071610</div>
+		<div style="font-size:7.0px;text-align:right;float:right;">Ricevimento lunedì e venerdì 9,00 - 13,00 e mercoledì 15,00 - 18,00</div>
+	</div>
+</div>
+	
+	<!--
+	<div id="footer">
+	<div style="margin-top:10px;">
+		<div style="font-size: 7.0px; text-align:left;float:left;">Responsabile Procedimento</div> 
+		<div style="font-size: 6.0px;text-align:right;float:right;">(se non compliato il responsabile è il dirigente preposto alla struttura organizzativa)</div>
+	</div>
+	<br />
+	<div>
+		<div style="font-size:7.0px;text-align:left;float:left;width:50px;">Stanza</div> 
+		<div style="font-size:7.0px;text-align:left;float:left;width:50px;">Piano</div>
+		<div style="font-size:7.0px;text-align:left;float:left;width:100px;">Tel</div>
+		<div style="font-size:7.0px;text-align:left;float:left;width:100px;">Durata Procedimento</div>
+		<div style="font-size:6.0px;text-align:right;float:right;">(ove non previsto da leggi o regolamenti é di 30 giorni)</div>
+	</div>
+	<br />
+	<div>
+		<div style="font-size:7.0px;text-align:left;float:left;width:150px;">Ufficio Relazioni con il pubblico(URP)</div> 
+		<div style="font-size:7.0px;text-align:left;float:left;width:150px;">e mail urpbci@regione.sicilia.it</div>
+		<div style="font-size:7.0px;text-align:right;float:right;">Responsabile Dirigente: Franco Fidelio - Incaricato: Giuseppe Scuderi</div>
+	</div>
+	<br />
+	<div>
+		<div style="font-size:7.0px;text-align:left;float:left;width:50px;">Stanza 10</div> 
+		<div style="font-size:7.0px;text-align:left;float:left;width:50px;">Piano 4°</div>
+		<div style="font-size:7.0px;text-align:left;float:left;width:200px;">Tel. +39.0917071736 - +39.0917071610</div>
+		<div style="font-size:7.0px;text-align:right;float:right;">Ricevimento lunedì e venerdì 9,00 - 13,00 e mercoledì 15,00 - 18,00</div>
+	</div>
+</div>
+-->
+</body>
+</html>

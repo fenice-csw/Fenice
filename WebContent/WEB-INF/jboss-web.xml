@@ -1,0 +1,9 @@
+
+<jboss-web>
+    <context-root>feniceWeb</context-root>
+</jboss-web>
+<!--
+<jboss-web>
+    <context-root>feniceTest</context-root>
+</jboss-web>
+-->

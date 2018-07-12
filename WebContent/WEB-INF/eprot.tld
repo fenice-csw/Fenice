@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE taglib
+  PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+  "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>Application Tag Library</shortname>
+	<uri>http://jakarta.apache.org/taglibs/struts-example-1.0</uri>
+	<info>EprotTag</info>
+
+	<tag>
+		<name>page</name>
+		<tagclass>
+			it.finsiel.siged.mvc.presentation.tag.PageTag
+		</tagclass>
+		<info>Generazione pagina</info>
+		<attribute>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>calendar</name>
+		<tagclass>
+			it.finsiel.siged.mvc.presentation.tag.CalendarTag
+		</tagclass>
+		<info>Generazione pagina</info>
+		<attribute>
+			<name>textField</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>timepicker</name>
+		<tagclass>
+			it.compit.fenice.mvc.presentation.tag.TimepickerTag
+		</tagclass>
+		<info>Generazione pagina</info>
+		<attribute>
+			<name>textField</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>timeFormat</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>step</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>ifAuthorized</name>
+		<tagclass>
+			it.flosslab.mvc.presentation.tag.AuthorizationTag
+		</tagclass>
+		<info>verifica se l'utente in sessione possiede un permesso</info>
+		<attribute>
+			<name>permission</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib>

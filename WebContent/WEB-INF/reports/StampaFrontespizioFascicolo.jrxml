@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2015-10-14T14:53:04 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StampaFrontespizio" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" whenResourceMissingType="Empty" uuid="16703506-c90d-481b-b68c-85525a7d5992">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="192"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="Arial_Normal" fontName="Arial" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+	<style name="Arial_Bold" fontName="Arial" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+	<style name="Arial_Italic" fontName="Arial" isBold="false" isItalic="true" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Oblique" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+	<style name="ArialBold_Header" fontName="Arial" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+	<style name="Arial_Big" fontName="Arial" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+	<parameter name="BaseDir" class="java.io.File"/>
+	<parameter name="aoo_name" class="java.lang.String"/>
+	<parameter name="progressivo" class="java.lang.String"/>
+	<parameter name="oggetto" class="java.lang.String"/>
+	<parameter name="padre" class="java.lang.String"/>
+	<parameter name="referente" class="java.lang.String"/>
+	<parameter name="istruttore" class="java.lang.String"/>
+	<parameter name="delegato" class="java.lang.String"/>
+	<parameter name="categoria" class="java.lang.String"/>
+	<parameter name="interessato" class="java.lang.String"/>
+	<parameter name="posizione" class="java.lang.String"/>
+	<parameter name="tipo" class="java.lang.String"/>
+	<parameter name="trattato_da" class="java.lang.String"/>
+	<parameter name="data_creazione" class="java.lang.String"/>
+	<parameter name="anno" class="java.lang.String"/>
+	<parameter name="note" class="java.lang.String"/>
+	<parameter name="data_ultimo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="57" splitType="Stretch">
+			<line>
+				<reportElement key="line-4" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="34" width="539" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="a39736ee-7a44-40e3-a9d0-dcad6e121b47">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+				<graphicElement fill="Solid">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="685" splitType="Stretch">
+			<line>
+				<reportElement key="line-2" stretchType="RelativeToBandHeight" mode="Opaque" x="539" y="-22" width="1" height="673" forecolor="#000000" backcolor="#FFFFFF" uuid="435b3e20-4b4c-4b9f-9df8-1b5b1c876004">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement fill="Solid">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="133" y="30" width="406" height="24" isRemoveLineWhenBlank="true" uuid="6cc750d9-5e43-45f4-a258-b9fc2c095115">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{progressivo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="651" width="539" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="64b2af37-26e2-48f8-8daa-2019780b5485">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement fill="Solid">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-3" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="-22" width="1" height="673" forecolor="#000000" backcolor="#FFFFFF" uuid="932ace64-0f28-4ec9-ac30-53966270fbae">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement fill="Solid">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="133" y="68" width="406" height="49" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="d9335c8b-9948-4f26-8095-0abed706bb59">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{oggetto}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement isPrintRepeatedValues="false" x="133" y="131" width="406" height="24" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="06163b7e-0e1e-4ad3-adc7-5a795c15a367"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{categoria}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="133" y="169" width="407" height="24" isRemoveLineWhenBlank="true" uuid="80bf8cf9-ebd9-4cd6-a700-4ada07a12838"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{padre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="133" y="207" width="407" height="24" isRemoveLineWhenBlank="true" uuid="9a466f44-725e-459d-929c-dcab496db523"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{referente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="133" y="245" width="407" height="24" isRemoveLineWhenBlank="true" uuid="32fecd72-1c4d-4a0d-bfd2-eece808e77dd"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{istruttore}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="133" y="283" width="407" height="24" isRemoveLineWhenBlank="true" uuid="1755a3d7-892b-4854-816d-56381badc7b5"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{delegato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="133" y="321" width="407" height="24" isRemoveLineWhenBlank="true" uuid="4d91bb7b-7432-4639-b275-5a5940e033aa"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{interessato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="133" y="359" width="407" height="24" isRemoveLineWhenBlank="true" uuid="abb4edab-7309-4b13-a810-01048840b07d"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{posizione}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="133" y="397" width="407" height="24" isRemoveLineWhenBlank="true" uuid="ac150e2b-44fb-4036-8b2a-e3bf5ecff8bc"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="133" y="435" width="407" height="24" isRemoveLineWhenBlank="true" uuid="19f830fb-410e-4ef5-9a8e-99ba85cd4460"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{trattato_da}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="133" y="473" width="407" height="24" isRemoveLineWhenBlank="true" uuid="6c0e0c04-02cb-4908-b8bc-f07b4dc98ddf"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{anno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="133" y="511" width="407" height="24" isRemoveLineWhenBlank="true" uuid="03ad71eb-e0c4-46c8-9d24-004088848ead"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{data_creazione}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="133" y="549" width="407" height="24" isRemoveLineWhenBlank="true" uuid="a947a51e-5aba-4f12-8c29-df42764b00a9">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{data_ultimo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="30" width="132" height="24" isRemoveLineWhenBlank="true" uuid="ba200c57-8783-4702-aab4-88201b68f7bd"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[PROGRESSIVO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="68" width="131" height="24" isRemoveLineWhenBlank="true" uuid="07256954-d165-4dc3-bf34-427eb71cdd2f"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[OGGETTO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="131" width="131" height="24" isRemoveLineWhenBlank="true" uuid="deaaab5c-73e8-4cda-a9a1-91ffe5e6fd34"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[CATEGORIA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="169" width="132" height="24" isRemoveLineWhenBlank="true" uuid="1cb921a5-e7b9-49e4-8183-4721b3ad880b"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[FASCICOLO PADRE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="207" width="132" height="24" isRemoveLineWhenBlank="true" uuid="25e9f125-b442-40ea-833f-702826ec6f18"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[REFERENTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="245" width="132" height="24" isRemoveLineWhenBlank="true" uuid="cfc59600-90a7-493d-ac8c-42ed079a91f1"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[ISTRUTTORE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="397" width="131" height="24" isRemoveLineWhenBlank="true" uuid="0a5effb1-308d-4ddb-9832-20ed16962852"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[TIPO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="359" width="132" height="24" isRemoveLineWhenBlank="true" uuid="51338898-7d82-493d-b085-7ad876189c07"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[STATO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="321" width="132" height="24" isRemoveLineWhenBlank="true" uuid="9ce34f66-b57e-4403-9bb0-d56bb04e3e51"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[INTERESSATO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="283" width="132" height="24" isRemoveLineWhenBlank="true" uuid="520fa82e-94e2-48eb-b99b-f08def376e3e"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[DELEGATO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="511" width="132" height="24" isRemoveLineWhenBlank="true" uuid="82f1ab54-9439-49bb-917c-ab3f2c8ad710"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[DATA CREAZIONE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="473" width="132" height="24" isRemoveLineWhenBlank="true" uuid="51561f45-0cd9-40f2-bba5-251384b39acc"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[ANNO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="435" width="132" height="24" isRemoveLineWhenBlank="true" uuid="3f0dfdaf-ddcd-4b0d-a4dd-7cfc5f7d8fc7"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[TRATTATO DA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="549" width="132" height="24" isRemoveLineWhenBlank="true" uuid="57199a41-4b98-407e-880b-9f806b01199a">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[DATA ULTIMO MOVIMENTO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="581" width="131" height="24" isRemoveLineWhenBlank="true" uuid="dbd31ce0-38cd-41c8-b55b-7c434a86ce12">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[NOTE:]]></text>
+			</staticText>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="133" y="581" width="407" height="61" isRemoveLineWhenBlank="true" uuid="02c4bd2a-76ba-491d-bf09-aae495bd791f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{note}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="1" y="-10" width="538" height="30" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="30f95d8e-3efd-4a93-bac7-ca06848cc93a"/>
+				<textElement textAlignment="Center" markup="none">
+					<font size="14" isBold="true" pdfEncoding=""/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{aoo_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+</jasperReport>

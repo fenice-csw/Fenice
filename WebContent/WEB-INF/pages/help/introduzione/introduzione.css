@@ -1,0 +1,56 @@
+body  {
+background-color : white;
+background-repeat : no-repeat;
+}
+
+td  {
+        font-size : 10pt;
+        font-family : sans-serif;
+        font-weight : normal;
+        font-style : normal;
+        color : black;
+}
+
+th  {
+        font-size : 10pt;
+        font-family : sans-serif;
+        font-weight : bold;
+        font-style : normal;
+        color : black;
+}
+
+a:link  {
+        font-size : 10pt;
+        font-family : sans-serif;
+        font-weight : normal;
+        font-style : normal;
+        color : #ff9900;
+}
+
+a:visited  {
+        font-size : 10pt;
+        font-family : sans-serif;
+        font-weight : normal;
+        font-style : normal;
+        color : #ff9900;
+}
+
+a:active  {}
+
+
+.titolo1  {
+		font-size : 16pt;
+        color : maroon;
+}
+
+.titolo2  {
+		font-size : 12pt;
+        font-weight : bold;
+        color : navy;
+}
+
+.titolo3  {
+        font-size : 12pt;
+        font-weight : bold;
+}
+      

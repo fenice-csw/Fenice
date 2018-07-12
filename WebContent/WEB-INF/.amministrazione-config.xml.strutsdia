@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="StrutsProcess">
+ <PROCESS-ITEM ID="#page#amministrazione#firmadigitale#aggiorna_crl"
+  NAME="action0" PATH="/page/amministrazione/firmadigitale/aggiorna_crl"
+  SHAPE="32,17,0,0" TITLE="aggiornaCRLForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/firmadigitale/aggiorna_crl.jsp"
+   TARGET="page0" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#tipiProcedimento"
+  NAME="action1" PATH="/page/amministrazione/tipiProcedimento"
+  SHAPE="32,129,0,0" TITLE="tipoProcedimentoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/tipiProcedimento/cerca.jsp"
+   TARGET="page1" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit" NAME="forward1"
+   PATH="/WEB-INF/pages/amministrazione/tipiProcedimento/formAggiornamento.jsp"
+   TARGET="page2" TITLE="edit" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#organizzazione#ufficio"
+  NAME="action2" PATH="/page/amministrazione/organizzazione/ufficio"
+  SHAPE="32,385,0,0" TITLE="ufficioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/uffici/cerca.jsp"
+   TARGET="page3" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit" NAME="forward1"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/uffici/cerca.jsp"
+   TARGET="page3" TITLE="edit" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="aggiorna" NAME="forward2"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/uffici/ufficio.jsp"
+   TARGET="page4" TITLE="aggiorna" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward3"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/uffici/success.jsp"
+   TARGET="page5" TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="carica" NAME="forward4"
+   PATH="/page/amministrazione/carica.do?btnNuovaCarica=true"
+   TARGET="action34" TITLE="carica" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#organizzazione#utenti#profilo"
+  NAME="action3"
+  PATH="/page/amministrazione/organizzazione/utenti/profilo"
+  SHAPE="32,881,0,0" TITLE="profiloUtenteForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/utenti/profilo.jsp"
+   TARGET="page6" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="indietro" NAME="forward1"
+   PATH="/page/amministrazione/organizzazione/utenti/cerca.do"
+   TARGET="action25" TITLE="indietro" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward2"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/utenti/success.jsp"
+   TARGET="page7" TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="permessi" NAME="forward3"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/utenti/permessi.jsp"
+   TARGET="page8" TITLE="permessi" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#scarto" NAME="action4"
+  PATH="/page/amministrazione/scarto" SHAPE="32,1457,0,0"
+  TITLE="scartoProtocolliForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/scarto.jsp" TARGET="page9"
+   TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione" NAME="action5"
+  PATH="/page/amministrazione" SHAPE="32,1569,0,0"
+  TITLE="amministrazioneForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/amministrazione.jsp"
+   TARGET="page10" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#archivioScarto" NAME="action6"
+  PATH="/page/amministrazione/archivioScarto" SHAPE="32,1681,0,0"
+  TITLE="archivioScartoProtocolliForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/scarto/ricerca.jsp"
+   TARGET="page11" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="visualizzaProtocolloIngresso" NAME="forward1"
+   PATH="/page/protocollo/ingresso/documentoview.do" TARGET="action30"
+   TITLE="visualizzaProtocolloIngresso" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="visualizzaProtocolloUscita" NAME="forward2"
+   PATH="/page/protocollo/uscita/documentoview.do" TARGET="action31"
+   TITLE="visualizzaProtocolloUscita" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="risultati" NAME="forward3"
+   PATH="/WEB-INF/pages/amministrazione/scarto/protocolliScartati.jsp"
+   TARGET="page12" TITLE="risultati" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#titoliDestinatario"
+  NAME="action7" PATH="/page/amministrazione/titoliDestinatario"
+  SHAPE="32,2225,0,0" TITLE="titoloDestinatarioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/destinatarioTitoli/titoliDestinatarioElenco.jsp"
+   TARGET="page13" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="titolo" NAME="forward1"
+   PATH="/WEB-INF/pages/amministrazione/destinatarioTitoli/titoloDestinatario.jsp"
+   TARGET="page14" TITLE="titolo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#registro" NAME="action8"
+  PATH="/page/amministrazione/registro" SHAPE="32,2481,0,0"
+  TITLE="registroForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/registro/registro.jsp"
+   TARGET="page15" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="registri" NAME="forward1"
+   PATH="/page/amministrazione/registri.do" TARGET="action19"
+   TITLE="registri" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#install#migrazioneDati" NAME="action9"
+  PATH="/install/migrazioneDati" SHAPE="32,2769,0,0"
+  TITLE="migrazioneDatiForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/migrazionedati/migrazionedati.jsp"
+   TARGET="page16" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="errore" NAME="forward1"
+   PATH="/WEB-INF/pages/amministrazione/migrazionedati/errore.jsp"
+   TARGET="page17" TITLE="errore" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="noneffettuabile" NAME="forward2"
+   PATH="/WEB-INF/pages/amministrazione/migrazionedati/noneffettuabile.jsp"
+   TARGET="page18" TITLE="noneffettuabile" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="ok" NAME="forward3"
+   PATH="/WEB-INF/pages/amministrazione/migrazionedati/migrazioneok.jsp"
+   TARGET="page19" TITLE="ok" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#executeImport" NAME="action10"
+  PATH="/page/amministrazione/executeImport" SHAPE="32,3313,0,0"
+  TITLE="importTitolarioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/importTitolario.jsp"
+   TARGET="page20" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="notImported" NAME="forward1"
+   PATH="/WEB-INF/pages/amministrazione/importTitolario.jsp"
+   TARGET="page20" TITLE="notImported" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward2"
+   PATH="/page/amministrazione/titolario.do" TARGET="action20"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#oggettario" NAME="action11"
+  PATH="/page/amministrazione/oggettario" SHAPE="256,4321,0,0"
+  TITLE="oggettiForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/oggettario.jsp" TARGET="page21"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuovoOggetto" NAME="forward1"
+   PATH="/page/amministrazione/oggettarioAdd.do" TARGET="action15"
+   TITLE="nuovoOggetto" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="modificaOggetto" NAME="forward2"
+   PATH="/page/amministrazione/oggettarioAdd.do" TARGET="action15"
+   TITLE="modificaOggetto" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#spostaTitolario"
+  NAME="action12" PATH="/page/amministrazione/spostaTitolario"
+  SHAPE="32,3825,0,0" TITLE="titolarioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="annulla" NAME="forward0"
+   PATH="/page/amministrazione/titolario.do?impostaTitolarioAction=true"
+   TARGET="action20" TITLE="annulla" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward1"
+   PATH="/WEB-INF/pages/amministrazione/titolario/sposta.jsp"
+   TARGET="page22" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#acquisizioneMassiva"
+  NAME="action13" PATH="/page/amministrazione/acquisizioneMassiva"
+  SHAPE="32,4529,0,0" TITLE="acquisizioneMassivaForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listaDocumenti" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/acquisizioneMassiva.jsp"
+   TARGET="page23" TITLE="listaDocumenti" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward1"
+   PATH="/WEB-INF/pages/amministrazione/acquisizioneMassiva.jsp"
+   TARGET="page23" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="logs" NAME="forward2"
+   PATH="/WEB-INF/pages/amministrazione/logsAcquisizioneMassiva.jsp"
+   TARGET="page24" TITLE="logs" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#oggettarioDelete"
+  NAME="action14" PATH="/page/amministrazione/oggettarioDelete"
+  SHAPE="32,4305,0,0" TITLE="oggettiForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/page/amministrazione/oggettario.do" TARGET="action11"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#oggettarioAdd" NAME="action15"
+  PATH="/page/amministrazione/oggettarioAdd" SHAPE="32,4417,0,0"
+  TITLE="oggettiForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/page/amministrazione/oggettario.do" TARGET="action11"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward1"
+   PATH="/WEB-INF/pages/amministrazione/oggetto/oggettario.jsp"
+   TARGET="page44" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#forcedImport" NAME="action16"
+  PATH="/page/amministrazione/forcedImport" SHAPE="32,3489,0,0"
+  TITLE="importTitolarioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/importTitolario.jsp"
+   TARGET="page20" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="notImported" NAME="forward1"
+   PATH="/WEB-INF/pages/amministrazione/importTitolario.jsp"
+   TARGET="page20" TITLE="notImported" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward2"
+   PATH="/page/amministrazione/titolario.do" TARGET="action20"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#importTitolario"
+  NAME="action17" PATH="/page/amministrazione/importTitolario"
+  SHAPE="32,3969,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/importTitolario.jsp"
+   TARGET="page20" TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#mezzispedizione#spedizione"
+  NAME="action18"
+  PATH="/page/amministrazione/mezzispedizione/spedizione"
+  SHAPE="32,4817,0,0" TITLE="spedizioneForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/mezzispedizione/spedizione.jsp"
+   TARGET="page25" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit" NAME="forward1"
+   PATH="/WEB-INF/pages/amministrazione/mezzispedizione/formAggiornamento.jsp"
+   TARGET="page26" TITLE="edit" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#registri" NAME="action19"
+  PATH="/page/amministrazione/registri" SHAPE="256,2641,0,0"
+  TITLE="registroForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/registro/registri.jsp"
+   TARGET="page27" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="registro" NAME="forward1"
+   PATH="/page/amministrazione/registro.do" TARGET="action8"
+   TITLE="registro" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#titolario" NAME="action20"
+  PATH="/page/amministrazione/titolario" SHAPE="304,3505,0,0"
+  TITLE="titolarioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="cercaAmministrazione" NAME="forward0"
+   PATH="/page/protocollo/anagrafica/persona-giuridica/cerca.do"
+   TARGET="action32" TITLE="cercaAmministrazione" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward1"
+   PATH="/WEB-INF/pages/amministrazione/titolario/titolario.jsp"
+   TARGET="page28" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="sposta" NAME="forward2"
+   PATH="/WEB-INF/pages/cercaAmministrazioneamministrazione/titolario/sposta.jsp"
+   TARGET="page29" TITLE="sposta" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="uffici" NAME="forward3"
+   PATH="/page/amministrazione/titolario.do?btnAssocia=true"
+   TARGET="action20" TITLE="uffici" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="associa" NAME="forward4"
+   PATH="/WEB-INF/pages/amministrazione/titolario/associaUffici.jsp"
+   TARGET="page30" TITLE="associa" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="storia" NAME="forward5"
+   PATH="/WEB-INF/pages/amministrazione/titolario/storiaTitolario.jsp"
+   TARGET="page31" TITLE="storia" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit" NAME="forward6"
+   PATH="/page/amministrazione/titolario.do" TARGET="action20"
+   TITLE="edit" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="aggiorna" NAME="forward7"
+   PATH="/WEB-INF/pages/amministrazione/titolario/formAggiornamento.jsp"
+   TARGET="page32" TITLE="aggiorna" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#firmadigitale#edit_ca"
+  NAME="action21" PATH="/page/amministrazione/firmadigitale/edit_ca"
+  SHAPE="32,5073,0,0" TITLE="certificateAuthorityForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/firmadigitale/edit_ca.jsp"
+   TARGET="page33" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  ID="#page#amministrazione#organizzazione#selezionaUfficio"
+  NAME="action22"
+  PATH="/page/amministrazione/organizzazione/selezionaUfficio"
+  SHAPE="32,593,0,0" TITLE="ufficioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/uffici/cerca.jsp"
+   TARGET="page3" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit" NAME="forward1"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/uffici/cerca.jsp"
+   TARGET="page3" TITLE="edit" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="aggiorna" NAME="forward2"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/uffici/ufficio.jsp"
+   TARGET="page4" TITLE="aggiorna" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#report#protocolliDaScartare"
+  NAME="action23"
+  PATH="/page/amministrazione/report/protocolliDaScartare"
+  SHAPE="32,5185,0,0" TITLE="protocolloDaScartareForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/report/protocolliDaScartare.jsp"
+   TARGET="page34" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#organizzazione#aoo#aoo"
+  NAME="action24" PATH="/page/amministrazione/organizzazione/aoo/aoo"
+  SHAPE="32,5297,0,0" TITLE="areaOrganizzativaForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/aoo/aoo.jsp"
+   TARGET="page35" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit" NAME="forward1"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/aoo/editAoo.jsp"
+   TARGET="page36" TITLE="edit" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward2"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/aoo/success.jsp"
+   TARGET="page37" TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#organizzazione#utenti#cerca"
+  NAME="action25"
+  PATH="/page/amministrazione/organizzazione/utenti/cerca"
+  SHAPE="288,1105,0,0" TITLE="cercaUtentiForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/utenti/cerca.jsp"
+   TARGET="page38" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuovo" NAME="forward1"
+   PATH="/page/amministrazione/organizzazione/utenti/profilo.do?btnAnnulla=true"
+   TARGET="action3" TITLE="nuovo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#firmadigitale#lista_ca"
+  NAME="action26" PATH="/page/amministrazione/firmadigitale/lista_ca"
+  SHAPE="32,5697,0,0" TITLE="listaCAForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/firmadigitale/lista_ca.jsp"
+   TARGET="page39" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#tipidocumento" NAME="action27"
+  PATH="/page/amministrazione/tipidocumento" SHAPE="32,5809,0,0"
+  TITLE="tipoDocumentoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/tipidocumento/tipoDocumento.jsp"
+   TARGET="page40" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit" NAME="forward1"
+   PATH="/WEB-INF/pages/amministrazione/tipidocumento/formAggiornamento.jsp"
+   TARGET="page41" TITLE="edit" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#profilo" NAME="action28"
+  PATH="/page/amministrazione/profilo" SHAPE="32,6065,0,0"
+  TITLE="profiloForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/profili/profili.jsp"
+   TARGET="page42" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit" NAME="forward1"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/profili/profili.jsp"
+   TARGET="page42" TITLE="edit" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#amministrazione#organizzazione" NAME="action29"
+  PATH="/page/amministrazione/organizzazione" SHAPE="32,6209,0,0"
+  TITLE="profiloUtenteForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/ricaricaOrganizzazione.jsp"
+   TARGET="page43" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit" NAME="forward1"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/ricaricaOrganizzazione.jsp"
+   TARGET="page43" TITLE="edit" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="logon" NAME="forward2" PATH="/logon.do"
+   TARGET="action33" TITLE="logon" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page0"
+  PATH="/WEB-INF/pages/amministrazione/firmadigitale/aggiorna_crl.jsp"
+  SHAPE="240,34,0,0" SUBTYPE="jsp" TITLE="aggiorna_crl.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page1"
+  PATH="/WEB-INF/pages/amministrazione/tipiProcedimento/cerca.jsp"
+  SHAPE="256,146,0,0" SUBTYPE="jsp" TITLE="cerca.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page2"
+  PATH="/WEB-INF/pages/amministrazione/tipiProcedimento/formAggiornamento.jsp"
+  SHAPE="256,290,0,0" SUBTYPE="jsp" TITLE="formAggiornamento.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page3"
+  PATH="/WEB-INF/pages/amministrazione/organizzazione/uffici/cerca.jsp"
+  SHAPE="288,402,0,0" SUBTYPE="jsp" TITLE="cerca.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page4"
+  PATH="/WEB-INF/pages/amministrazione/organizzazione/uffici/ufficio.jsp"
+  SHAPE="288,610,0,0" SUBTYPE="jsp" TITLE="ufficio.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page5"
+  PATH="/WEB-INF/pages/amministrazione/organizzazione/uffici/success.jsp"
+  SHAPE="288,786,0,0" SUBTYPE="jsp" TITLE="success.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page6"
+  PATH="/WEB-INF/pages/amministrazione/organizzazione/utenti/profilo.jsp"
+  SHAPE="288,898,0,0" SUBTYPE="jsp" TITLE="profilo.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page7"
+  PATH="/WEB-INF/pages/amministrazione/organizzazione/utenti/success.jsp"
+  SHAPE="288,1250,0,0" SUBTYPE="jsp" TITLE="success.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page8"
+  PATH="/WEB-INF/pages/amministrazione/organizzazione/utenti/permessi.jsp"
+  SHAPE="288,1362,0,0" SUBTYPE="jsp" TITLE="permessi.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page9"
+  PATH="/WEB-INF/pages/amministrazione/scarto.jsp" SHAPE="240,1474,0,0"
+  SUBTYPE="jsp" TITLE="scarto.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page10"
+  PATH="/WEB-INF/pages/amministrazione/amministrazione.jsp"
+  SHAPE="240,1586,0,0" SUBTYPE="jsp" TITLE="amministrazione.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page11"
+  PATH="/WEB-INF/pages/amministrazione/scarto/ricerca.jsp"
+  SHAPE="288,1698,0,0" SUBTYPE="jsp" TITLE="ricerca.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#page#protocollo#ingresso#documentoview"
+  NAME="action30" PATH="/page/protocollo/ingresso/documentoview"
+  SHAPE="288,1905,0,0" SUBTYPE="unknown" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#page#protocollo#uscita#documentoview"
+  NAME="action31" PATH="/page/protocollo/uscita/documentoview"
+  SHAPE="288,2017,0,0" SUBTYPE="unknown" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page12"
+  PATH="/WEB-INF/pages/amministrazione/scarto/protocolliScartati.jsp"
+  SHAPE="288,2130,0,0" SUBTYPE="jsp" TITLE="protocolliScartati.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page13"
+  PATH="/WEB-INF/pages/amministrazione/destinatarioTitoli/titoliDestinatarioElenco.jsp"
+  SHAPE="256,2242,0,0" SUBTYPE="jsp"
+  TITLE="titoliDestinatarioElenco.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page14"
+  PATH="/WEB-INF/pages/amministrazione/destinatarioTitoli/titoloDestinatario.jsp"
+  SHAPE="256,2386,0,0" SUBTYPE="jsp" TITLE="titoloDestinatario.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page15"
+  PATH="/WEB-INF/pages/amministrazione/registro/registro.jsp"
+  SHAPE="256,2498,0,0" SUBTYPE="jsp" TITLE="registro.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page16"
+  PATH="/WEB-INF/pages/amministrazione/migrazionedati/migrazionedati.jsp"
+  SHAPE="288,2786,0,0" SUBTYPE="jsp" TITLE="migrazionedati.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page17"
+  PATH="/WEB-INF/pages/amministrazione/migrazionedati/errore.jsp"
+  SHAPE="288,2994,0,0" SUBTYPE="jsp" TITLE="errore.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page18"
+  PATH="/WEB-INF/pages/amministrazione/migrazionedati/noneffettuabile.jsp"
+  SHAPE="288,3106,0,0" SUBTYPE="jsp" TITLE="noneffettuabile.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page19"
+  PATH="/WEB-INF/pages/amministrazione/migrazionedati/migrazioneok.jsp"
+  SHAPE="288,3218,0,0" SUBTYPE="jsp" TITLE="migrazioneok.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page20"
+  PATH="/WEB-INF/pages/amministrazione/importTitolario.jsp"
+  SHAPE="304,3330,0,0" SUBTYPE="jsp" TITLE="importTitolario.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page21"
+  PATH="/WEB-INF/pages/amministrazione/oggettario.jsp"
+  SHAPE="464,4306,0,0" SUBTYPE="jsp" TITLE="oggettario.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page22"
+  PATH="/WEB-INF/pages/amministrazione/titolario/sposta.jsp"
+  SHAPE="304,3842,0,0" SUBTYPE="jsp" TITLE="sposta.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page23"
+  PATH="/WEB-INF/pages/amministrazione/acquisizioneMassiva.jsp"
+  SHAPE="272,4546,0,0" SUBTYPE="jsp" TITLE="acquisizioneMassiva.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page24"
+  PATH="/WEB-INF/pages/amministrazione/logsAcquisizioneMassiva.jsp"
+  SHAPE="272,4722,0,0" SUBTYPE="jsp" TITLE="logsAcquisizioneMassiva.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page25"
+  PATH="/WEB-INF/pages/amministrazione/mezzispedizione/spedizione.jsp"
+  SHAPE="256,4834,0,0" SUBTYPE="jsp" TITLE="spedizione.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page26"
+  PATH="/WEB-INF/pages/amministrazione/mezzispedizione/formAggiornamento.jsp"
+  SHAPE="256,4978,0,0" SUBTYPE="jsp" TITLE="formAggiornamento.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page27"
+  PATH="/WEB-INF/pages/amministrazione/registro/registri.jsp"
+  SHAPE="480,2626,0,0" SUBTYPE="jsp" TITLE="registri.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#page#protocollo#anagrafica#persona-giuridica#cerca"
+  NAME="action32"
+  PATH="/page/protocollo/anagrafica/persona-giuridica/cerca"
+  SHAPE="576,3489,0,0" SUBTYPE="unknown" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page28"
+  PATH="/WEB-INF/pages/amministrazione/titolario/titolario.jsp"
+  SHAPE="576,3826,0,0" SUBTYPE="jsp" TITLE="titolario.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page29"
+  PATH="/WEB-INF/pages/cercaAmministrazioneamministrazione/titolario/sposta.jsp"
+  SHAPE="576,3314,0,0" SUBTYPE="jsp" TITLE="sposta.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page30"
+  PATH="/WEB-INF/pages/amministrazione/titolario/associaUffici.jsp"
+  SHAPE="576,3970,0,0" SUBTYPE="jsp" TITLE="associaUffici.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page31"
+  PATH="/WEB-INF/pages/amministrazione/titolario/storiaTitolario.jsp"
+  SHAPE="576,4082,0,0" SUBTYPE="jsp" TITLE="storiaTitolario.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page32"
+  PATH="/WEB-INF/pages/amministrazione/titolario/formAggiornamento.jsp"
+  SHAPE="576,4194,0,0" SUBTYPE="jsp" TITLE="formAggiornamento.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page33"
+  PATH="/WEB-INF/pages/amministrazione/firmadigitale/edit_ca.jsp"
+  SHAPE="240,5090,0,0" SUBTYPE="jsp" TITLE="edit_ca.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page34"
+  PATH="/WEB-INF/pages/amministrazione/report/protocolliDaScartare.jsp"
+  SHAPE="240,5202,0,0" SUBTYPE="jsp" TITLE="protocolliDaScartare.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page35"
+  PATH="/WEB-INF/pages/amministrazione/organizzazione/aoo/aoo.jsp"
+  SHAPE="272,5314,0,0" SUBTYPE="jsp" TITLE="aoo.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page36"
+  PATH="/WEB-INF/pages/amministrazione/organizzazione/aoo/editAoo.jsp"
+  SHAPE="272,5490,0,0" SUBTYPE="jsp" TITLE="editAoo.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page37"
+  PATH="/WEB-INF/pages/amministrazione/organizzazione/aoo/success.jsp"
+  SHAPE="272,5602,0,0" SUBTYPE="jsp" TITLE="success.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page38"
+  PATH="/WEB-INF/pages/amministrazione/organizzazione/utenti/cerca.jsp"
+  SHAPE="512,1090,0,0" SUBTYPE="jsp" TITLE="cerca.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page39"
+  PATH="/WEB-INF/pages/amministrazione/firmadigitale/lista_ca.jsp"
+  SHAPE="240,5714,0,0" SUBTYPE="jsp" TITLE="lista_ca.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page40"
+  PATH="/WEB-INF/pages/amministrazione/tipidocumento/tipoDocumento.jsp"
+  SHAPE="256,5826,0,0" SUBTYPE="jsp" TITLE="tipoDocumento.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page41"
+  PATH="/WEB-INF/pages/amministrazione/tipidocumento/formAggiornamento.jsp"
+  SHAPE="256,5970,0,0" SUBTYPE="jsp" TITLE="formAggiornamento.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page42"
+  PATH="/WEB-INF/pages/amministrazione/organizzazione/profili/profili.jsp"
+  SHAPE="256,6082,0,0" SUBTYPE="jsp" TITLE="profili.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page43"
+  PATH="/WEB-INF/pages/amministrazione/organizzazione/ricaricaOrganizzazione.jsp"
+  SHAPE="272,6226,0,0" SUBTYPE="jsp" TITLE="ricaricaOrganizzazione.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#logon" NAME="action33" PATH="/logon"
+  SHAPE="272,6401,0,0" SUBTYPE="unknown" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page44"
+  PATH="/WEB-INF/pages/amministrazione/oggetto/oggettario.jsp"
+  SHAPE="240,4641,0,0" SUBTYPE="jsp" TITLE="oggettario.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#page#amministrazione#carica" NAME="action34"
+  PATH="/page/amministrazione/carica" SHAPE="32,7825,0,0"
+  TITLE="caricaForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/amministrazione/organizzazione/utenti/carica.jsp"
+   TARGET="page45" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/page/amministrazione/organizzazione/ufficio.do?indietroCaricaAction=true"
+   TARGET="action2" TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page45"
+  PATH="/WEB-INF/pages/amministrazione/organizzazione/utenti/carica.jsp"
+  SHAPE="240,7825,0,0" SUBTYPE="jsp" TITLE="carica.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+</PROCESS>

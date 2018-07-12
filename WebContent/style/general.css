@@ -1,0 +1,44 @@
+#general 
+
+.sup {
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: black;
+        font-family: Verdana, Arial; text-align:left; color: white; font-size: 20px;
+	background-color: #8699D0;
+}
+.center {
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: black;
+	background-color: #AFBBE0;
+	font-family: Verdana, Arial; text-align:center; color: white; font-size: 12px;
+}
+
+.down {
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: black;
+	background-color: #8699D0;
+}
+
+A:link {
+	TEXT-DECORATION: none
+}
+A:visited {
+	TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #c4df9b
+}
+A:visited {
+	COLOR: #c4df9b
+}
+A:hover {
+	COLOR: #ffffff
+}
+
+#messaggi li {
+	color: orange;
+	font-size: 70%;
+}

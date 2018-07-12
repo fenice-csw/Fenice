@@ -1,0 +1,2291 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+	<!--
+		This is the Struts configuration file for the example application,
+		using the proposed new syntax.
+	-->
+<struts-config>
+	<data-sources />
+	<!--
+		========== Form Bean Definitions ===================================
+	-->
+	<form-beans>
+		<!-- Logon form bean -->
+		<form-bean name="LogonForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.LogonForm" />
+		<form-bean name="passwordForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.CambioPasswordForm" />
+		<form-bean name="protocolloIngressoForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.ProtocolloIngressoForm" />
+		<form-bean name="protocolloUscitaForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.ProtocolloUscitaForm" />
+		<form-bean name="annotazioneProtocolloForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.AnnotazioneProtocolloForm" />
+		<form-bean name="allaccioProtocolloForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.AllaccioProtocolloForm" />
+		<form-bean name="uploadForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.UploaderForm" />
+		<form-bean name="personaFisicaForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.soggetto.PersonaFisicaForm" />
+		<form-bean name="personaGiuridicaForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.soggetto.PersonaGiuridicaForm" />
+		<form-bean name="cercaAooForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.soggetto.CercaAooForm" />
+		<form-bean name="soggettoForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.soggetto.SoggettoForm" />          
+		<form-bean name="registroForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.registro.RegistroForm" />
+		<form-bean name="SelezionaRegistroUfficioForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.SelezionaRegistroUfficioForm" />
+		<form-bean name="titolarioForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.TitolarioForm" />
+		<form-bean name="presaInCaricoForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.PresaInCaricoForm" />
+		<form-bean name="scaricoForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.ScaricoForm" />
+		<form-bean name="respintiForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.ProtocolliRespintiForm" />
+		<form-bean name="riassegnazioneForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.ProtocolloIngressoForm" />
+		<form-bean name="ricercaForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.RicercaForm" />
+		<form-bean name="reportCommonForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.report.ReportCommonForm" />
+		<form-bean name="reportRegistroForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.report.ReportRegistroForm" />
+		<form-bean name="reportScaricatiForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.report.ReportScaricatiForm" />
+		<form-bean name="reportLavorazioneForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.report.ReportLavorazioneForm" />
+		<form-bean name="reportDaScartareForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.report.ReportDaScartareForm" />
+		<form-bean name="reportAssegnatiForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.report.ReportAssegnatiForm" />
+		<form-bean name="reportAnnullatiForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.report.ReportAnnullatiForm" />
+		<form-bean name="reportSpeditiForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.report.ReportSpeditiForm" />
+		<form-bean name="reportAnagraficaForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.report.ReportAnagraficaForm" />
+		<form-bean name="reportStatisticheForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.report.ReportStatisticheForm" />
+		<form-bean name="reportEtichetteForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.report.ReportEtichetteForm" />
+		<form-bean name="reportOrganizzazioneForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.report.ReportOrganizzazioneForm" />
+		<form-bean name="spedizioneForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.SpedizioneForm" />
+		<form-bean name="ufficioForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.org.utenti.UfficioForm" />
+		<form-bean name="storiaProtocolloForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.StoriaProtocolloForm" />
+		<form-bean name="fascicoloForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.FascicoloForm" />
+		<form-bean name="ricercaFascicoliForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.RicercaFascicoliForm" />
+		<form-bean name="listaEmailForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.ListaEmailForm" />
+		<form-bean name="listaEmailLogForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.ListaEmailLogForm" />
+		<form-bean name="registroEmergenzaForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.RegistroEmergenzaForm" />
+		<form-bean name="documentoForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.documentale.DocumentoForm" />
+		<form-bean name="documentiArchivioForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.DocumentiArchivioForm" />
+		<form-bean name="fascicoliArchivioForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.FascicoliArchivioForm" />
+		<form-bean name="faldoneForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.FaldoneForm" />
+		<form-bean name="ricercaFaldoneForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.RicercaFaldoneForm" />
+		<form-bean name="evidenzaForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.evidenza.EvidenzaForm" />
+		<form-bean name="configurazioneForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.ConfigurazioneUtenteForm" />
+		<form-bean name="listaDistribuzioneForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.soggetto.ListaDistribuzioneForm" />
+		<form-bean name="ricercaEvidenzaForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.RicercaEvidenzaForm" />
+		<form-bean name="registroModificheForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.RegistroModificheForm" />
+		<form-bean name="procedimentoForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.ProcedimentoForm" />
+		<form-bean name="ricercaProcedimentoForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.RicercaProcedimentoForm" />
+		<form-bean name="protocolloDaScartareForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.ReportProtocolliDaScartareForm" />
+		<form-bean name="storiaFascicoloForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.StoriaFascicoloForm" />
+		<form-bean name="storiaFaldoneForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.StoriaFaldoneForm" />
+		<form-bean name="storiaProcedimentoForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.StoriaProcedimentoForm" />
+		<form-bean name="stampaEtichettaForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.protocollo.StampaEtichettaForm" />
+		<form-bean name="postaInternaForm"
+			type="it.compit.fenice.mvc.presentation.actionform.protocollo.PostaInternaForm" />
+		<form-bean name="cruscottoForm"
+			type="it.compit.fenice.mvc.presentation.actionform.protocollo.CruscottoForm" />
+		<form-bean name="riassegnazionePostaForm"
+			type="it.compit.fenice.mvc.presentation.actionform.protocollo.PostaInternaForm" />
+		<form-bean name="rifiutoForm"
+			type="it.compit.fenice.mvc.presentation.actionform.protocollo.RifiutoForm" />
+		<form-bean name="alertProcedimentoForm"
+			type="it.compit.fenice.mvc.presentation.actionform.protocollo.AlertProcedimentoForm" />
+		<form-bean name="alertProtocolloForm"
+			type="it.compit.fenice.mvc.presentation.actionform.protocollo.AlertProtocolloForm" />
+		<form-bean name="documentoRepertorioForm"
+			type="it.compit.fenice.mvc.presentation.actionform.repertori.DocumentoRepertorioForm" />
+		<form-bean name="repertorioForm"
+			type="it.compit.fenice.mvc.presentation.actionform.repertori.RepertorioForm" />
+		<form-bean name="visualizzaProtocolloForm"
+			type="it.compit.fenice.mvc.presentation.actionform.protocollo.VisualizzaProtocolloForm" />
+		<form-bean name="listaDomandeForm"
+			type="it.compit.fenice.mvc.presentation.actionform.protocollo.ListaDomandeForm" />
+		<form-bean name="archivioDepositoForm"
+			type="it.compit.fenice.mvc.presentation.actionform.protocollo.ArchivioDepositoForm" />
+		<form-bean name="reportGenericForm"
+			type="it.compit.fenice.mvc.presentation.actionform.report.ReportGenericForm" />
+		<form-bean name="logForm"
+			type="it.compit.fenice.mvc.presentation.actionform.log.LogForm" />
+		<form-bean name="emailUscitaForm"
+			type="it.compit.fenice.mvc.presentation.actionform.protocollo.EmailUscitaForm" />
+		<form-bean name="notificaEsitoCommittenteForm"
+			type="it.compit.fenice.mvc.presentation.actionform.protocollo.NotificaEsitoCommittenteForm" />
+		<form-bean name="jobScheduledLogForm"
+			type="it.compit.fenice.mvc.presentation.actionform.log.JobScheduledLogForm" />
+		<form-bean name="inviaRepertorioForm"
+			type="it.compit.fenice.mvc.presentation.actionform.protocollo.InviaRepertorioForm" />
+		<form-bean name="jSProtocollazioneBean"
+			type="it.compit.fenice.cds.service.bean.protocollo.JSProtocollazioneBean" />
+		
+		<!-- Amm. Trasparente -->
+		<form-bean name="ammTrasparenteForm"
+			type="it.compit.fenice.mvc.presentation.actionform.ammtrasparente.AmmTrasparenteForm" />
+	</form-beans>
+	<global-exceptions />
+	<!--
+		========== Global Forward Definitions ==============================
+	-->
+	<global-forwards>
+		<forward name="pagina_iniziale" path="/menu.do?id=1" />
+	</global-forwards>
+	<!--
+		========== Action Mapping Definitions ==============================
+	-->
+
+	<action-mappings>
+
+		<action input="input" name="LogonForm" path="/logon" scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.LogonAction" validate="false">
+			<forward name="input" path="/logon.jsp" />
+			<forward name="scelta_registro" path="/selezionaRegistroUfficio.do" />
+			<forward name="gestisci_aoo" path="/gestisciAOO.do" />
+			<forward name="pagina_predefinita" path="/menu.do?id=1" />
+		</action>
+
+		<action input="input" name="logForm" path="/page/log" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.log.LogAction" validate="false">
+			<forward name="input" path="/WEB-INF/pages/log/dashboard.jsp" />
+			<forward name="lista" path="/WEB-INF/pages/log/lista_log.jsp" />
+		</action>
+
+		<action name="LogonForm" path="/logoff" scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.LogonAction" validate="false">
+			<forward name="logon" path="/logon.jsp" />
+		</action>
+
+		<action path="/gestisciAOO" scope="request"
+			type="it.compit.fenice.mvc.presentation.action.amministrazione.GestioneAOOAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/gestione_AOO/gestione_AOO.jsp" />
+			<forward name="error" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="logon" path="/logon.do" />
+		</action>
+		
+		<action name="jSProtocollazioneBean" path="/testProtocollazione" scope="request"
+			type="it.compit.fenice.cds.action.CdsAction"
+			validate="false">
+			<forward name="error" path="/WEB-INF/pages/errore.jsp" />
+		</action>
+
+		<action input="input" name="SelezionaRegistroUfficioForm" path="/selezionaRegistroUfficio"
+			scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.SelezionaRegistroUfficioAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/registro/selezionaRegistroUfficio.jsp" />
+		</action>
+
+		<action input="input" name="passwordForm" path="/cambioPwd"
+			scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.CambioPasswordAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/cambioPassword.jsp" />
+		</action>
+
+		<action path="/menu"
+			type="it.finsiel.siged.mvc.presentation.action.MenuAction" validate="false">
+			<forward name="emptyMenu" path="/WEB-INF/pages/emptyPage.jsp" />
+		</action>
+
+		<action path="/navbar"
+			type="it.finsiel.siged.mvc.presentation.action.NavBarAction"
+			validate="false">
+			<forward name="emptyMenu" path="/WEB-INF/pages/emptyPage.jsp" />
+		</action>
+
+		<action path="/page/protocollo/barcode"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.BarCodeAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/protocollo/barcode.jsp" />
+		</action>
+
+		<action input="input" name="protocolloUscitaForm"
+			path="/page/protocollo/etichetteDestinatari" scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.EtichetteDestinatariAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/etichetteDestinatari.jsp" />
+		</action>
+
+		<action input="input" name="listaEmailForm" path="/page/protocollo/ingresso/email"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ListaEmailAction"
+			validate="true">
+			<forward name="input" path="/WEB-INF/pages/protocollo/ingresso/email.jsp" />
+			<forward name="edit"
+				path="/WEB-INF/pages/protocollo/ingresso/emailEdit.jsp" />
+			<forward name="erroreVisual"
+				path="/WEB-INF/pages/erroreVisualizzazione.jsp" />
+			<forward name="protocollazione" path="/page/protocollo/ingresso/documento.do" />
+			<forward name="cercaPersonaFisica"
+				path="/page/protocollo/anagrafica/persona-fisica/cerca.do" />
+			<forward name="cercaPersonaGiuridica"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do" />
+			<forward name="nuovaPersonaFisica"
+				path="/page/protocollo/anagrafica/persona-fisica/nuovo.do" />
+			<forward name="nuovaPersonaGiuridica"
+				path="/page/protocollo/anagrafica/persona-giuridica/nuovo.do" />
+		</action>
+
+		<action input="input" name="listaEmailForm" path="/page/protocollo/ingresso/email_ufficio"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.ListaEmailUfficioAction"
+			validate="true">
+			<forward name="input" path="/WEB-INF/pages/protocollo/ingresso/emailUfficio.jsp" />
+			<forward name="edit"
+				path="/WEB-INF/pages/protocollo/ingresso/emailUfficioEdit.jsp" />
+			<forward name="protocollazione" path="/page/protocollo/ingresso/documento.do" />
+			<forward name="cercaPersonaFisica"
+				path="/page/protocollo/anagrafica/persona-fisica/cerca.do" />
+			<forward name="cercaPersonaGiuridica"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do" />
+			<forward name="nuovaPersonaFisica"
+				path="/page/protocollo/anagrafica/persona-fisica/nuovo.do" />
+			<forward name="nuovaPersonaGiuridica"
+				path="/page/protocollo/anagrafica/persona-giuridica/nuovo.do" />
+		</action>
+
+		<action input="input" name="documentiArchivioForm"
+			path="/page/protocollo/uscita/archivio/documenti" scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.DocumentiArchivioAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/uscita/archivio/documenti.jsp" />
+			<forward name="edit"
+				path="/WEB-INF/pages/protocollo/uscita/archivio/documento.jsp" />
+			<forward name="protocollazione"
+				path="/page/protocollo/uscita/documento.do?protocolla=true" />
+		</action>
+
+		<action input="input" name="fascicoliArchivioForm"
+			path="/page/protocollo/uscita/archivio/fascicoli" scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.FascicoliArchivioAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/uscita/archivio/fascicoli.jsp" />
+			<forward name="edit"
+				path="/WEB-INF/pages/protocollo/uscita/archivio/fascicolo.jsp" />
+			<forward name="protocollazione" path="/page/protocollo/uscita/documento.do" />
+		</action>
+
+		<action input="input" name="emailUscitaForm" path="/page/protocollo/ingresso/emailLog"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ListaEmailLogAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/protocollo/emailUscita.jsp" />
+			<forward name="modifica" path="/WEB-INF/pages/protocollo/uscita/email.jsp" />
+		</action>
+		
+		<action input="input" name="emailUscitaForm" path="/page/protocollo/uscita/modificaEmailUscita"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ListaEmailLogAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/protocollo/uscita/email.jsp" />
+			<forward name="success" path="/WEB-INF/pages/protocollo/emailUscita.jsp" />
+		</action>
+		
+		<action input="input" name="listaDomandeForm"
+			path="/page/domande/elenco" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.ListaDomandeErsuAction" >
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/domande_ersu/domande.jsp" />
+			<forward name="edit" path="/page/domande/elenco.do?caricaLista=true"/>
+			<forward name="accettaDomanda"
+				path="/page/protocollo/domande_ersu/documento.do" />
+			<forward name="visualizzaProtocolloIngresso"
+				path="/page/protocollo/ingresso/documentoview.do" />
+			
+		</action>
+
+		<action input="input" name="protocolloIngressoForm"
+			path="/page/protocollo/domande_ersu/documento" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.ProtocollaDomandeErsuAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/domande_ersu/documento.jsp" />
+			<forward name="cercaAllacci" path="/allacciProtocollo.do" />
+			<forward name="erroreDownload" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="visualizzaProtocollo"
+				path="/page/protocollo/ingresso/documentoview.do?protocolloRegistrato=true"
+				redirect="true" />
+			<forward name="allegaDaScanner" path="/page/protocollo/ingresso/documento.do?allegaDocumentoAction=true" />
+			<forward name="allegaDocProtocollo" path="/page/protocollo/ingresso/allega.do" />
+			<forward name="saveFailure"
+				path="/WEB-INF/pages/protocollo/protocolloGiaSalvato.jsp" />
+			<forward name="indietro"
+				path="/page/domande/elenco.do?caricaLista=true" />
+			<forward name="visualizzaAllaccio" path="/page/protocollo/allaccioview.do" />			
+		</action>
+
+		<action input="input" name="protocolloIngressoForm"
+			path="/page/fatture/documento" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.ProtocollaFattureAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/fatture/documento.jsp" />
+			<forward name="cercaAllacci" path="/allacciProtocollo.do" />
+			<forward name="erroreDownload" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="visualizzaProtocollo"
+				path="/page/protocollo/ingresso/documentoview.do?protocolloRegistrato=true"
+				redirect="true" />
+			<forward name="allegaDaScanner" path="/page/protocollo/ingresso/documento.do?allegaDocumentoAction=true" />
+			<forward name="allegaDocProtocollo" path="/page/protocollo/ingresso/allega.do" />
+			<forward name="saveFailure"
+				path="/WEB-INF/pages/protocollo/protocolloGiaSalvato.jsp" />
+			<forward name="visualizzaAllaccio" path="/page/protocollo/allaccioview.do" />
+			
+			<forward name="cercaPersonaFisica"
+				path="/page/protocollo/anagrafica/persona-fisica/cerca.do" />
+			<forward name="cercaPersonaGiuridica"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do" />
+		</action>
+		
+		<action input="input" name="notificaEsitoCommittenteForm" path="/page/fatturaelettronica/notifica"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.NotificaEsitoCommittenteAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/protocollo/fattura_elettronica/notifica.jsp" />
+			<forward name="protocollazioneUscita" path="/page/protocollo/uscita/documento.do?protocolla=true" />
+			<forward name="indietro" path="/page/protocollo/ingresso/documentoview.do" />
+			
+		</action>
+
+		<action input="input" name="protocolloIngressoForm"
+			path="/page/protocollo/ingresso/documento" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloIngressoAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/ingresso/documento.jsp" />
+			<forward name="cercaPersonaFisica"
+				path="/page/protocollo/anagrafica/persona-fisica/cerca.do" />
+			<forward name="cercaPersonaGiuridica"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do" />
+			<forward name="cercaAllacci" path="/allacciProtocollo.do" />
+			<forward name="erroreDownload" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="cercaProtocolloMittente"
+				path="/WEB-INF/pages/protocollo/ingresso/listaProtocolli.jsp" />
+			<forward name="visualizzaProtocollo"
+				path="/page/protocollo/ingresso/documentoview.do?protocolloRegistrato=true"
+				redirect="true" />
+			<forward name="allegaDaScanner" path="/page/protocollo/ingresso/documento.do?allegaDocumentoAction=true" />
+			<forward name="allegaDocProtocollo" path="/page/protocollo/ingresso/allega.do" redirect="true" />
+			<forward name="cercaFascicolo" path="/page/fascicoli.do?btnCercaFascicoli=true" />
+			<forward name="nuovoFascicolo" path="/page/fascicolo.do?btnNuovo=true" />
+			<forward name="saveFailure"
+				path="/WEB-INF/pages/protocollo/protocolloGiaSalvato.jsp" />
+			<forward name="nuovoProcedimento" path="/page/procedimento.do?protocolloIngresso=true" />
+			<forward name="cercaProcedimento"
+				path="/page/procedimento/ricerca.do?protocolloIngresso=true" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+			<forward name="visualizzaAllaccio" path="/page/protocollo/allaccioview.do" />
+			<forward name="stampaEtichetta" path="/page/protocollo/stampaEtichetta.do?DOC_IN=TRUE" />
+			<forward name="allegaStampaEtichetta" path="/page/protocollo/stampaEtichetta.do?ATTACH_IN=TRUE" />
+			
+			
+		</action>
+
+		<!-- visualizza allaccio -->
+		<action input="input" name="visualizzaProtocolloForm" path="/page/protocollo/allaccioview"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.VisualizzaProtocolloAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/visualizza/allaccio.jsp" />
+			<forward name="tornaIngresso" path="/page/protocollo/ingresso/documento.do" />
+			<forward name="indietro" path="/WEB-INF/pages/procedimento/sospensione.jsp" />
+			<forward name="tornaPosta" path="/page/protocollo/posta_interna/documento.do" />
+			<forward name="tornaUscita" path="/page/protocollo/uscita/documento.do" />
+			<forward name="tornaIngressoView" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="tornaPostaView" path="/page/protocollo/posta_interna/documentoview.do" />
+			<forward name="tornaUscitaView" path="/page/protocollo/uscita/documentoview.do" />
+		</action>
+		
+		<action input="input" name="visualizzaProtocolloForm" path="/page/protocollo/posta_interna/summaryview"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.VisualizzaProtocolloAction" validate="false">
+			<forward name="input" path="/WEB-INF/pages/protocollo/visualizza/posta_interna.jsp" />
+			<forward name="indietro" path="/page/protocollo/dashboard/showCheckPostaInterna.do" />
+		</action>
+		
+		<action input="input" name="visualizzaProtocolloForm" path="/page/protocollo/uscita/summaryview"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.VisualizzaProtocolloAction" validate="false">
+			<forward name="input" path="/WEB-INF/pages/protocollo/visualizza/uscita.jsp" />
+			<forward name="indietro" path="/page/protocollo/ingresso/emailLog.do" />
+		</action>
+		
+		<action input="input" name="fascicoloForm" path="/page/fascicolo/allaccioview"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.VisualizzaCollegamentoFascicoloAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/fascicolo/visualizzaAllaccio.jsp" />
+			<forward name="indietro" path="/page/fascicolo.do" />
+		</action>
+		<!--  -->
+
+		<!-- TODO -->
+		<action input="input" name="protocolloIngressoForm"
+			path="/page/protocollo/ingresso/procedimento" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloIngressoAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/ingresso/aggiungiProcedimento.jsp" />
+			<forward name="erroreDownload" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="visualizzaProtocollo"
+				path="/page/protocollo/ingresso/documentoview.do?protocolloRegistrato=true"
+				redirect="true" />
+			<forward name="saveFailure"
+				path="/WEB-INF/pages/protocollo/protocolloGiaSalvato.jsp" />
+			<forward name="nuovoProcedimento" path="/page/procedimento.do?protocolloIngresso=true" />
+			<forward name="cercaProcedimento"
+				path="/page/procedimento/ricerca.do?protocolloIngresso=true" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+			<forward name="tornaUfficio" path="/page/protocollo/dashboard/assegnati.do?type=ufficio" />
+			<forward name="tornaUtente" path="/page/protocollo/dashboard/scarico.do?type=carico" />
+		</action>
+
+		<action input="input" name="postaInternaForm"
+			path="/page/protocollo/posta_interna/procedimento" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.PostaInternaAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/posta_interna/aggiungiProcedimento.jsp" />
+			<forward name="erroreDownload" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="visualizzaProtocollo"
+				path="/page/protocollo/posta_interna/documentoview.do?protocolloRegistrato=true"
+				redirect="true" />
+			<forward name="saveFailure"
+				path="/WEB-INF/pages/protocollo/protocolloGiaSalvato.jsp" />
+			<forward name="nuovoProcedimento" path="/page/procedimento.do?protocolloIngresso=true" />
+			<forward name="cercaProcedimento"
+				path="/page/procedimento/ricerca.do?protocolloIngresso=true" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+			<forward name="tornaUfficio" path="/page/protocollo/dashboard/posta_interna.do?type=ufficio" />
+			<forward name="tornaUtente" path="/page/protocollo/dashboard/posta_interna.do?type=utente" />
+		</action>
+
+		<!-- cruscotti -->
+		<action input="input" name="cruscottoForm" path="/page/cruscotto/struttura"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.CruscottoStrutturaAction"
+			validate="true">
+			<forward name="input" path="/WEB-INF/pages/cruscotto/struttura.jsp" />
+			<forward name="erroreDownload" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="riassegnaProtocollo"
+				path="/page/protocollo/ingresso/riassegna.do?CRUSCOTTO_STRUTTURA=TRUE" />
+			<forward name="riassegnaPosta"
+				path="/page/protocollo/posta_interna/riassegna.do?CRUSCOTTO_STRUTTURA=TRUE" />
+			<forward name="riassegnazioneMultiplaProtocollo"
+				path="/page/protocollo/ingresso/riassegnaMultipla.do?CRUSCOTTO_STRUTTURA=TRUE" />
+			<forward name="riassegnazioneMultiplaPosta"
+				path="/page/protocollo/posta_interna/riassegnaMultipla.do?CRUSCOTTO_STRUTTURA=TRUE" />
+			<forward name="riassegnazioneFascicoli"
+				path="/page/riassegnaFascicoli.do?CRUSCOTTO_STRUTTURA=TRUE" />
+			<forward name="visualizzaProtocolloIngresso" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="visualizzaPostaInterna"
+				path="/page/protocollo/posta_interna/documentoview.do" />
+		</action>
+
+		<action input="input" name="cruscottoForm" path="/page/cruscotto/amministrazione"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.CruscottoAmministrazioneAction"
+			validate="true">
+			<forward name="input" path="/WEB-INF/pages/cruscotto/amministrazione.jsp" />
+			<forward name="erroreDownload" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="riassegnaProtocollo"
+				path="/page/protocollo/ingresso/riassegna.do?CRUSCOTTO_AMMINISTRAZIONE=TRUE" />
+			<forward name="riassegnaPosta"
+				path="/page/protocollo/posta_interna/riassegna.do?CRUSCOTTO_AMMINISTRAZIONE=TRUE" />
+			<forward name="riassegnazioneMultiplaProtocollo"
+				path="/page/protocollo/ingresso/riassegnaMultipla.do?CRUSCOTTO_AMMINISTRAZIONE=TRUE" />
+			<forward name="riassegnazioneMultiplaPosta"
+				path="/page/protocollo/posta_interna/riassegnaMultipla.do?CRUSCOTTO_AMMINISTRAZIONE=TRUE" />
+			<forward name="riassegnazioneFascicoli"
+				path="/page/riassegnaFascicoli.do?CRUSCOTTO_AMMINISTRAZIONE=TRUE" />		
+			<forward name="visualizzaProtocolloIngresso" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="visualizzaPostaInterna"
+				path="/page/protocollo/posta_interna/documentoview.do" />
+		</action>
+
+		<!-- allega da scanner -->
+		<action input="input" name="protocolloIngressoForm" path="/page/protocollo/ingresso/allega"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloIngressoAction"
+			validate="false">
+			<forward name="input" path="/page/protocollo/ingresso/allegaview.do?btnModificaProtocollo=true" redirect="true" />
+		</action>
+
+		<action input="input" name="protocolloIngressoForm"
+			path="/page/protocollo/ingresso/allegaview" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloIngressoAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/ingresso/allegaView.jsp" />
+			<forward name="annullaProtocollo"
+				path="/WEB-INF/pages/protocollo/ingresso/annullaProtocollo.jsp" />
+			<forward name="modificaProtocollo" path="/page/protocollo/ingresso/allegaEdit.do"
+				redirect="true" />
+			<forward name="storiaProtocollo" path="/page/protocollo/storia.do" />
+			<forward name="nuovoProtocollo"
+				path="/page/protocollo/ingresso/documento.do" redirect="true"/>
+			<forward name="nuovoProtocolloRipeti"
+				path="/page/protocollo/ingresso/documento.do?ripetiAction=true" />
+			<forward name="nuovoProcedimento" path="/page/procedimento.do?protocolloIngresso=true" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+		</action>
+
+		<action input="input" name="protocolloIngressoForm"
+			path="/page/protocollo/ingresso/allegaEdit" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloIngressoAction"
+			validate="true">
+			<forward name="input" path="/WEB-INF/pages/protocollo/ingresso/allega.jsp" />
+			<forward name="erroreDownload" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="visualizzaProtocollo" path="/page/protocollo/ingresso/documentoview.do?protocolloRegistrato=true" redirect="true" />
+			<forward name="saveFailure" path="/WEB-INF/pages/protocollo/protocolloGiaSalvato.jsp" />
+			<forward name="allegaStampaEtichetta" path="/page/protocollo/stampaEtichetta.do?ATTACH_IN=TRUE" />			
+		</action>
+
+		<!-- posta interna -->
+		<action input="input" name="postaInternaForm"
+			path="/page/protocollo/posta_interna/documento" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.PostaInternaAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/posta_interna/documento.jsp" />
+			<forward name="cercaAllacci" path="/allacciProtocollo.do" />
+			<forward name="erroreDownload" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="visualizzaProtocollo"
+				path="/page/protocollo/posta_interna/documentoview.do?protocolloRegistrato=true"
+				redirect="true" />
+			<forward name="allegaDaScanner" path="/page/protocollo/posta_interna/documento.do?allegaDocumentoAction=true" />
+			<forward name="allegaDocProtocollo" path="/page/protocollo/posta_interna/allega.do" />
+			<forward name="cercaFascicolo" path="/page/fascicoli.do?btnCercaFascicoli=true" />
+			<forward name="nuovoFascicolo" path="/page/fascicolo.do?btnNuovo=true" />
+			<forward name="storiaProtocollo" path="/page/protocollo/storia.do" />
+			<forward name="saveFailure"
+				path="/WEB-INF/pages/protocollo/protocolloGiaSalvato.jsp" />
+			<forward name="nuovoProcedimento" path="/page/procedimento.do?postaInterna=true" />
+			<forward name="stampaEtichetta" path="/page/protocollo/stampaEtichetta.do?DOC_PI=TRUE" />
+			<forward name="allegaStampaEtichetta" path="/page/protocollo/stampaEtichetta.do?ATTACH_PI=TRUE" />
+			<forward name="cercaProcedimento"
+				path="/page/procedimento/ricerca.do?postaInterna=true" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+			<forward name="visualizzaAllaccio" path="/page/protocollo/allaccioview.do" />
+			<forward name="cercaListaDistribuzione"
+				path="/page/protocollo/anagrafica/listaDistribuzioneInterna.do" />
+			<forward name="scarico_procedimento" path="/page/procedimento/scarico.do?chiudiDaRisposta=true" />
+			<forward name="tornaUfficio" path="/page/protocollo/dashboard/posta_interna.do?type=ufficio" />
+			<forward name="tornaUtente" path="/page/protocollo/dashboard/posta_interna.do?type=utente" />
+		</action>
+
+		<action input="input" name="postaInternaForm"
+			path="/page/protocollo/posta_interna/allega" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.PostaInternaAction"
+			validate="false">
+			<forward name="input"
+				path="/page/protocollo/posta_interna/allegaview.do?btnModificaProtocollo=true"
+				redirect="true" />
+		</action>
+
+		<action input="input" name="postaInternaForm"
+			path="/page/protocollo/posta_interna/allegaview" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.PostaInternaAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/posta_interna/allegaView.jsp" />
+			<forward name="annullaProtocollo"
+				path="/WEB-INF/pages/protocollo/posta_interna/annullaProtocollo.jsp" />
+			<forward name="modificaProtocollo" path="/page/protocollo/posta_interna/allegaEdit.do"
+				redirect="true" />
+			<forward name="storiaProtocollo" path="/page/protocollo/storia.do" />
+			<forward name="nuovoProtocollo"
+				path="/page/protocollo/posta_interna/documento.do" redirect="true"/>
+			<forward name="nuovoProtocolloRipeti"
+				path="/page/protocollo/posta_interna/documento.do?ripetiAction=true" />
+			<forward name="nuovoProcedimento" path="/page/procedimento.do?protocolloIngresso=true" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+			
+		</action>
+
+		<action input="input" name="postaInternaForm"
+			path="/page/protocollo/posta_interna/allegaEdit" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.PostaInternaAction"
+			validate="true">
+			<forward name="input" path="/WEB-INF/pages/protocollo/posta_interna/allega.jsp" />
+			<forward name="erroreDownload" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="visualizzaProtocollo" path="/page/protocollo/posta_interna/documentoview.do?protocolloRegistrato=true" redirect="true" />
+			<forward name="saveFailure" path="/WEB-INF/pages/protocollo/protocolloGiaSalvato.jsp" />
+			<forward name="allegaStampaEtichetta" path="/page/protocollo/stampaEtichetta.do?ATTACH_PI=TRUE" />
+			
+		</action>
+
+		<action input="input" name="postaInternaForm"
+			path="/page/protocollo/posta_interna/presaVisione" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.PostaInternaAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/protocollo/posta_interna/presaVisioneView.jsp" />
+			<forward name="tornaUfficio" path="/page/protocollo/dashboard/posta_interna.do?type=ufficio" />
+			<forward name="tornaUtente" path="/page/protocollo/dashboard/posta_interna.do?type=utente" />
+		</action>
+
+		<action input="input" name="protocolloIngressoForm"
+			path="/page/protocollo/ingresso/presaVisione" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloIngressoAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/protocollo/ingresso/presaVisioneView.jsp" />
+			<forward name="tornaConoscenzaUfficio" path="/page/protocollo/dashboard/conoscenza.do?type=ufficio" />
+			<forward name="tornaConoscenzaUtente" path="/page/protocollo/dashboard/conoscenza.do?type=utente" />
+		</action>
+
+		<action input="input" name="protocolloIngressoForm"
+			path="/page/protocollo/ingresso/lavoratoProcedimento" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloIngressoAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/protocollo/ingresso/lavoratoProcedimento.jsp" />
+			<forward name="tornaUfficio" path="/page/protocollo/dashboard/assegnati.do?type=ufficio" />
+			<forward name="tornaUtente" path="/page/protocollo/dashboard/scarico.do?type=carico" />
+		</action>
+
+		<action input="input" name="postaInternaForm"
+			path="/page/protocollo/posta_interna/documentoview" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.PostaInternaAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/posta_interna/documentoView.jsp" />
+			<forward name="annullaProtocollo"
+				path="/WEB-INF/pages/protocollo/posta_interna/annullaProtocollo.jsp" />
+			<forward name="modificaProtocollo" path="/page/protocollo/posta_interna/documento.do" redirect="true" />
+			<forward name="stampaEtichetta" path="/page/protocollo/stampaEtichetta.do?DOCVIEW_PI=TRUE" />
+			<forward name="storiaProtocollo" path="/page/protocollo/storia.do" />
+			<forward name="nuovoProtocollo"
+				path="/page/protocollo/posta_interna/documento.do" redirect="true"/>
+			<forward name="nuovoProtocolloRipeti"
+				path="/page/protocollo/posta_interna/documento.do?ripetiAction=true" />
+			<forward name="nuovoProcedimento" path="/page/procedimento.do?protocolloIngresso=true" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+			<forward name="aggiungiProcedimento" path="/page/protocollo/posta_interna/procedimento.do" redirect="true" />
+			<forward name="tornaRicerca" path="/page/protocollo/ricerca/elencoProtocolli.do" />
+		</action>
+
+		<action input="input" name="postaInternaForm"
+			path="/page/protocollo/posta_interna/fascicola" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.PostaInternaAction"
+			validate="false">
+			<forward name="input"
+				path="/page/protocollo/posta_interna/fascicolaEdit.do" redirect="true" />
+			<forward name="modificaProtocollo"
+				path="/page/protocollo/posta_interna/fascicolaEdit.do" redirect="true" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+		</action>
+		
+		<action input="input" name="inviaRepertorioForm"
+			path="/page/protocollo/posta_interna/invio_repertorio" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.InvioRepertorioAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/posta_interna/invia_repertorio.jsp" />
+			<forward name="inviaRepertorio" path="/page/repertorio/documento_repertorio.do" />
+		</action>
+
+		<action input="input" name="postaInternaForm"
+			path="/page/protocollo/posta_interna/fascicolaEdit" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.PostaInternaAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/posta_interna/fascicoloEdit.jsp" />
+			<forward name="erroreDownload" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="visualizzaProtocollo"
+				path="/page/protocollo/posta_interna/documentoview.do?protocolloRegistrato=true"
+				redirect="true" />
+			<forward name="cercaFascicolo" path="/page/fascicoli.do?btnCercaFascicoli=true" />
+			<forward name="nuovoFascicolo" path="/page/fascicolo.do?btnNuovo=true" />
+			<forward name="saveFailure"
+				path="/WEB-INF/pages/protocollo/protocolloGiaSalvato.jsp" />
+			<forward name="tornaUfficio" path="/page/protocollo/dashboard/posta_interna.do?type=ufficio" />
+			<forward name="tornaUtente" path="/page/protocollo/dashboard/posta_interna.do?type=utente" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+		</action>
+
+		<!-- fascicolazione multipla -->
+		<action input="input" name="postaInternaForm"
+			path="/page/protocollo/posta_interna/fascicolaMultipla" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.PostaInternaAction"
+			validate="false">
+			<forward name="input"
+				path="/page/protocollo/posta_interna/fascicolaMultiplaEdit.do"
+				redirect="true" />
+			<forward name="modificaProtocollo"
+				path="/page/protocollo/posta_interna/fascicolaMultiplaEdit.do" redirect="true" />
+			<forward name="fascicolo" path="/page/fascicolaMultipla.do?btnSeleziona=TRUE" />
+		</action>
+
+		<action input="input" name="postaInternaForm"
+			path="/page/protocollo/posta_interna/fascicolaMultiplaEdit" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.PostaInternaAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/posta_interna/fascicolaMultiplaEdit.jsp" />
+			<forward name="cercaFascicolo"
+				path="/page/ricercaPerFascicolazioneMultipla.do?btnCercaFascicoli=true" />
+			<forward name="nuovoFascicolo"
+				path="/page/nuovoPerFascicolazioneMultipla.do?btnNuovo=true" />
+			<forward name="fascicolo" path="/page/fascicolaMultipla.do?btnSeleziona=TRUE" />
+			<forward name="tornaUfficio" path="/page/protocollo/dashboard/posta_interna.do?type=ufficio" />
+			<forward name="tornaUtente" path="/page/protocollo/dashboard/posta_interna.do?type=utente" />
+		</action>
+
+		<action input="input" name="protocolloIngressoForm"
+			path="/page/protocollo/ingresso/fascicolaMultipla" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloIngressoAction"
+			validate="false">
+			<forward name="input"
+				path="/page/protocollo/ingresso/fascicolaMultiplaEdit.do" redirect="true" />
+			<forward name="modificaProtocollo"
+				path="/page/protocollo/ingresso/fascicolaMultiplaEdit.do" redirect="true" />
+			<forward name="fascicolo" path="/page/fascicolaMultipla.do?btnSeleziona=TRUE" />
+		</action>
+
+		<action input="input" name="protocolloIngressoForm"
+			path="/page/protocollo/ingresso/fascicolaMultiplaEdit" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloIngressoAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/ingresso/fascicolaMultiplaEdit.jsp" />
+			<forward name="cercaFascicolo"
+				path="/page/ricercaPerFascicolazioneMultipla.do?btnCercaFascicoli=true" />
+			<forward name="nuovoFascicolo"
+				path="/page/nuovoPerFascicolazioneMultipla.do?btnNuovo=true" />
+			<forward name="fascicolo" path="/page/fascicolaMultipla.do?btnSeleziona=TRUE" />
+			<forward name="tornaUfficio" path="/page/protocollo/dashboard/assegnati.do?type=ufficio" />
+			<forward name="tornaUtente" path="/page/protocollo/dashboard/scarico.do?type=carico" />
+			<forward name="tornaFatture" path="/page/protocollo/fatture.do" />
+		</action>
+
+		<action input="input" name="ricercaFascicoliForm"
+			path="/page/ricercaPerFascicolazioneMultipla" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.RicercaFascicoliAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/fascicolo/ricercaPerFascicolazioneMultipla.jsp" />
+			<forward name="fascicolo" path="/page/ricercaPerFascicolazioneMultipla.do" />
+			<forward name="tornaProtocolloIngresso"
+				path="/page/protocollo/ingresso/fascicolaMultipla.do" />
+			<forward name="tornaPostaInterna"
+				path="/page/protocollo/posta_interna/fascicolaMultipla.do" />
+			<forward name="visualizzaPostaInterna"
+				path="/page/protocollo/posta_interna/fascicolaMultipla.do" />
+			<forward name="visualizzaProtocolloIngresso"
+				path="/page/protocollo/ingresso/fascicolaMultipla.do" />
+		</action>
+
+		<action input="input" name="fascicoloForm"
+			path="/page/nuovoPerFascicolazioneMultipla" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.FascicoloAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/fascicolo/nuovoPerFascicolazioneMultipla.jsp" />
+			<forward name="fascicolo"
+				path="/WEB-INF/pages/fascicolo/fascicoloProprietaPerFascicolazioneMultipla.jsp" />
+			<forward name="lista"
+				path="/page/ricercaPerFascicolazioneMultipla.do?btnAnnullaRicerca=true" />
+			<forward name="tornaProtocolloIngresso"
+				path="/page/protocollo/ingresso/fascicolaMultiplaEdit.do" />
+			<forward name="tornaPostaInterna"
+				path="/page/protocollo/posta_interna/fascicolaMultiplaEdit.do" />
+			<forward name="confermaOperazione"
+				path="/WEB-INF/pages/fascicolo/confermaOperazione.jsp" />
+		</action>
+
+		<!-- fine fascicolazione multipla fascicolazione protocollo uscita -->
+
+		<action input="input" name="protocolloUscitaForm" path="/page/protocollo/uscita/fascicola"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloUscitaAction"
+			validate="false">
+			<forward name="input" path="/page/protocollo/uscita/fascicolaEdit.do"
+				redirect="true" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+		</action>
+
+		<action input="input" name="protocolloUscitaForm"
+			path="/page/protocollo/uscita/fascicolaEdit" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloUscitaAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/uscita/fascicoloEdit.jsp" />
+			<forward name="cercaFascicolo" path="/page/fascicoli.do?btnCercaFascicoli=true" />
+			<forward name="nuovoFascicolo" path="/page/fascicolo.do?btnNuovo=true" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+			<forward name="visualizzaProtocollo"
+				path="/page/protocollo/uscita/documentoview.do?protocolloRegistrato=true"
+				redirect="true" />
+		</action>
+
+		<action input="input" name="protocolloIngressoForm"
+			path="/page/protocollo/ingresso/fascicola" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloIngressoAction"
+			validate="false">
+			<forward name="input" path="/page/protocollo/ingresso/fascicolaEdit.do"
+				redirect="true" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+		</action>
+		
+		<action input="input" name="protocolloIngressoForm"
+			path="/page/protocollo/ingresso/fascicolaEdit" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloIngressoAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/ingresso/fascicoloEdit.jsp" />
+			<forward name="erroreDownload" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="visualizzaProtocollo"
+				path="/page/protocollo/ingresso/documentoview.do?protocolloRegistrato=true"
+				redirect="true" />
+			<forward name="cercaFascicolo" path="/page/fascicoli.do?btnCercaFascicoli=true" />
+			<forward name="nuovoFascicolo" path="/page/fascicolo.do?btnNuovo=true" />
+			<forward name="saveFailure"
+				path="/WEB-INF/pages/protocollo/protocolloGiaSalvato.jsp" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+			<forward name="tornaUfficio" path="/page/protocollo/dashboard/assegnati.do?type=ufficio" />
+			<forward name="tornaUtente" path="/page/protocollo/dashboard/scarico.do?type=carico" />
+			<forward name="tornaFatture" path="/page/protocollo/fatture.do" />
+			<!--  -->
+			<forward name="tornaConoscenzaUfficio" path="/page/protocollo/dashboard/conoscenza.do?type=ufficio" />
+			<forward name="tornaConoscenzaUtente" path="/page/protocollo/dashboard/conoscenza.do?type=utente" />
+		</action>
+
+		<!-- FINE modificato da Mario Cartia -->
+		<!-- TODO -->
+		<action input="input" name="protocolloIngressoForm"
+			path="/page/protocollo/ingresso/documentoview" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloIngressoAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/ingresso/documentoView.jsp" />
+			<forward name="annullaProtocollo"
+				path="/WEB-INF/pages/protocollo/ingresso/annullaProtocollo.jsp" />
+			<forward name="modificaProtocollo" path="/page/protocollo/ingresso/documento.do" redirect="true" />
+			<forward name="stampaEtichetta" path="/page/protocollo/stampaEtichetta.do?DOCVIEW_IN=TRUE" />
+			<forward name="storiaProtocollo" path="/page/protocollo/storia.do" />
+			<forward name="nuovoProtocollo" path="/page/protocollo/ingresso/documento.do" redirect="true"/>
+			<forward name="nuovaFattura" path="/page/fatture/documento.do" />
+			<forward name="nuovoProtocolloRipeti" path="/page/protocollo/ingresso/documento.do?ripetiAction=true" />
+			<forward name="nuovaFatturaRipeti" path="/page/fatture/documento.do?ripetiAction=true" />
+			<forward name="nuovoProcedimento" path="/page/procedimento.do?protocolloIngresso=true" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+			<forward name="aggiungiProcedimento" path="/page/protocollo/ingresso/procedimento.do"
+				redirect="true" />
+			<forward name="tornaRicerca" path="/page/protocollo/ricerca/elencoProtocolli.do" />
+			<forward name="notificaEsitoCommittente" path="/page/fatturaelettronica/notifica.do" />
+			
+				
+		</action>
+
+		<action input="input" name="protocolloUscitaForm" path="/page/protocollo/uscita/documento"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloUscitaAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/uscita/documento.jsp" />
+			<forward name="cercaPersonaFisica"
+				path="/page/protocollo/anagrafica/persona-fisica/cerca.do" />
+			<forward name="cercaPersonaGiuridica"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do" />
+			<forward name="cercaListaDistribuzione"
+				path="/page/protocollo/anagrafica/listaDistribuzione.do" />
+			<forward name="cercaAoo" path="/page/protocollo/anagrafica/aoo/cerca.do" />
+			<forward name="cercaAllacci" path="/allacciProtocollo.do" />
+			<forward name="erroreDownload" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="visualizzaProtocollo" path="/page/protocollo/uscita/documentoview.do?protocolloRegistrato=true" redirect="true" />
+			<forward name="allegaDaScanner" path="/page/protocollo/uscita/documento.do?allegaDocumentoAction=true" />
+			<forward name="allegaDocProtocollo" path="/page/protocollo/uscita/allega.do" />
+			<forward name="cercaFascicolo" path="/page/fascicoli.do?btnCercaFascicoli=true" />
+			<forward name="nuovoFascicolo" path="/page/fascicolo.do?btnNuovo=true" />
+			<forward name="saveFailure"
+				path="/WEB-INF/pages/protocollo/protocolloGiaSalvato.jsp" />
+			<forward name="nuovoProcedimento" path="/page/procedimento.do?protocolloUscita=true" />
+			<forward name="cercaProcedimento"
+				path="/page/procedimento/ricerca.do?protocolloUsita=true" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+			<forward name="visualizzaAllaccio" path="/page/protocollo/allaccioview.do" />
+			<forward name="stampaEtichetta" path="/page/protocollo/stampaEtichetta.do?DOC_OUT=TRUE" />
+			<forward name="allegaStampaEtichetta" path="/page/protocollo/stampaEtichetta.do?ATTACH_OUT=TRUE" />
+			
+			
+		</action>
+
+		<action input="input" name="protocolloUscitaForm" path="/page/protocollo/uscita/allega"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloUscitaAction"
+			validate="false">
+			<forward name="input"
+				path="/page/protocollo/uscita/allegaview.do?btnModificaProtocollo=true"
+				redirect="true" />
+		</action>
+
+		<action input="input" name="protocolloUscitaForm" path="/page/protocollo/uscita/allegaview"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloUscitaAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/uscita/allegaView.jsp" />
+			<forward name="annullaProtocollo"
+				path="/WEB-INF/pages/protocollo/uscita/documentoview.do?protocolloRegistrato=true" />
+			<forward name="modificaProtocollo" path="/page/protocollo/uscita/allegaEdit.do"
+				redirect="true" />
+			<forward name="storiaProtocollo" path="/page/protocollo/storia.do" />
+			<forward name="nuovoProtocollo"
+				path="/page/protocollo/uscita/documento.do" redirect="true"/>
+			<forward name="nuovoProtocolloRipeti"
+				path="/page/protocollo/uscita/documento.do?ripetiAction=true" />
+			<forward name="stampaEtichetteDestinatari"
+				path="/page/stampa/prn-pro/etichetteDestinatari.do?stampaEtichetteDestinatari=true" />
+			<forward name="nuovoProcedimento" path="/page/procedimento.do?protocolloUscita=true" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+		</action>
+		<action input="input" name="protocolloUscitaForm" path="/page/protocollo/uscita/allegaEdit"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloUscitaAction"
+			validate="true">
+			<forward name="input" path="/WEB-INF/pages/protocollo/uscita/allega.jsp" />
+			<forward name="erroreDownload" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="visualizzaProtocollo" path="/page/protocollo/uscita/documentoview.do?protocolloRegistrato=true" redirect="true" />
+			<forward name="saveFailure" path="/WEB-INF/pages/protocollo/protocolloGiaSalvato.jsp" />
+			<forward name="allegaStampaEtichetta" path="/page/protocollo/stampaEtichetta.do?ATTACH_OUT=TRUE" />
+			
+		</action>
+
+		<action input="input" name="protocolloUscitaForm"
+			path="/page/protocollo/uscita/documentoview" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolloUscitaAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/uscita/documentoView.jsp" />
+			<forward name="annullaProtocollo"
+				path="/WEB-INF/pages/protocollo/uscita/annullaProtocollo.jsp" />
+			<forward name="modificaProtocollo" path="/page/protocollo/uscita/documento.do"
+				redirect="true" />
+			<forward name="stampaEtichetta" path="/page/protocollo/stampaEtichetta.do?DOCVIEW_OUT=TRUE" />
+			<forward name="storiaProtocollo" path="/page/protocollo/storia.do" />
+			<forward name="nuovoProtocollo"
+				path="/page/protocollo/uscita/documento.do" redirect="true"/>
+			<forward name="nuovoProtocolloRipeti"
+				path="/page/protocollo/uscita/documento.do?ripetiAction=true" />
+			<forward name="stampaEtichetteDestinatari"
+				path="/page/stampa/prn-pro/etichetteDestinatari.do?stampaEtichetteDestinatari=true" />
+			<forward name="nuovoProcedimento" path="/page/procedimento.do?protocolloUscita=true" />
+			<forward name="fascicolo" path="/page/fascicolo.do?btnSeleziona=TRUE" />
+			<forward name="inoltraInterna"
+				path="/page/protocollo/posta_interna/documento.do" />
+			<forward name="tornaRicerca" path="/page/protocollo/ricerca/elencoProtocolli.do" />
+		</action>
+
+		<action input="input" name="registroForm" path="/page/protocollo/gestione-registro"
+			scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.registro.GestioneRegistroAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/gestione-registro.jsp" />
+		</action>
+
+		<action input="input" name="personaFisicaForm"
+			path="/page/protocollo/anagrafica/persona-fisica/nuovo" scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.soggetto.PersonaFisicaAction">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/anagrafica/persona-fisica/formPersonaFisica.jsp" />
+			<forward name="nuova"
+				path="/WEB-INF/pages/protocollo/anagrafica/persona-fisica/formPersonaFisica.jsp" />
+			<forward name="cerca"
+				path="/page/protocollo/anagrafica/persona-fisica/cerca.do?annulla=true"
+				redirect="true" />
+			<forward name="salvaPerProtocollo"
+				path="/page/protocollo/anagrafica/persona-fisica/cerca.do" redirect="true" />
+			<forward name="tornaEmail" path="/page/protocollo/ingresso/email.do?protocolla=true" redirect="true"/>
+			<forward name="indietroEmail" path="/page/protocollo/ingresso/email.do?visualizza=true" redirect="true"/>
+			<forward name="tornaEmailUfficio" path="/page/protocollo/ingresso/email_ufficio.do?protocolla=true" redirect="true"/>
+			<forward name="indietroEmailUfficio" path="/page/protocollo/ingresso/email_ufficio.do?visualizza=true" redirect="true"/>
+			<forward name="tornaProtocolloIngresso" path="/page/protocollo/ingresso/documento.do" />
+			<forward name="tornaProtocolloUscita" path="/page/protocollo/uscita/documento.do" />
+			<forward name="tornaProcedimento" path="/page/procedimento.do" />
+			
+		</action>
+
+		<action input="input" name="personaFisicaForm"
+			path="/page/protocollo/anagrafica/persona-fisica/cerca" scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.soggetto.PersonaFisicaAction"
+			validate="false">
+			<forward name="edit"
+				path="/page/protocollo/anagrafica/persona-fisica/cerca.do" />
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/anagrafica/persona-fisica/cercaPF.jsp" />
+			<forward name="nuova"
+				path="/page/protocollo/anagrafica/persona-fisica/nuovo.do" />
+			<forward name="tornaProtocolloIngresso" path="/page/protocollo/ingresso/documento.do" />
+			<forward name="tornaFascicolo" path="/page/fascicolo.do" />
+			<forward name="tornaProcedimento" path="/page/procedimento.do" />
+			<forward name="tornaEmail" path="/page/protocollo/ingresso/email.do?protocolla=true" redirect="true"/>
+			<forward name="indietroEmail" path="/page/protocollo/ingresso/email.do?visualizza=true" redirect="true"/>
+			<forward name="tornaEmailUfficio" path="/page/protocollo/ingresso/email_ufficio.do?protocolla=true" redirect="true"/>
+			<forward name="indietroEmailUfficio" path="/page/protocollo/ingresso/email_ufficio.do?visualizza=true" redirect="true"/>
+			<forward name="indietroFascicolo"
+				path="/page/fascicolo.do?indietroCercaPersonaFisica=true" />
+			<forward name="tornaProtocolloUscita" path="/page/protocollo/uscita/documento.do" />
+			<forward name="tornaFattura" path="/page/fatture/documento.do" />
+			<forward name="tornaSoggetto"
+				path="/WEB-INF/pages/protocollo/anagrafica/persona-fisica/formPersonaFisica.jsp" />
+			<forward name="tornaInvioFascicolo" path="/page/invioFascicolo.do" />
+			<forward name="tornaInvioDocumento" path="/page/documentale/inviaDocumento.do" />
+			<forward name="tornaInvioDocumentoEditor" path="/page/documentale/inviaDocumentoEditor.do" />
+			<forward name="tornaDocumentoTemplate" path="/page/documentale/daTemplate.do" />
+			
+		</action>
+
+		<action input="input" name="personaGiuridicaForm"
+			path="/page/protocollo/anagrafica/persona-giuridica/nuovo" scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.soggetto.PersonaGiuridicaAction">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/anagrafica/persona-giuridica/formPersonaGiuridica.jsp" />
+			<forward name="nuova"
+				path="/WEB-INF/pages/protocollo/anagrafica/persona-giuridica/formPersonaGiuridica.jsp" />
+			<forward name="cerca"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do?annulla=true"
+				redirect="true" />
+			<forward name="salvaPerProtocollo"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do"
+				redirect="true" />
+			<forward name="tornaEmailUfficio" path="/page/protocollo/ingresso/email_ufficio.do?protocolla=true" redirect="true"/>
+			<forward name="indietroEmailUfficio" path="/page/protocollo/ingresso/email_ufficio.do?visualizza=true" redirect="true"/>
+			<forward name="tornaEmail" path="/page/protocollo/ingresso/email.do?protocolla=true" redirect="true"/>
+			<forward name="indietroEmail" path="/page/protocollo/ingresso/email.do?visualizza=true" redirect="true"/>
+			<forward name="tornaProtocolloIngresso" path="/page/protocollo/ingresso/documento.do" />
+			<forward name="tornaProtocolloUscita" path="/page/protocollo/uscita/documento.do" />
+			<forward name="tornaProcedimento" path="/page/procedimento.do" />
+			
+		</action>
+
+		<action input="input" name="personaGiuridicaForm"
+			path="/page/protocollo/anagrafica/persona-giuridica/cerca" scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.soggetto.PersonaGiuridicaAction"
+			validate="false">
+			<forward name="edit"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do" />
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/anagrafica/persona-giuridica/cercaPG.jsp" />
+			<forward name="nuova"
+				path="/page/protocollo/anagrafica/persona-giuridica/nuovo.do" />
+			<forward name="tornaProtocolloIngresso" path="/page/protocollo/ingresso/documento.do" />
+			<forward name="tornaProtocolloUscita" path="/page/protocollo/uscita/documento.do" />
+			<forward name="tornaFattura" path="/page/fatture/documento.do" />
+			<forward name="tornaTitolario"
+				path="/page/amministrazione/titolario.do?aggiungiAmministrazione=true" />
+			<forward name="tornaTipoProcedimento"
+				path="/page/amministrazione/tipiProcedimento.do?aggiungiAmministrazione=true" />
+			<forward name="tornaFascicolo" path="/page/fascicolo.do" />
+			<forward name="tornaProcedimento" path="/page/procedimento.do" />
+			<forward name="tornaSoggetto"
+				path="/WEB-INF/pages/protocollo/anagrafica/persona-giuridica/formPersonaGiuridica.jsp" />
+			<forward name="tornaInvioFascicolo" path="/page/invioFascicolo.do" />
+			<forward name="tornaInvioDocumento" path="/page/documentale/inviaDocumento.do" />
+			<forward name="tornaInvioDocumentoEditor" path="/page/documentale/inviaDocumentoEditor.do" />
+			<forward name="tornaDocumentoTemplate" path="/page/documentale/daTemplate.do" />
+			<forward name="tornaEmail" path="/page/protocollo/ingresso/email.do?protocolla=true" redirect="true"/>
+			<forward name="indietroEmail" path="/page/protocollo/ingresso/email.do?visualizza=true" redirect="true"/>
+			<forward name="tornaEmailUfficio" path="/page/protocollo/ingresso/email_ufficio.do?protocolla=true" redirect="true"/>
+			<forward name="indietroEmailUfficio" path="/page/protocollo/ingresso/email_ufficio.do?visualizza=true" redirect="true"/>
+		</action>
+
+		<action input="input" name="cercaAooForm"
+			path="/page/protocollo/anagrafica/aoo/cerca" scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.soggetto.CercaAooAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/anagrafica/aoo/cercaAOO.jsp" />
+			<forward name="listaAoo"
+				path="/WEB-INF/pages/protocollo/anagrafica/aoo/listaAOO.jsp" />
+			<forward name="tornaProtocolloUscita" path="/page/protocollo/uscita/documento.do" />
+			<forward name="tornaTitolario"
+				path="/page/amministrazione/titolario.do?aggiungiAmministrazione=true" />
+		</action>
+
+		<action input="input" name="allaccioProtocolloForm" path="/allacciProtocollo"
+			scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.AllaccioProtocolloAction">
+			<forward name="edit" path="/allacciProtocollo.do" />
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/allacci/cercaAllacci.jsp" />
+			<forward name="tornaProtocolloIngresso" path="/page/protocollo/ingresso/documento.do" />
+			<forward name="tornaProtocolloUscita" path="/page/protocollo/uscita/documento.do" />
+			<forward name="tornaPostaInterna" path="/page/protocollo/posta_interna/documento.do" />
+		</action>
+
+		<action input="input" name="annotazioneProtocolloForm" path="/annotazioniProtocollo"
+			scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.AnnotazioneProtocolloAction">
+			<forward name="edit" path="/annotazioniProtocollo.do" />
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/annotazioni/cercaAnnotazioni.jsp" />
+			<forward name="tornaProtocolloIngresso" path="/page/protocollo/ingresso/documento.do" />
+			<forward name="tornaProtocolloUscita" path="/page/protocollo/uscita/documento.do" />
+		</action>
+		<action input="aggiorna" name="titolarioForm" path="/page/amministrazione/titolario"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.TitolarioAction"
+			validate="true">
+			<forward name="edit" path="/page/amministrazione/titolario.do" />
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/titolario/titolario.jsp" />
+			<forward name="aggiorna"
+				path="/WEB-INF/pages/amministrazione/titolario/formAggiornamento.jsp" />
+			<forward name="associa"
+				path="/WEB-INF/pages/amministrazione/titolario/associaUffici.jsp" />
+		</action>
+
+		<action input="input" name="presaInCaricoForm" path="/page/protocollo/presaInCarico"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.PresaInCaricoAction"
+			validate="true">
+			<forward name="edit" path="/page/protocollo/presaInCarico.do" />
+			<forward name="input" path="/WEB-INF/pages/protocollo/presaInCarico.jsp" />
+			<forward name="visualizzaProtocolloIngresso" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="riassegnaProtocollo"
+				path="/page/protocollo/ingresso/riassegna.do?SCARICO_UFFICIO=TRUE" />
+			<forward name="riassegnazioneMultiplaProtocollo"
+				path="/page/protocollo/ingresso/riassegnaMultipla.do?SCARICO_UFFICIO=TRUE" />
+			<forward name="fascicolaProtocollo" path="/page/protocollo/ingresso/fascicola.do" />
+			<forward name="fascicolazioneMultiplaProtocolli"
+				path="/page/protocollo/ingresso/fascicolaMultipla.do" />
+			<!--
+				<forward name="ritornaAssegnatiUfficio"
+				path="/page/protocollo/dashboard/assegnati.do?type=ufficio" />
+			-->
+			<forward name="rifiutaProtocollo"
+				path="/page/protocollo/ingresso/rifiuta.do?SCARICO_UFFICIO=true" />
+			<forward name="aggiungiProcedimento"
+				path="/page/protocollo/ingresso/documentoview.do?btnAggiungiProcedimenti=true" />
+			<forward name="lavoratoProcedimento" path="/page/protocollo/ingresso/lavoratoProcedimento.do" />
+			
+		</action>
+
+		<action input="input" name="scaricoForm" path="/page/protocollo/scarico"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ScaricoAction">
+			<forward name="edit" path="/page/protocollo/scarico.do" />
+			<forward name="input" path="/WEB-INF/pages/protocollo/scarico.jsp" />
+			<forward name="checkPostaInterna" path="/WEB-INF/pages/protocollo/checkPostaInterna.jsp" />
+			<forward name="creaProtocolloRisposta" path="/page/protocollo/uscita/documento.do" />
+			<forward name="visualizzaProtocolloIngresso" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="fascicolaProtocolloIngresso" path="/page/protocollo/ingresso/fascicola.do" />
+			<forward name="riassegnaProtocollo"
+				path="/page/protocollo/ingresso/riassegna.do?SCARICO_UTENTE=TRUE" />
+			<forward name="riassegnazioneMultiplaProtocollo"
+				path="/page/protocollo/ingresso/riassegnaMultipla.do?SCARICO_UTENTE=TRUE" />
+			<forward name="fascicolazioneMultiplaProtocolli"
+				path="/page/protocollo/ingresso/fascicolaMultipla.do" />
+			<forward name="presaVisione" path="/page/protocollo/dashboard/conoscenza.do?type=utente" />
+			<forward name="visionaProtocollo" path="/page/protocollo/ingresso/presaVisione.do" />
+			
+			<forward name="rifiutaProtocollo"
+				path="/page/protocollo/ingresso/rifiuta.do?SCARICO_UTENTE=true" />
+			<forward name="aggiungiProcedimento"
+				path="/page/protocollo/ingresso/documentoview.do?btnAggiungiProcedimenti=true" />
+			<forward name="lavoratoProcedimento" path="/page/protocollo/ingresso/lavoratoProcedimento.do" />
+		</action>
+		
+		<action input="input" name="alertProcedimentoForm" path="/page/procedimento/scarico"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.ScaricoProcedimentoAction" >
+			<forward name="edit" path="/page/procedimento/scarico.do" />
+			<forward name="input" path="/WEB-INF/pages/procedimento/procedimentiAssegnatario/dashboardIstruttore.jsp" />
+			<forward name="confirmChiusura" path="/WEB-INF/pages/procedimento/procedimentiAssegnatario/confermaChiusura.jsp" />
+			<forward name="creaProtocolloRisposta" path="/page/protocollo/posta_interna/documento.do" />
+			<forward name="erroreDownload" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="downloadDoc" path="/page/procedimento/scarico.do?downloadDoc=true"/>
+		</action>
+		
+		<action input="input" name="scaricoForm" path="/page/protocollo/fatture"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.ListaFattureAction">
+			<forward name="edit" path="/page/protocollo/fatture.do" />
+			<forward name="input" path="/WEB-INF/pages/protocollo/fatture.jsp" />
+			<forward name="visualizzaProtocolloIngresso" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="fascicolaProtocolloIngresso" path="/page/protocollo/ingresso/fascicola.do" />
+			<forward name="riassegnaProtocollo" path="/page/protocollo/ingresso/riassegna.do?SCARICO_FATTURE=TRUE" />
+			<forward name="riassegnazioneMultiplaProtocollo" path="/page/protocollo/ingresso/riassegnaMultipla.do?SCARICO_FATTURE=TRUE" />
+			<forward name="fascicolazioneMultiplaProtocolli" path="/page/protocollo/ingresso/fascicolaMultipla.do" />
+			<forward name="rifiutaProtocollo" path="/page/protocollo/ingresso/rifiuta.do?SCARICO_FATTURE=true" />
+			
+		</action>
+		
+		<action input="input" name="rifiutoForm" path="/page/protocollo/ingresso/rifiuta"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.RifiutaProtocolloAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/ingresso/rifiuta.jsp" />
+			<forward name="ritornaAssegnatiUtente"
+				path="/page/protocollo/dashboard/scarico.do?type=carico" />
+			<forward name="ritornaAssegnatiUfficio"
+				path="/page/protocollo/dashboard/assegnati.do?type=ufficio" />
+			<forward name="ritornaRespinti" path="/page/protocollo/dashboard/respinti.do" />
+			<forward name="ritornaFatture" path="/page/protocollo/fatture.do" />
+		</action>
+
+		<action input="input" name="scaricoForm"
+			path="/page/protocollo/posta_interna/ricevute" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ScaricoAction">
+			<forward name="edit" path="/page/protocollo/posta_interna/ricevute.do" />
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/posta_interna/scarico.jsp" />
+			<forward name="creaProtocolloRisposta" path="/page/protocollo/posta_interna/documento.do" />
+			<forward name="visualizzaPostaInterna"
+				path="/page/protocollo/posta_interna/documentoview.do" />
+			<forward name="fascicolaPostaInterna" path="/page/protocollo/posta_interna/fascicola.do" />
+			<forward name="presaVisionePostaInterna" path="/page/protocollo/posta_interna/presaVisione.do" />
+			<forward name="riassegnaProtocollo"
+				path="/page/protocollo/posta_interna/riassegna.do?POSTA_INTERNA=TRUE" />
+			<forward name="presaVisione"
+				path="/page/protocollo/dashboard/posta_interna.do?type=ufficio" />
+			<forward name="riassegnazioneMultiplaProtocollo"
+				path="/page/protocollo/posta_interna/riassegnaMultipla.do?POSTA_INTERNA=TRUE" />
+			<forward name="fascicolazioneMultiplaProtocolli"
+				path="/page/protocollo/posta_interna/fascicolaMultipla.do" />
+			<forward name="aggiungiProcedimento"
+				path="/page/protocollo/posta_interna/documentoview.do?btnAggiungiProcedimenti=true" />
+		</action>
+		
+		<action input="input" name="scaricoForm"
+			path="/page/protocollo/posta_interna/ricevute_repertorio" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ScaricoAction">
+			<forward name="edit" path="/page/protocollo/posta_interna/ricevute_repertorio.do" />
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/posta_interna/scarico_repertorio.jsp" />
+			<forward name="visualizzaPostaInterna"
+				path="/page/protocollo/posta_interna/documentoview.do" />	
+			<forward name="repertorio" path="/page/protocollo/posta_interna/invio_repertorio.do" />
+		</action>
+
+		<action input="input" name="riassegnazionePostaForm"
+			path="/page/protocollo/posta_interna/riassegna" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.RiassegnaPostaInternaAction"
+			validate="false">
+			<forward name="edit" path="/WEB-INF/pages/protocollo/posta_interna/riassegna.jsp" />
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/posta_interna/riassegna.jsp" />
+			<forward name="presaInCarico" path="/page/protocollo/posta_interna/ricevute.do" />
+			<forward name="listaRespinti" path="/page/protocollo/posta_interna/ricevute.do" />
+		</action>
+
+		<action input="input" name="riassegnazionePostaForm"
+			path="/page/protocollo/posta_interna/riassegnaMultipla" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.RiassegnaPostaInternaAction"
+			validate="false">
+			<forward name="edit"
+				path="/WEB-INF/pages/protocollo/posta_interna/riassegnaMultipla.jsp" />
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/posta_interna/riassegnaMultipla.jsp" />
+			<forward name="presaInCarico" path="/page/protocollo/posta_interna/ricevute.do" />
+			<forward name="listaRespinti" path="/page/protocollo/posta_interna/ricevute.do" />
+			<forward name="cruscottoStruttura" path="/page/cruscotto/struttura.do?impostaUfficioAction=true" />
+			<forward name="cruscottoAmministrazione" path="/page/cruscotto/amministrazione.do?impostaUfficioAction=true" />
+		</action>
+		
+		<action input="input" name="fascicoloForm"
+			path="/page/riassegnaFascicoli" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.RiassegnaFascicoloAction"
+			validate="false">
+			<forward name="edit" path="/WEB-INF/pages/fascicolo/riassegnaMultipla.jsp" />
+			<forward name="input" path="/WEB-INF/pages/fascicolo/riassegnaMultipla.jsp" />
+			<forward name="cruscottoStruttura" path="/page/cruscotto/struttura.do?impostaUfficioAction=true" />
+			<forward name="cruscottoAmministrazione" path="/page/cruscotto/amministrazione.do?impostaUfficioAction=true" />
+		</action>
+		
+		<action input="input" name="riassegnazioneForm"
+			path="/page/protocollo/ingresso/riassegnaMultipla" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.RiassegnaProtocolloAction"
+			validate="false">
+			<forward name="edit" path="/WEB-INF/pages/protocollo/riassegnazione/riassegnaMultipla.jsp" />
+			<forward name="input" path="/WEB-INF/pages/protocollo/riassegnazione/riassegnaMultipla.jsp" />
+			<forward name="presaInCaricoUfficio"
+				path="/page/protocollo/dashboard/assegnati.do?type=ufficio" />
+			<forward name="presaInCarico"
+				path="/page/protocollo/dashboard/scarico.do?type=carico" />
+			<forward name="ritornaFatture" path="/page/protocollo/fatture.do" />
+			<forward name="listaRespinti" path="/page/protocollo/dashboard/respinti.do" />
+			<forward name="cruscottoStruttura" path="/page/cruscotto/struttura.do?impostaUfficioAction=true" />
+			<forward name="cruscottoAmministrazione" path="/page/cruscotto/amministrazione.do?impostaUfficioAction=true" />
+		</action>
+
+		<action input="input" name="respintiForm" path="/page/protocollo/ingresso/respinti"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProtocolliRespintiAction"
+			validate="true">
+			<forward name="edit" path="/page/protocollo/protocolliRespinti.do" />
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/protocolliRespinti.jsp" />
+			<forward name="riassegna" path="/page/protocollo/ingresso/riassegna.do" />
+			<forward name="visualizzaProtocolloIngresso" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="rifiutaProtocollo"
+				path="/page/protocollo/ingresso/rifiuta.do?RESPINTI=true" />
+		</action>
+
+		<action input="input" name="riassegnazioneForm"
+			path="/page/protocollo/ingresso/riassegna" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.RiassegnaProtocolloAction"
+			validate="false">
+			<forward name="edit"
+				path="/WEB-INF/pages/protocollo/riassegnazione/riassegna.jsp" />
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/riassegnazione/riassegna.jsp" />
+			<forward name="cruscottoStruttura" path="/page/cruscotto/struttura.do?impostaUfficioAction=true" />
+			<forward name="alert" path="/page/protocollo/dashboard/alertProtocollo.do" />
+			<forward name="cruscottoAmministrazione" path="/page/cruscotto/amministrazione.do?impostaUfficioAction=true" />
+			<forward name="presaInCaricoUfficio"
+				path="/page/protocollo/dashboard/assegnati.do?type=ufficio" />
+			<forward name="presaInCarico"
+				path="/page/protocollo/dashboard/scarico.do?type=carico" />
+			<forward name="listaRespinti" path="/page/protocollo/dashboard/respinti.do" />
+			<forward name="ritornaFatture" path="/page/protocollo/fatture.do" />
+			
+		</action>
+
+		<action forward="/WEB-INF/pages/protocollo/ricerca/tabellaProtocolli.jsp"
+			path="/page/protocollo/ricerca/elencoProtocolli" />
+		<action forward="/WEB-INF/pages/protocollo/ricerca/cercaDestinatario.jsp"
+			path="/protocollo/ricerca/cercaDestinatario" />
+			
+		<action input="input" name="ricercaForm" path="/page/protocollo/ricerca"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.RicercaAction">
+			<forward name="edit" path="/page/protocollo/ricerca.do" />
+			<forward name="input" path="/WEB-INF/pages/protocollo/ricerca.jsp" />
+			<forward name="lista" path="/page/protocollo/ricerca/elencoProtocolli.do" />
+			<forward name="listaMittenti"
+				path="/WEB-INF/pages/protocollo/ricerca/cercaMittente.jsp" />
+			<forward name="listaDestinatari" path="/protocollo/ricerca/cercaDestinatario.do" />
+			<forward name="listaArgomenti"
+				path="/WEB-INF/pages/protocollo/ricerca/titolario.jsp" />
+			<forward name="visualizzaProtocolloIngresso" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="visualizzaProtocolloUscita" path="/page/protocollo/uscita/documentoview.do" />
+			<forward name="visualizzaPostaInterna"
+				path="/page/protocollo/posta_interna/documentoview.do" />
+			<forward name="tornaProcedimento" path="/WEB-INF/pages/procedimento/procedimento.jsp" />
+			<forward name="tornaFascicolo" path="/page/fascicolo.do" />
+			<forward name="apriDocumento" path="/page/protocollo/ricerca.do" />
+		</action>
+
+		<action input="input" name="storiaProtocolloForm" path="/page/protocollo/storia"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.StoriaProtocolloAction">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/storiaProtocollo.jsp" />
+			<forward name="visualizzaProtocolloIngresso" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="visualizzaProtocolloUscita" path="/page/protocollo/uscita/documentoview.do" />
+			<forward name="visualizzaPostaInterna"
+				path="/page/protocollo/posta_interna/documentoview.do" />
+		</action>
+
+		<action input="input" name="storiaFascicoloForm" path="/page/fascicolo/storia"
+			scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.StoriaFascicoloAction">
+			<forward name="input" path="/WEB-INF/pages/fascicolo/storiaFascicolo.jsp" />
+			<forward name="fascicolo" path="/page/fascicolo.do" />
+		</action>
+
+		<action input="input" name="storiaFaldoneForm" path="/page/faldone/storia"
+			scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.StoriaFaldoneAction">
+			<forward name="input" path="/WEB-INF/pages/faldone/storiaFaldone.jsp" />
+			<forward name="faldone" path="/page/faldone.do" />
+		</action>
+
+	
+
+		<action input="input" name="storiaProcedimentoForm" path="/page/procedimento/storia"
+			scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.StoriaProcedimentoAction">
+			<forward name="input" path="/WEB-INF/pages/procedimento/storiaProcedimento.jsp" />
+			<forward name="procedimento" path="/page/procedimentoview.do" />
+			<forward name="versioneProcedimento" path="/page/procedimentoview.do" />
+		</action>
+		
+		
+		<action input="input" name="reportEtichetteForm"
+			path="/page/stampa/prn-pro/etichetteDestinatari" scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.report.ReportEtichetteAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/stampa/prn-pro/etichetteDestinatari.jsp" />
+		</action>
+
+		<action input="input" name="protocolloDaScartareForm"
+			path="/page/amministrazione/report/protocolliDaScartare" scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.ReportProtocolliDaScartareAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/report/protocolliDaScartare.jsp" />
+		</action>
+		
+		<action input="input" name="reportRegistroForm" path="/page/stampa/conservazione/registro_giornaliero"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.report.ConservazioneRegistroGiornalieroAction"
+			validate="false">
+			<forward name="edit" path="/page/stampa/conservazione/registro_giornaliero.do" />
+			<forward name="input" path="/WEB-INF/pages/stampa/conservazione/registro_giornaliero.jsp" />
+		</action>
+		
+		<action input="input" name="reportRegistroForm" path="/page/stampa/conservazione/registro_annuale"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.report.ConservazioneRegistroAnnualeAction"
+			validate="false">
+			<forward name="edit" path="/page/stampa/conservazione/registro_annuale.do" />
+			<forward name="input" path="/WEB-INF/pages/stampa/conservazione/registro_annuale.jsp" />
+		</action>
+		
+		<action input="input" name="jobScheduledLogForm" path="/page/stampa/conservazione/lista_logs"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.log.JobScheduledLogAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/stampa/conservazione/dashboard.jsp" />
+		</action>
+
+		<action input="input" name="reportDaScartareForm" path="/page/stampa/prn-pro/daScartare"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.report.ReportDaScartareAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/stampa/prn-pro/daScartare.jsp" />
+		</action>
+
+		<action input="input" name="reportRegistroForm" path="/page/stampa/prn-pro/registro"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.report.ReportRegistroAction"
+			validate="false">
+			<forward name="edit" path="/page/stampa/prn-pro/registro.do" />
+			<forward name="input" path="/WEB-INF/pages/stampa/prn-pro/registro.jsp" />
+		</action>
+
+		<action input="input" name="reportScaricatiForm" path="/page/stampa/prn-pro/scaricati"
+			scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.report.ReportScaricatiAction"
+			validate="false">
+			<forward name="edit" path="/WEB-INF/pages/stampa/prn-pro/scaricati.jsp" />
+			<forward name="input" path="/WEB-INF/pages/stampa/prn-pro/scaricati.jsp" />
+		</action>
+
+		<action input="input" name="reportLavorazioneForm" path="/page/stampa/prn-pro/lavorazione"
+			scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.report.ReportLavorazioneAction"
+			validate="false">
+			<forward name="edit" path="/WEB-INF/pages/stampa/prn-pro/lavorazione.jsp" />
+			<forward name="input" path="/WEB-INF/pages/stampa/prn-pro/lavorazione.jsp" />
+		</action>
+
+		<action input="input" name="reportAssegnatiForm" path="/page/stampa/prn-pro/assegnati"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.report.ReportAssegnatiAction"
+			validate="false">
+			<forward name="edit" path="/WEB-INF/pages/stampa/prn-pro/assegnati.jsp" />
+			<forward name="input" path="/WEB-INF/pages/stampa/prn-pro/assegnati.jsp" />
+		</action>
+
+		<action input="input" name="reportAnnullatiForm" path="/page/stampa/prn-pro/annullati"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.report.ReportAnnullatiAction"
+			validate="false">
+			<forward name="edit" path="/WEB-INF/pages/stampa/prn-pro/annullati.jsp" />
+			<forward name="input" path="/WEB-INF/pages/stampa/prn-pro/annullati.jsp" />
+		</action>
+
+		<action input="input" name="reportSpeditiForm" path="/page/stampa/prn-pro/spediti"
+			scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.report.ReportSpeditiAction"
+			validate="false">
+			<forward name="edit" path="/WEB-INF/pages/stampa/prn-pro/spediti.jsp" />
+			<forward name="input" path="/WEB-INF/pages/stampa/prn-pro/spediti.jsp" />
+		</action>
+
+		<action input="input" name="reportAnagraficaForm" path="/page/stampa/rubrica"
+			scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.report.ReportAnagraficaAction"
+			validate="false">
+			<forward name="edit" path="/WEB-INF/pages/stampa/rubrica/rubrica.jsp" />
+			<forward name="input" path="/WEB-INF/pages/stampa/rubrica/rubrica.jsp" />
+		</action>
+
+		<action input="input" name="reportStatisticheForm" path="/page/stampa/prn-pro/statistiche"
+			scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.report.ReportStatisticheAction"
+			validate="true">
+			<forward name="edit" path="/WEB-INF/pages/stampa/prn-pro/statistiche.jsp" />
+			<forward name="input" path="/WEB-INF/pages/stampa/prn-pro/statistiche.jsp" />
+			<forward name="dettaglio"
+				path="/WEB-INF/pages/stampa/prn-pro/statistiche/dettaglio.jsp" />
+			<forward name="visualizzaProtocolloIngresso" path="/page/protocollo/ingresso/documentoview.do" />
+		</action>
+
+		<action input="input" name="reportOrganizzazioneForm" path="/page/stampa/organizzazione"
+			scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.report.ReportOrganizzazioneAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/stampa/organizzazione/organizzazione.jsp" />
+		</action>
+
+		<action input="input" name="reportRegistroForm" path="/page/stampa/veline"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.report.ReportVelineAction"
+			validate="false">
+			<forward name="edit" path="/page/stampa/veline.do" />
+			<forward name="input" path="/WEB-INF/pages/stampa/veline/veline.jsp" />
+		</action>
+		
+		<action input="input" name="reportGenericForm" path="/page/stampa/titolario"
+			scope="request"
+			type="it.compit.fenice.mvc.presentation.action.report.ReportTitolarioAction"
+			validate="false">
+			<forward name="edit" path="/page/stampa/titolario.do" />
+			<forward name="input" path="/WEB-INF/pages/stampa/titolario/titolario.jsp" />
+		</action>
+		
+		<action input="input" name="reportGenericForm" path="/page/stampa/prn-pro/notifichePI"
+			scope="request"
+			type="it.compit.fenice.mvc.presentation.action.report.ReportNotifichePostaInternaAction"
+			validate="false">
+			<forward name="edit" path="/page/stampa/prn-pro/notifichePI.do" />
+			<forward name="input" path="/WEB-INF/pages/stampa/prn-pro/notifichePI.jsp" />
+		</action>
+		<!-- fine aggiunta  report -->
+
+		<action input="input" name="fascicoloForm" path="/page/fascicolo"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.FascicoloAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/fascicolo/fascicolo.jsp" />
+			<forward name="fascicolo" path="/WEB-INF/pages/fascicolo/fascicoloProprieta.jsp" />
+			<forward name="lista" path="/page/fascicoli.do" />
+			<forward name="tornaProtocolloIngresso" path="/page/protocollo/ingresso/fascicolaEdit.do" />
+			<forward name="tornaPostaInterna"
+				path="/page/protocollo/posta_interna/fascicolaEdit.do" />
+			<forward name="tornaPostaInternaNew"
+				path="/page/protocollo/posta_interna/documento.do" />
+			<forward name="tornaProtocolloIngressoNew"
+				path="/page/protocollo/ingresso/documento.do" />
+			<forward name="tornaProtocolloUscita" path="/page/protocollo/uscita/documento.do" />
+			<forward name="tornaDocumento" path="/page/documentale/documento.do" />
+			<forward name="tornaFaldone" path="/page/faldone.do" />
+			<forward name="confermaOperazione"
+				path="/WEB-INF/pages/fascicolo/confermaOperazione.jsp" />
+			<forward name="documenti" path="/page/documentale/documento.do?" />
+			<forward name="visualizzaDocumento" path="/page/documentale/documentoView.do" />
+			<forward name="downloadDocumentoProtocollo" path="/page/protocollo/ricerca.do" />
+			<forward name="invioProtocollo" path="/page/invioFascicolo.do" />
+			<forward name="annullaInvioProtocollo" path="/page/invioFascicolo.do?btnAnnullaInvio=true" />
+			<forward name="storiaFascicolo" path="/page/fascicolo/storia.do" />
+			<forward name="associaProtocolli" path="/page/protocollo/ricerca.do" />
+			<forward name="associaProcedimenti" path="/page/procedimento/ricerca.do" />
+			<forward name="cercaPersonaFisica"
+				path="/page/protocollo/anagrafica/persona-fisica/cerca.do" />
+			<forward name="cercaPersonaGiuridica"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do" />
+			<forward name="cercaFascicolo" path="/page/fascicoli.do?btnCercaFascicoli=true" />
+			<forward name="rifascicolaProtocolloIngresso" path="/page/protocollo/ingresso/fascicolaEdit.do" />
+			<forward name="rifascicolaPostaInterna"
+				path="/page/protocollo/posta_interna/fascicolaEdit.do" />
+			<forward name="rifascicolaProtocolloUscita" path="/page/protocollo/uscita/fascicolaEdit.do" />
+			<forward name="tornaFascicolaProtocolloUscita" path="/page/protocollo/uscita/fascicolaEdit.do" />
+			<forward name="tornaAlert" path="/page/fascicolo/alert.do" />
+			<forward name="tornaInvioProtocolloEditor" path="/page/documentale/inviaDocumentoEditor.do" />
+			<forward name="tornaTemplate" path="/page/documentale/daTemplate.do" />
+			<forward name="visualizzaCollegamento" path="/page/fascicolo/allaccioview.do" />
+
+		</action>
+
+		<action input="input" name="fascicoloForm" path="/page/invioFascicolo"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.InvioFascicoloAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/fascicolo/invioProtocollo.jsp" />
+			<forward name="tornaFascicolo" path="/page/fascicolo.do" />
+			<forward name="cercaPersonaFisica"
+				path="/page/protocollo/anagrafica/persona-fisica/cerca.do" />
+			<forward name="cercaPersonaGiuridica"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do" />
+		</action>
+
+		<action input="input" name="documentoForm" path="/page/invioDocumento"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.InvioDocumentooAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/documentale/invioProtocollo.jsp" />
+			<forward name="tornaDocumento" path="/page/documento.do" />
+			<forward name="cercaPersonaFisica"
+				path="/page/protocollo/anagrafica/persona-fisica/cerca.do" />
+			<forward name="cercaPersonaGiuridica"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do" />
+		</action>
+
+		<action input="input" name="ricercaFascicoliForm" path="/page/fascicoli"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.RicercaFascicoliAction"
+			validate="true">
+			<forward name="input" path="/WEB-INF/pages/fascicolo/fascicoli.jsp" />
+			<forward name="fascicolo" path="/page/fascicolo.do" />
+			<forward name="tornaDocumento"
+				path="/WEB-INF/pages/documentale/fascicolaDocumento.jsp" />
+			<forward name="tornaFaldone" path="/page/faldone.do" />
+			<forward name="tornaProcedimento" path="/WEB-INF/pages/procedimento/procedimento.jsp" />
+			<forward name="tornaProtocolloIngresso" path="/page/protocollo/ingresso/fascicolaEdit.do" />
+			<forward name="tornaProtocolloUscita" path="/page/protocollo/uscita/documento.do" />
+			<forward name="tornaPostaInternaNew"
+				path="/page/protocollo/posta_interna/documento.do" />
+			<forward name="tornaProtocolloIngressoNew"
+				path="/page/protocollo/ingresso/documento.do" />
+			<forward name="tornaPostaInterna"
+				path="/page/protocollo/posta_interna/fascicolaEdit.do" />
+			<forward name="visualizzaPostaInterna"
+				path="/page/protocollo/posta_interna/documentoview.do" />
+			<forward name="visualizzaProtocolloIngresso" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="visualizzaProtocolloUscita" path="/page/protocollo/uscita/documentoview.do" />
+			<forward name="tornaFascicolo" path="/page/fascicolo.do?tornaFascicoloPadre=true" />
+			<forward name="tornaCollegato" path="/page/fascicolo.do?ricarica=true" />
+			<forward name="tornaFascicolaProtocolloUscita" path="/page/protocollo/uscita/fascicolaEdit.do" />
+			<forward name="tornaInvioProtocolloEditor" path="/page/documentale/inviaDocumentoEditor.do" />
+			<forward name="tornaTemplate" path="/page/documentale/daTemplate.do" />
+		</action>
+
+		<!--  =============== Evidenze ==================== -->
+		<action input="input" name="ricercaEvidenzaForm" path="/page/evidenza/cerca"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.evidenza.RicercaEvidenzaAction">
+			<forward name="input" path="/WEB-INF/pages/evidenza/ricerca.jsp" />
+			<forward name="visualizzaLista" path="/WEB-INF/pages/evidenza/evidenze.jsp" />
+		</action>
+
+		<!--
+			=============== Ripeti dati - Protocollo/Configurazione Utente
+			====================
+		-->
+		<action input="input" name="configurazioneForm" path="/page/protocollo/ripetiDati"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ConfigurazioneUtenteAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/ripetiDati/configurazioneUtente.jsp" />
+		</action>
+
+		<!--
+			========================================================= link DOC
+			===========
+		-->
+		<action forward="/WEB-INF/pages/protocollo/ricerca/tabellaProtocolli.jsp"
+			path="/page/protocollo">
+			<forward name="apriDocumentoIngresso" path="/page/protocollo/ingresso/documento.do" />
+			<forward name="apriDocumentoUscita" path="/page/protocollo/uscita/documento.do" />
+		</action>
+
+		<!--  =============================================== -->
+		<action forward="/page/fascicolo.do?btnNuovo=true" path="/page/protocollo/fascicolo" />
+		<action forward="/page/fascicoli.do?btnAnnullaRicerca=true"
+			path="/page/protocollo/fascicoli" />
+		<!-- Registro d'emergenza -->
+		<action input="input" name="registroEmergenzaForm" path="/page/protocollo/registroEmergenza"
+			scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.RegistroEmergenzaAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/registroEmergenza.jsp" />
+			<forward name="visualizzaProtocolloIngresso" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="visualizzaProtocolloUscita" path="/page/protocollo/uscita/documentoview.do" />
+		</action>
+
+		<!-- Registro d'emergenza Ministero Interni-->
+		<action input="input" name="registroEmergenzaForm" path="/page/protocollo/emergenza"
+			scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.RegistroEmergenzaAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/registroEmergenza/emergenza.jsp" />
+			<forward name="output"
+				path="/WEB-INF/pages/protocollo/registroEmergenza/protocolloRegistrato.jsp" />
+			<forward name="lista"
+				path="/WEB-INF/pages/protocollo/registroEmergenza/lista.jsp" />
+			<forward name="visualizzaProtocolloIngresso" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="visualizzaProtocolloUscita" path="/page/protocollo/uscita/documentoview.do" />
+		</action>
+
+		<action input="input" name="registroEmergenzaForm"
+			path="/page/protocollo/emergenzaviewingresso" scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.RegistroEmergenzaAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/registroEmergenza/lista.jsp" />
+			<forward name="output"
+				path="/WEB-INF/pages/protocollo/registroEmergenza/protocolloRegistrato.jsp" />
+			<forward name="visualizzaProtocollo" path="/page/protocollo/ingresso/documento.do" />
+		</action>
+
+		<action input="input" name="registroEmergenzaForm"
+			path="/page/protocollo/emergenzaviewuscita" scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.RegistroEmergenzaAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/registroEmergenza/lista.jsp" />
+			<forward name="output"
+				path="/WEB-INF/pages/protocollo/registroEmergenza/protocolloRegistrato.jsp" />
+			<forward name="visualizzaProtocollo" path="/page/protocollo/uscita/documento.do" />
+		</action>
+
+		<!--  -->
+		<action input="input" name="fascicoloForm" path="/page/fascicoli/trattamento"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.FascicoloAction"
+			validate="true">
+			<forward name="input" path="/WEB-INF/pages/fascicolo/fascicoli.jsp" />
+			<forward name="modifica"
+				path="/WEB-INF/pages/fascicolo/fascicoloProprieta.jsp" />
+		</action>
+
+		<!-- Faldone -->
+		<action input="input" name="faldoneForm" path="/page/faldone"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.FaldoneAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/faldone/faldone.jsp" />
+			<forward name="visualizzaFaldone" path="/WEB-INF/pages/faldone/faldoneView.jsp" />
+			<forward name="storiaFaldone" path="/page/faldone/storia.do" />
+			<forward name="cercaFascicoli"
+				path="/page/fascicoli.do?cercaFascicoliDaFaldoni=true" />
+			<forward name="nuovoFascicolo" path="/page/fascicolo.do?btnNuovo=true" />
+			<forward name="cercaProcedimenti" path="/page/procedimento/ricerca.do" />
+			<forward name="visualizzaFascicolo" path="/page/fascicolo.do" />
+			<forward name="confermaOperazione" path="/WEB-INF/pages/faldone/confermaOperazione.jsp" />
+			<forward name="faldoneCancellato" path="/WEB-INF/pages/faldone/faldoneCancellato.jsp" />
+		</action>
+
+		<action input="input" name="ricercaFaldoneForm" path="/page/faldone/cerca"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.RicercaFaldoneAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/faldone/ricerca.jsp" />
+			<forward name="tornaProcedimento" path="/WEB-INF/pages/procedimento/procedimento.jsp" />
+		</action>
+
+		<!-- ==========  T E S T   =========== -->
+		<action input="input" name="protocolloIngressoForm" path="/test_protocollazione"
+			scope="session" type="it.finsiel.siged.test.TestProtocollazione"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/ingresso/documento.jsp" />
+			<forward name="cercaPersonaFisica"
+				path="/page/protocollo/anagrafica/persona-fisica/cerca.do" />
+			<forward name="cercaPersonaGiuridica"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do" />
+			<forward name="cercaAllacci" path="/allacciProtocollo.do" />
+			<forward name="erroreDownload" path="/WEB-INF/pages/errore.jsp" />
+			<forward name="cercaProtocolloMittente"
+				path="/WEB-INF/pages/protocollo/ingresso/listaProtocolli.jsp" />
+			<forward name="visualizzaProtocollo" path="/page/protocollo/ingresso/documentoview.do"
+				redirect="true" />
+		</action>
+
+		<action input="input" name="protocolloIngressoForm" path="/email_ingresso"
+			scope="session" type="it.finsiel.siged.test.TestProtocollazione"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/ingresso/documento.jsp" />
+		</action>
+
+		<!-- ===============Lista distribuzione====================-->
+		<action input="input" name="listaDistribuzioneForm"
+			path="/page/protocollo/anagrafica/listaDistribuzione/nuovo" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.soggetto.ListaDistribuzioneAction">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/anagrafica/listaDistribuzioni/formListaDistribuzioniNew.jsp" />
+			<forward name="nuova"
+				path="/page/protocollo/anagrafica/listaDistribuzione/nuovo.do?annullaAction=true" />
+			<forward name="cerca"
+				path="/page/protocollo/anagrafica/listaDistribuzione.do?cercaAction=true"
+				redirect="true" />
+			<forward name="cercaSoggettoPG"
+				path="/WEB-INF/pages/protocollo/anagrafica/listaDistribuzioni/cercaPG.jsp" />
+			<forward name="cercaSoggettoPF"
+				path="/WEB-INF/pages/protocollo/anagrafica/listaDistribuzioni/cercaPF.jsp" />
+		</action>
+
+		<action input="input" name="listaDistribuzioneForm"
+			path="/page/protocollo/anagrafica/listaDistribuzione" scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.soggetto.ListaDistribuzioneAction"
+			validate="false">
+			<forward name="edit"
+				path="/page/protocollo/anagrafica/listaDistribuzione.do" />
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/anagrafica/listaDistribuzioni/cercaLD.jsp" />
+			<forward name="nuova"
+				path="/page/protocollo/anagrafica/listaDistribuzione/nuovo.do?annullaAction=true" />
+			<forward name="cercaSoggettoPG"
+				path="/WEB-INF/pages/protocollo/anagrafica/listaDistribuzioni/cercaPG.jsp" />
+			<forward name="tornaLista"
+				path="/WEB-INF/pages/protocollo/anagrafica/listaDistribuzioni/formListaDistribuzioniNew.jsp" />
+			<forward name="cercaSoggettoPF"
+				path="/WEB-INF/pages/protocollo/anagrafica/listaDistribuzioni/cercaPF.jsp" />
+			<forward name="inputTornaProtocollo"
+				path="/WEB-INF/pages/protocollo/anagrafica/listaDistribuzioni/cercaListaPerProtocollo.jsp" />
+			<forward name="tornaProtocollo"
+				path="/WEB-INF/pages/protocollo/uscita/documento.jsp" />
+		</action>
+
+		<!-- ===============Lista distribuzione INTERNA====================-->
+
+		<action input="input" name="listaDistribuzioneForm"
+			path="/page/protocollo/anagrafica/listaDistribuzioneInterna/nuovo" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.soggetto.ListaDistribuzioneInternaAction">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/anagrafica/listaDistribuzioneInterna/formListaDistribuzioniNew.jsp" />
+			<forward name="nuova"
+				path="/page/protocollo/anagrafica/listaDistribuzioneInterna/nuovo.do?annullaAction=true" />
+			<forward name="cerca"
+				path="/page/protocollo/anagrafica/listaDistribuzioneInterna.do?cercaAction=true"
+				redirect="true" />
+		</action>
+
+		<action input="input" name="listaDistribuzioneForm"
+			path="/page/protocollo/anagrafica/listaDistribuzioneInterna" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.soggetto.ListaDistribuzioneInternaAction"
+			validate="false">
+			<forward name="edit"
+				path="/page/protocollo/anagrafica/listaDistribuzioneInterna.do" />
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/anagrafica/listaDistribuzioneInterna/cercaLD.jsp" />
+			<forward name="nuova"
+				path="/page/protocollo/anagrafica/listaDistribuzioneInterna/nuovo.do?annullaAction=true" />
+			<forward name="tornaLista"
+				path="/WEB-INF/pages/protocollo/anagrafica/listaDistribuzioneInterna/formListaDistribuzioniNew.jsp" />
+			<forward name="inputTornaProtocollo"
+				path="/WEB-INF/pages/protocollo/anagrafica/listaDistribuzioneInterna/cercaListaPerProtocollo.jsp" />
+			<forward name="tornaProtocollo"
+				path="/WEB-INF/pages/protocollo/posta_interna/documento.jsp" />
+		</action>
+
+		<action input="input" name="registroModificheForm"
+			path="/page/amministrazione/registroModifiche" scope="request"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.RegistroModificheAction">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/registroModifiche.jsp" />
+			<forward name="stampaReport"
+				path="/WEB-INF/pages/stampa/prn-pro/registroModificheDoc.jsp" />
+		</action>
+
+
+		<!-- =============== PROCEDIMENTI ====================-->
+		<action input="input" name="procedimentoForm" path="/page/procedimento" 
+			scope="session" 
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProcedimentoAction" 
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/procedimento/procedimento.jsp" />
+			<forward name="visualizzaSospensione" path="/WEB-INF/pages/procedimento/sospensione.jsp" />
+			<forward name="visualizzaChiusura" path="/WEB-INF/pages/procedimento/chiudi.jsp" />
+			<forward name="ricerca" path="/page/procedimenti/ricerca.do" />
+			<forward name="cercaFascicoliDaProcedimento" path="/page/fascicoli.do?cercaFascicoliDaProcedimento=true" />
+			<forward name="cercaFaldoniDaProcedimento" path="/page/faldone/cerca.do?cercaFaldoniDaProcedimento=true" />
+			<forward name="visualizzaFascicolo" path="/page/fascicolo.do" />
+			<forward name="visualizzaFaldone" path="/page/faldone.do" />
+			<forward name="cercaProtocolliDaProcedimento" path="/page/protocollo/ricerca.do?btnAnnulla=true" />
+			<forward name="associaProtocolli" path="/page/protocollo/ricerca.do" />
+			<forward name="visualizzaProtocollo" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="tornaScaricoProcedimento" path="/page/protocollo/ingresso/procedimento.do" />
+			<forward name="tornaProtocolloIngresso" path="/page/protocollo/ingresso/documento.do" />
+			<forward name="tornaProtocolloUscita" path="/page/protocollo/uscita/documento.do" />
+			<forward name="tornaPostaInterna" path="/page/protocollo/posta_interna/procedimento.do" />
+			<forward name="tornaPostaPresaInCarico" path="/page/protocollo/posta_interna/procedimento.do" />
+			<forward name="visualizzaProcedimento" path="/WEB-INF/pages/procedimento/procedimentoView.jsp" />
+			<forward name="ricaricaProcedimento" path="/page/procedimentoview.do" />
+			<forward name="storiaProcedimento" path="/page/procedimento/storia.do" />
+			<forward name="cercaPersonaFisica" path="/page/protocollo/anagrafica/persona-fisica/cerca.do" />
+			<forward name="cercaPersonaGiuridica" path="/page/protocollo/anagrafica/persona-giuridica/cerca.do" />
+			<forward name="nuovoDocumento" path="/page/documentale/cartelle.do?nuovoDocumento=true" />
+			<forward name="compilaLettera" path="/page/documentale/letteraRicorsoULL.do?btnNuovoDocumentoAction=true" />
+			<forward name="documentoEditor" path="/page/documentale/daTemplate.do" />
+			<forward name="visualizzaAllaccio" path="/page/protocollo/allaccioview.do" />
+			<forward name="modificaAssegnatari" path="/page/procedimento/assegnatari.do" />
+			<forward name="riassegnaProcedimento" path="/WEB-INF/pages/procedimento/riassegnaProcedimento.jsp" />
+			<forward name="stampaComunicazioneAvvio" path="/WEB-INF/pages/procedimento/comunicazioneAvvio.jsp" />
+						
+		</action>
+		
+		<action input="input" name="procedimentoForm" path="/page/procedimentoview"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProcedimentoAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/procedimento/procedimentoView.jsp" />
+			<forward name="visualizzaFascicolo" path="/page/fascicolo.do" />
+			<forward name="storiaProcedimento" path="/page/procedimento/storia.do" />
+			<forward name="modificaProcedimento" path="/WEB-INF/pages/procedimento/procedimento.jsp" />
+			<forward name="visualizzaProcedimento" path="/WEB-INF/pages/procedimento/procedimentoView.jsp" />
+			<forward name="visualizzaProtocolloIngresso" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="visualizzaRiapertura" path="/WEB-INF/pages/procedimento/riapri.jsp" />
+		</action>
+		
+		<action input="input" name="procedimentoForm" path="/page/procedimento/assegnatari"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.ProcedimentoAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/procedimento/procedimentoAssegnatari/modifica.jsp" />
+			<forward name="visualizzaProcedimento" path="/page/procedimento.do" />
+			
+		</action>
+	
+		<action input="input" name="ricercaProcedimentoForm" path="/page/procedimento/ricerca"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.RicercaProcedimentoAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/procedimento/ricerca.jsp" />
+			<forward name="risultati" path="/WEB-INF/pages/procedimento/risultati.jsp" />
+			<forward name="tornaFaldone" path="/WEB-INF/pages/faldone/faldone.jsp" />
+			<forward name="tornaFascicolo" path="/page/fascicolo.do" />
+			<forward name="fascicoloProcedimento" path="/WEB-INF/pages/fascicolo/fascicolo.jsp" />
+			<forward name="fascicolo" path="/WEB-INF/pages/fascicolo/fascicolo.jsp" />
+			<forward name="tornaPresaInCarico" path="/page/protocollo/ingresso/procedimento.do" />
+			<forward name="tornaProtocolloIngresso" path="/page/protocollo/ingresso/documento.do" />
+			<forward name="tornaProtocolloUscita" path="/page/protocollo/uscita/documento.do" />
+			<forward name="tornaPostaInterna" path="/page/protocollo/posta_interna/documento.do" />
+			<forward name="tornaPostaPresaInCarico" path="/page/protocollo/posta_interna/procedimento.do" />
+			
+		</action>
+
+		<action input="input" name="stampaEtichettaForm" path="/page/protocollo/stampaEtichetta"
+			scope="session"
+			type="it.finsiel.siged.mvc.presentation.action.protocollo.StampaEtichettaAction"
+			validate="false">
+			
+			<forward name="input" path="/WEB-INF/pages/protocollo/stampaEtichetta.jsp" />
+			<forward name="stampaSuFoglioA4" path="/page/protocollo/uscita/documento.do" />
+			<forward name="stampaSuEtichettatrice" path="/WEB-INF/pages/protocollo/barcode.jsp" />
+			
+			<forward name="visualizzaProtocolloIngresso" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="visualizzaProtocolloUscita" path="/page/protocollo/uscita/documentoview.do" />
+			<forward name="visualizzaPostaInterna" path="/page/protocollo/posta_interna/documentoview.do" />
+			
+			<forward name="modificaProtocolloIngresso" path="/page/protocollo/ingresso/documento.do" />
+			<forward name="modificaProtocolloUscita" path="/page/protocollo/uscita/documento.do" />
+			<forward name="modificaPostaInterna" path="/page/protocollo/posta_interna/documento.do" />
+			
+			<forward name="allegaProtocolloIngresso" path="/page/protocollo/ingresso/allegaEdit.do" />
+			<forward name="allegaProtocolloUscita" path="/page/protocollo/uscita/allegaEdit.do" />
+			<forward name="allegaPostaInterna" path="/page/protocollo/posta_interna/allegaEdit.do" />
+			
+		</action>
+		<!-- ===============================================-->
+		<action forward="/WEB-INF/pages/unicode.jsp" path="/page/unicode" />
+
+		<action input="input" name="protocolloIngressoForm"
+			path="/page/protocollo/ingresso/stampaRicevuta" scope="session"
+			type="it.flosslab.mvc.presentation.action.protocollo.StampaRicevutaAction"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/protocollo/ingresso/documentoView.jsp" />
+		</action>
+		
+		<action parameter="SHOW" path="/page/protocollo/dashboard"
+			type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success" path="/WEB-INF/pages/protocollo/dashboard.jsp" />
+		</action>
+		
+		<action name="respintiForm" parameter="RESPINTI"
+			path="/page/protocollo/dashboard/respinti" type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success"
+				path="/WEB-INF/pages/protocollo/protocolliRespinti.jsp" />
+		</action>
+		
+		<action name="scaricoForm" parameter="SCARICO"
+			path="/page/protocollo/dashboard/scarico" type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success" path="/WEB-INF/pages/protocollo/scarico.jsp" />
+		</action>
+		
+		<action name="presaInCaricoForm" parameter="ASSEGNATI"
+			path="/page/protocollo/dashboard/assegnati" type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success" path="/WEB-INF/pages/protocollo/presaInCarico.jsp" />
+		</action>
+
+		<action name="scaricoForm" parameter="POSTA_INTERNA"
+			path="/page/protocollo/dashboard/posta_interna" type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success"
+				path="/WEB-INF/pages/protocollo/posta_interna/scarico.jsp" />
+		</action>
+		
+		<action name="scaricoForm" parameter="DA_REPERTORIARE"
+			path="/page/protocollo/dashboard/posta_interna_repertorio" type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success"
+				path="/WEB-INF/pages/protocollo/posta_interna/scarico_repertorio.jsp" />
+		</action>
+		
+		<action name="scaricoForm" parameter="PER_CONOSCENZA"
+			path="/page/protocollo/dashboard/conoscenza" type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success" path="/WEB-INF/pages/protocollo/perConoscenza.jsp" />
+		</action>
+
+		<action name="alertProcedimentoForm" parameter="PROCEDIMENTI_ALERT"
+			path="/page/protocollo/dashboard/alertProcedimento" type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success" path="/WEB-INF/pages/procedimento/alert.jsp" />
+		</action>
+
+		<action name="scaricoForm" parameter="CHECK_POSTA_INTERNA"
+			path="/page/protocollo/dashboard/showCheckPostaInterna" type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success" path="/WEB-INF/pages/protocollo/checkPostaInterna.jsp" />
+		</action>
+		
+		<action name="alertProcedimentoForm" parameter="RICORSI"
+			path="/page/protocollo/dashboard/showRicorsi" type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success" path="/WEB-INF/pages/procedimento/ricorsi.jsp" />
+		</action>
+		
+		<action name="scaricoForm" parameter="FATTURE"
+			path="/page/protocollo/dashboard/showFatture" type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success" path="/WEB-INF/pages/protocollo/fatture.jsp" />
+		</action>
+
+		<action name="editorForm" parameter="DA_FIRMARE"
+			path="/page/protocollo/dashboard/showDocumentiFirma" type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success" path="/WEB-INF/pages/documentale/editor/listaFirma.jsp" />
+		</action>
+
+		<action name="avvocatoGeneraleForm" parameter="RELAZIONI_DECRETI"
+			path="/page/protocollo/dashboard/showAvvocatoGeneraleDashboard" type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success" path="/WEB-INF/pages/documentale/editor/listaAvvocatoGenerale.jsp" />
+		</action>
+
+		<action name="listaEmailForm" parameter="EMAIL_UFFICIO"
+			path="/page/protocollo/dashboard/showEmailUfficio" type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success" path="/WEB-INF/pages/protocollo/ingresso/emailUfficio.jsp" redirect="true"/>
+		</action>
+
+		<action name="alertProtocolloForm" parameter="PROTOCOLLI_ALERT"
+			path="/page/protocollo/dashboard/alertProtocollo" type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success" path="/WEB-INF/pages/protocollo/alert.jsp" />
+		</action>
+		
+		<action name="alertProcedimentoForm" parameter="PROCEDIMENTI_ISTRUTTORE"
+			path="/page/protocollo/dashboard/showProcedimentiIstruttore" 
+			type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success" path="/WEB-INF/pages/procedimento/procedimentiAssegnatario/dashboardIstruttore.jsp" />
+		</action>
+		
+		<action name="alertProcedimentoForm" parameter="PROCEDIMENTI_UFFICIO_PARTECIPANTE"
+			path="/page/protocollo/dashboard/showProcedimentiUfficioPartecipante" 
+			type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success" path="/WEB-INF/pages/procedimento/procedimentiAssegnatario/dashboardUfficioPartecipante.jsp" />
+		</action>
+		
+		<action name="repertorioForm" parameter="REPERTORI"
+			path="/page/protocollo/dashboard/showRepertori" 
+			type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success" path="/WEB-INF/pages/repertorio/dashboard.jsp" />
+		</action>
+		
+		<action name="jobScheduledLogForm" parameter="LOG_JOB"
+			path="/page/protocollo/dashboard/showJobScheduledLogs" 
+			type="it.flosslab.mvc.presentation.action.protocollo.DashboardAction"
+			validate="false">
+			<forward name="success" path="/WEB-INF/pages/stampa/conservazione/dashboard.jsp" />
+		</action>
+
+		<action input="input" name="alertProtocolloForm" path="/page/protocollo/alert"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.AlertProtocolloAction"
+			validate="true">
+			<forward name="edit" path="/page/protocollo/alert.do" />
+			<forward name="input" path="/WEB-INF/pages/protocollo/alert.jsp" />
+			<forward name="visualizzaProtocollo" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="fascicolaProtocollo" path="/page/protocollo/ingresso/fascicola.do" />
+			<forward name="riassegnaProtocollo"
+				path="/page/protocollo/ingresso/riassegna.do?ALERT=TRUE" />
+		</action>
+
+		<action input="input" name="alertProcedimentoForm" path="/page/procedimento/alert"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.AlertProcedimentoAction"
+			validate="true">
+			<forward name="edit" path="/page/procedimento/alert.do" />
+			<forward name="input" path="/WEB-INF/pages/procedimento/alert.jsp" />
+			<forward name="visualizzaProcedimento" path="/page/procedimentoview.do" />
+		</action>
+
+		<action input="input" name="alertProcedimentoForm" path="/page/procedimento/ricorsi"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.AlertProcedimentoAction"
+			validate="true">
+			<forward name="edit" path="/page/procedimento/ricorsi.do" />
+			<forward name="input" path="/WEB-INF/pages/procedimento/ricorsi.jsp" />
+			<forward name="visualizzaProcedimento" path="/page/procedimentoview.do" />
+		</action>
+		
+		<!--========== ARCHVIO DEPOSITO================================ -->
+		
+		<action input="input" name="archivioDepositoForm" path="/page/archivio_deposito"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.ArchivioDepositoAction"
+			validate="false">
+			<forward name="input" path="/WEB-INF/pages/fascicolo/archivioDeposito.jsp"/>
+			<forward name="edit" path="/page/ricerca_deposito.do"/>
+		</action>
+		
+		<action input="edit" name="archivioDepositoForm" path="/page/ricerca_deposito"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.protocollo.ArchivioDepositoAction"
+			validate="false">
+			<forward name="edit" path="/WEB-INF/pages/fascicolo/ricercaDeposito.jsp"/>
+			<forward name="indietro" path="/page/archivio_deposito.do" redirect="true" />
+			<forward name="fascicola" path="/page/documentale/documento.do?impostaFascicoloAction=true" />
+		</action>
+		
+		<!--========== REPERTORI ================================ -->
+		
+		<action input="lista" name="repertorioForm" path="/page/repertori"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.repertori.RepertorioAction"
+			validate="true">
+			<forward name="lista" path="/WEB-INF/pages/repertorio/repertori.jsp" />
+			<forward name="listaUtente"
+				path="/WEB-INF/pages/repertorio/lista_repertori_responsabile.jsp" />
+		</action>
+
+		<action input="input" name="repertorioForm" path="/page/repertorio"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.repertori.RepertorioAction"
+			validate="true" >
+			<forward name="input" path="/WEB-INF/pages/repertorio/repertorio.jsp" />
+			<forward name="visualizzaDocumentoRepertorio" path="/page/repertorio/documento_repertorio.do" />
+			<forward name="nuovoDocumentoRepertorio"
+				path="/page/repertorio/documento_repertorio.do?btnNuovo=true" />
+			<forward name="listaUtente" path="/page/repertori.do?assegnatiAction=true" />
+		</action>
+
+		<action input="input" name="documentoRepertorioForm"
+			path="/page/repertorio/documento_repertorio" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.repertori.DocumentoRepertorioAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/repertorio/documento_repertorio.jsp" />
+			<forward name="success" path="/page/repertorio.do" />
+			<forward name="indietro" path="/page/repertorio.do" />
+			<forward name="protocollazionePostaInterna" path="/page/protocollo/posta_interna/documento.do" />
+		</action>
+
+
+		<action input="lista" name="repertorioForm" path="/page/repertoriView"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.repertori.RepertorioAction"
+			validate="true">
+			<forward name="lista" path="/WEB-INF/pages/repertorio/repertoriView.jsp" />
+		</action>
+
+		<action input="input" name="repertorioForm" path="/page/repertorioView"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.repertori.RepertorioAction"
+			validate="true">
+			<forward name="input" path="/WEB-INF/pages/repertorio/repertorioView.jsp" />
+			<forward name="visualizzaDocumentoRepertorio" path="/page/repertorio/documento_repertorioView.do" />
+			<forward name="listaUtente" path="/WEB-INF/pages/repertorio/repertoriView.jsp" />
+		</action>
+
+		<action input="input" name="documentoRepertorioForm"
+			path="/page/repertorio/documento_repertorioView" scope="session"
+			type="it.compit.fenice.mvc.presentation.action.repertori.DocumentoRepertorioAction"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/repertorio/documento_repertorioView.jsp" />
+			<forward name="success" path="/page/repertorioView.do" />
+			<forward name="indietro" path="/page/repertorioView.do" />
+		</action>
+		
+		<!--========== AMM. TRASPARENTE ================================ -->
+		
+		<action input="sezioni" name="ammTrasparenteForm" path="/page/amm_trasparente"
+			scope="session"
+			type="it.compit.fenice.mvc.presentation.action.ammtrasparente.AmmTrasparenteAction"
+			validate="true">
+			<forward name="sezioni" path="/WEB-INF/pages/amm_trasparente/amm_trasparentes.jsp" />
+			<forward name="listaUtente"
+				path="/WEB-INF/pages/amm_trasparente/lista_amm_trasparente_responsabile.jsp" />
+		</action>
+
+		<!--
+			FINE ========== Controller Configuration
+			================================
+		-->
+
+	</action-mappings>
+
+	<controller processorClass="it.compit.fenice.mvc.presentation.action.RequestProcessorUtf8"
+		contentType="text/html;charset=UTF-8" locale="true">
+		<set-property property="maxFileSize" value="100M" />
+		<set-property property="nocache" value="true" />
+		<set-property property="inputForward" value="true" />
+	</controller>
+
+	<!--
+		<controller> <set-property property="maxFileSize" value="100M" />
+		<set-property property="nocache" value="true" /> <set-property
+		property="inputForward" value="true" /> </controller>
+	-->
+</struts-config>

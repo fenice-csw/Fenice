@@ -1,0 +1,113 @@
+@page { 
+	margin-bottom: 3cm;
+	@bottom-center { content: element(footer);} 
+	} 
+
+#footer {
+		background: #ffffff url(../../images/compit/template/footerBBCCAA.png);
+  		width:645px;
+  		height: 70px; 
+	    position: running(footer); 
+}            
+	       
+html, body{
+	width: 630px;
+}
+
+
+
+#clear{
+	clear: both;
+}
+
+
+#content {
+  margin-left: 15px;
+
+}
+
+#col_1 {
+  background: #ffffff url(../../images/compit/template/logoBBCCAA.png) no-repeat fixed left top;
+  float: left;
+  height: 125px;
+  width: 250px;
+  
+}
+
+#col_1_1 {
+  margin-left: 45px;
+  margin-top:10px;
+  height: 55px;
+}
+
+#col_1_2 {
+  margin-left: 45px;
+}
+
+#col_2 {
+  margin-left: 10px;
+  height: 125px;
+  float: left;
+  width: 210px;
+  background-color: #ffffff;
+}
+
+#col_2_1 {
+  height: 65px;
+}
+
+#col_3 {
+  text-align: right;
+  width: 100px;
+  height: 125px;
+  float: right;
+
+}
+
+#col_3_1 { 
+	height: 5px;
+}
+
+#n_prot {
+	margin-left: 15px;
+	margin-top: 30px;
+	width: 250px;  
+	height: 10px;
+	text-align: left;
+	float: left;
+	
+}
+
+#allegati {
+	margin-top: 30px;
+	height: 10px;
+}
+
+#oggetto {
+	margin-top: 30px;
+}
+
+#testo {
+	margin-top: 30px;
+	
+}
+
+#destinatari {
+	margin-top: 30px;
+	text-align: right;
+	width: 300px;
+	float:right; 
+	  
+}
+
+#allaccio {
+    margin-top: 30px;
+	width: 250px;  
+	height: 10px;
+	float: right;
+	text-align: right;
+}
+
+
+
+

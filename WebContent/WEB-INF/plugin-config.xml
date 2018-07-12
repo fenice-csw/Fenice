@@ -1,0 +1,45 @@
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<!--
+	This is the Struts configuration file for the example application,
+	using the proposed new syntax.
+-->
+<struts-config>
+	
+	<!-- ========== Message Resources Definitions =========================== -->
+	<message-resources
+		parameter="it.finsiel.siged.mvc.presentation.resource.ApplicationResources"
+		null="false" />
+	<message-resources key="bundleErroriProtocollo"
+		parameter="it.finsiel.siged.mvc.presentation.resource.ErrorMessages"
+		null="false" />
+	<message-resources key="bundleErroriFaldone"
+		parameter="it.finsiel.siged.mvc.presentation.resource.ErroriFaldone"
+		null="false" />	
+	<message-resources key="bundleErroriAmministrazione"
+		parameter="it.finsiel.siged.mvc.presentation.resource.ErroriAmministrazione"
+		null="false" />
+	<message-resources key="bundleMessaggiAmministrazione"
+		parameter="it.finsiel.siged.mvc.presentation.resource.MessaggiAmministrazione"
+		null="false" />
+
+	<!-- ========== Plug Ins Configuration ================================== -->
+	<plug-in className="org.apache.struts.plugins.ModuleConfigVerifier" />
+	<plug-in className="it.finsiel.siged.mvc.plugin.LogPlugin">
+		<set-property property="config"
+			value="/WEB-INF/log4j-config.xml" />
+	</plug-in>
+	<plug-in
+		className="it.finsiel.siged.mvc.plugin.PersistencePlugIn">
+		<set-property property="configFile"
+			value="/WEB-INF/persistence.properties" />
+	</plug-in>
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
+	<!-- Aggiorna i dati ogni giorno alle 4 di mattina -->
+	<plug-in className="it.finsiel.siged.mvc.plugin.CRLDaemonPlugin">
+		<set-property property="cronExp" value="0 0 4 * * ?" />
+	</plug-in>
+
+</struts-config>

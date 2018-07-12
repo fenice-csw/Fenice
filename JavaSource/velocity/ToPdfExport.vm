@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style
+     type="text/css">
+    /*<![CDATA[*/
+        body { font-family: "Arial Unicode MS"; }
+        
+		@media print and (width: 21cm) and (height: 29.7cm){ 
+			@page { 
+				size: A4; 
+				margin: 2cm; 
+				@bottom-right { 
+					content: "Pagina " counter(page);} 
+				@top-right {content: "Audizione $intestazioneTitle";}
+				@top-left {content: "Ars III Commissione"; }
+            }
+		}
+			 
+    /*]]>*/
+    </style>
+	<title></title>
+</head>
+<body>
+	$verbaleContent
+</body>
+</html>

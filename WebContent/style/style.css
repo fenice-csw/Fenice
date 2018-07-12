@@ -1,0 +1,137 @@
+@import url('layout.css');
+@import url('navbar.css');
+@import url('tabmenu.css');
+@import url('sidemenu.css');
+@import url('protocollo.css');
+@import url('table.css');
+@import url('cartelle.css');
+
+input, textarea {
+
+border:1px solid #CCCCCC;
+padding:2px 3px;
+vertical-align:middle;
+
+}
+
+#root_titolario {
+	padding-left:0px;
+	padding-top:5px;
+}
+
+
+
+#zona_lavoro {
+width:390px;
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+-moz-border-radius-bottomleft:11px;
+-moz-border-radius-bottomright:11px;
+-moz-border-radius-topleft:11px;
+-moz-border-radius-topright:11px;
+
+-webkit-background-clip:border;
+-webkit-background-inline-policy:continuous;
+-webkit-background-origin:padding;
+-webkit-border-bottom-left-radius:11px;
+-webkit-border-bottom-right-radius:11px;
+-webkit-border-top-left-radius:11px;
+-webkit-border-top-right-radius:11px;
+
+
+background:#21759B none repeat scroll 0 0;
+border:1px solid #E5E5E5;
+font-weight:normal;
+margin-left:8px;
+padding:0px 0px 30px;
+height: auto;
+}
+
+
+#zona_lavoro_dash {
+width:420px;
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+-moz-border-radius-bottomleft:11px;
+-moz-border-radius-bottomright:11px;
+-moz-border-radius-topleft:11px;
+-moz-border-radius-topright:11px;
+
+-webkit-background-clip:border;
+-webkit-background-inline-policy:continuous;
+-webkit-background-origin:padding;
+-webkit-border-bottom-left-radius:11px;
+-webkit-border-bottom-right-radius:11px;
+-webkit-border-top-left-radius:11px;
+-webkit-border-top-right-radius:11px;
+
+background:#21759B none repeat scroll 0 0;
+border:1px solid #E5E5E5;
+font-weight:normal;
+margin-left:8px;
+padding:0px 0px 30px;
+height: auto;
+}
+
+#protocollo-errori {
+padding-top:10px;
+padding-bottom:10px;
+color:red;
+font-size: 90%;
+}
+
+
+#titolo_zonalavoro {
+color: #fff;
+padding-left: 16px;
+padding-top: 5px;
+padding-bottom: 5px;
+
+}
+
+#corpo_zonalavoro {
+background: #fff;
+padding-left: 16px;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-right: 16px;
+}
+
+#corpo_zonalavoro li {
+padding: 5px;
+list-style-type: none;
+}
+
+
+
+
+* {
+	font-family: Verdana,arial,sans-serif;
+	font-size: 10pt;
+	
+}
+
+body {
+
+	margin: 0;
+	padding: 0;
+	background-color: #F9F9F9;
+}
+
+
+
+img {
+	border-style: none;
+}
+
+a {
+	color: #0D007A;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #0D007A;
+
+}

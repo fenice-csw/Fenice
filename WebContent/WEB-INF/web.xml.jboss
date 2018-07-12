@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC 
+		"-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+		"http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+	<display-name>Gestione Informatizzata del Protocollo</display-name>
+
+	<!-- MENU SETTINGS -->
+	<context-param>
+		<param-name>MENU_ROOT_LINK</param-name>
+		<param-value>page</param-value>
+	</context-param>
+	<!-- SYSTEM SETTINGS -->
+	<!-- IMPORTANTE: Le path devono iniziare e finire con "/" -->
+	<context-param>
+		<param-name>TEMP_FILE_PATH</param-name>
+		<param-value>/WEB-INF/temp_path/</param-value>
+	</context-param>
+	<context-param>
+		<param-name>TEMP_PEC_PATH</param-name>
+		<param-value>/WEB-INF/temp_pec/</param-value>
+	</context-param>
+
+	<!-- FILTERS  -->
+	
+
+  	<filter>
+    	<filter-name>CharsetFilter</filter-name>
+    	<filter-class>it.compit.fenice.mvc.presentation.filter.CharsetFilter</filter-class>
+      		<init-param>
+        		<param-name>requestEncoding</param-name>
+        		<param-value>UTF-8</param-value>
+      		</init-param>
+  	</filter>
+
+	<filter>
+		<filter-name>AuthenticationFilter</filter-name>
+		<filter-class>
+			it.finsiel.siged.mvc.presentation.filter.AuthenticationFilter
+		</filter-class>
+	</filter>
+	
+	<filter>
+		<filter-name>AuthorizationFilter</filter-name>
+		<filter-class>
+			it.finsiel.siged.mvc.presentation.filter.AuthorizationFilter
+		</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<url-pattern>/menu.do</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<url-pattern>/page/*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>AuthorizationFilter</filter-name>
+		<url-pattern>/page/*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+    	<filter-name>CharsetFilter</filter-name>
+    	<url-pattern>/page/*</url-pattern>
+  	</filter-mapping>
+	
+
+	<!-- Action Servlet Configuration -->
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>
+			org.apache.struts.action.ActionServlet
+		</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>
+				/WEB-INF/struts-config.xml,/WEB-INF/amministrazione-config.xml,/WEB-INF/documentale-config.xml,/WEB-INF/help-config.xml,/WEB-INF/plugin-config.xml
+			</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+
+	<!-- UTIL SERVLET -->
+
+	<servlet>
+		<servlet-name>BarcodeServlet</servlet-name>
+		<servlet-class>
+			it.finsiel.siged.servlet.BarcodeServlet
+		</servlet-class>
+		<load-on-startup>6</load-on-startup>
+	</servlet>
+	
+	<servlet>
+    	<servlet-name>ScannerJnlpGeneratorServlet</servlet-name>
+    	<servlet-class>it.compit.fenice.servlet.ScannerJnlpGeneratorServlet</servlet-class>
+  	</servlet>
+ 
+ 	     <!-- Define Velocity template compiler -->
+ 
+ 
+ 
+	<!--<servlet>
+		<servlet-name>EtichetteServlet</servlet-name>
+		<servlet-class>
+			it.finsiel.siged.servlet.EtichetteServlet
+		</servlet-class>
+		<load-on-startup>6</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EtichetteServlet</servlet-name>
+		<url-pattern>/page/servlets/etichette/png</url-pattern>
+	</servlet-mapping>
+
+
+	-->
+	<!-- Action Servlet Mapping -->
+	
+	   <!--
+	<servlet>
+        <servlet-name>php</servlet-name>
+        <servlet-class>org.jboss.web.php.Handler</servlet-class>
+        <init-param>
+          <param-name>debug</param-name>
+          <param-value>0</param-value>
+        </init-param>
+         <load-on-startup>6</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>phps</servlet-name>
+        <servlet-class>org.jboss.web.php.Highlight</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>php</servlet-name>
+        <url-pattern>*.php</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>phps</servlet-name>
+        <url-pattern>*.phps</url-pattern>
+    </servlet-mapping>
+      --> 
+      
+
+
+
+	<servlet-mapping>
+		<servlet-name>BarcodeServlet</servlet-name>
+		<url-pattern>/page/servlets/barcode/png</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+    	<servlet-name>ScannerJnlpGeneratorServlet</servlet-name>
+    	<url-pattern>/scanagent/ScannerJnlpGeneratorServlet</url-pattern>
+  	</servlet-mapping>
+	
+	
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+
+<!--  
+	<session-config>
+		<session-timeout>60</session-timeout>
+	</session-config>
+-->
+
+
+	<!-- The Welcome File List -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- <resource-ref>
+		<description>Datasource</description>
+		<res-ref-name>jdbc/eProtDS</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+ 		<res-sharing-scope>Shareable</res-sharing-scope>
+ 	</resource-ref> -->
+</web-app>

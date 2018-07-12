@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="WEB-INF/src"/>
+	<classpathentry kind="src" path="WEB-INF/reports"/>
+	<classpathentry exported="true" kind="lib" path="WEB-INF/lib/antlr.jar"/>
+	<classpathentry exported="true" kind="lib" path="WEB-INF/lib/commons-beanutils.jar"/>
+	<classpathentry exported="true" kind="lib" path="WEB-INF/lib/commons-collections.jar"/>
+	<classpathentry exported="true" kind="lib" path="WEB-INF/lib/commons-dbcp-1.2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="WEB-INF/lib/commons-digester.jar"/>
+	<classpathentry exported="true" kind="lib" path="WEB-INF/lib/commons-fileupload.jar"/>
+	<classpathentry exported="true" kind="lib" path="WEB-INF/lib/commons-jxpath-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry exported="true" kind="lib" path="WEB-INF/lib/commons-pool-1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="WEB-INF/lib/commons-validator.jar"/>
+	<classpathentry exported="true" kind="lib" path="WEB-INF/lib/dom4j.jar"/>
+	<classpathentry exported="true" kind="lib" path="WEB-INF/lib/jakarta-oro.jar"/>
+	<classpathentry exported="true" kind="lib" path="WEB-INF/lib/jdom-b9.jar"/>
+	<classpathentry exported="true" kind="lib" path="WEB-INF/lib/log4j-1.2.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="WEB-INF/lib/struts.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-codec-1.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-lang-2.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-transaction-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/geronimo-spec-jta-1.0-M1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/junit-3.8.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/activation.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/barcode4j.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/bsh-1.3.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-logging-api-1.0.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/displaytag-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/itext-1.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jasperreports-0.6.3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/poi-2.0-final-20040126.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/postgresql-8.0.309.jdbc3.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/common/lib/servlet-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/common/lib/jasper-runtime.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/common/lib/jsp-api.jar"/>
+	<classpathentry output="work" kind="src" path="work"/>
+	<classpathentry kind="output" path="WEB-INF/classes"/>
+</classpath>

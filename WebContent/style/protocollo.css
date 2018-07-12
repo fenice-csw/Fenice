@@ -1,0 +1,113 @@
+#protocollo_registrato {
+	font-size: 90%;
+	margin-top: 8px;
+	color: red;
+}
+
+#link-sezioni input {
+	position: relative;
+	top: -8pt;
+    background-color: white;
+    color: #111166;
+	padding-left: 2px;
+	padding-right: 2px;
+	margin-left: 0;
+	margin-right: 2px;
+	cursor: pointer;
+    border-width: 0px;
+    outline-style: none;
+	border:1px solid #E5E5E5;
+}
+
+#link-sezioni input.corrente {
+    font-weight: bold;
+    color: #000;
+	/*border-style: solid;
+	border-color: black;
+	border-width: 1px;*/
+}
+
+#link-sezioni a {
+    color: #111166;
+}
+
+#link-sezioni input:hover {
+    color: #cc3300;
+}
+
+#link-sezioni input.obbligatorio {
+    color: #cc3300;
+}
+
+#link-sezioni input.correnteobbligatorio {
+    font-weight: bold;
+    color: #000;
+}
+
+
+#sezioni-protocolli {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+#assegnatari td, #assegnatari th {
+	border-style: solid;
+	border-color: #111166;
+	border-width: 1px;
+	padding-left: 4px;
+	padding-right: 8px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+/*#protocollo-errori {
+
+-moz-border-radius-bottomleft:3px;
+-moz-border-radius-bottomright:3px;
+-moz-border-radius-topleft:3px;
+-moz-border-radius-topright:3px;
+
+-webkit-border-bottom-left-radius:3px;
+-webkit-border-bottom-right-radius:3px;
+-webkit-border-top-left-radius:3px;
+-webkit-border-top-right-radius:3px;
+
+border-style:solid;
+border-width:1px;
+margin:0px 8px 16px 8px;
+padding:12px;
+background-color:#FFEBE8;
+border-color:#CC0000;
+font-size: 14px;
+
+}*/
+
+/*#protocollo-errori li {
+	color: #cc3300;
+	font-size: 90%;
+}*/
+
+#messaggi li {
+	color: #cc3300;
+	font-size: 70%;
+}
+
+#oggetto {
+	color: #cc3300;
+	font-size: 10px;
+	
+	}
+
+/*[class*="span"].pull-right{
+  float: right;
+}*/
+
+.listaOggetti th{
+	background-color: #cccccc;
+	text-align: center;
+	}
+	
+.listaOggetti td{
+	background-color: #cccccc;
+	
+	}

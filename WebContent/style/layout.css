@@ -1,0 +1,252 @@
+form {
+	margin-top: 0.3em;
+}
+
+#layout {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+}
+
+div.sezione input {
+	vertical-align:middle;
+}
+
+div.sezione td {
+	padding:2px 2px 2px 2px;
+}
+
+#layout td {
+	padding: 0px;
+}
+
+#header {
+	border-bottom: 5px #cccccc solid;
+}
+
+#layout #sidebar {
+    width: 214px;
+}
+
+#layout #body {
+    padding: 6px;
+    padding-left: 12px;
+    min-width: 480px;
+    /*float: right;*/
+}
+
+#header, #footer, #sidebar, #body {
+    vertical-align: top;
+}
+
+#header span {
+    float: left;
+	font-family: "verdana", sans-serif;
+}
+
+#header span.title {
+	font-size: 200%;
+	font-wight: bold;
+	color: #0d0089;
+	margin-left: 8px;
+}
+
+#header span.aoo {
+	font-size: 80%;
+}
+
+#header span.account {
+    float: right;
+	text-align: right;
+	font-size: 80%;
+	font-family: verdana, sans-serif;
+	color: #000000;
+	background-color: #cccccc;
+	padding: 4px;
+    padding-left: 4px;
+	border: 1px #111166 solid;
+	margin-left: 0px;
+}
+
+#header img {
+    float: left;
+    margin-top: 0px;
+}
+
+#body * {
+	font-family: verdana, sans-serif;
+	color: #000000;
+	font-size: 100%
+}
+
+#body hr {
+
+	color: #111166;
+	size: 3px solid;
+
+}
+
+#body a {
+	font-family: verdana, sans-serif;
+	color: #111166;
+	font-size: 100%;
+}
+
+#body a:hover {
+	font-family: verdana, sans-serif;
+	color: #cc3300;
+	font-size: 100%;
+}
+
+#body label, #body input, #body select, #body textarea, #body span {
+	font-size: 80%;
+}
+
+#body p {
+	vertical-align: middle;
+	margin-top: 1px;
+	margin-bottom: 2px;
+}
+
+#body table {
+	border-collapse: collapse;
+}
+
+#body td, #body th {
+	vertical-align: top;
+	text-align: left;
+	padding: 2px;
+	padding-top:1 px;
+}
+
+#body td.label {
+	text-align: right;
+}
+
+#body td.labelEvidenziata {
+	text-align: right;
+	background-color: silver;	
+}
+
+#body select.evidenziato {
+	color: red;	
+}
+
+#body input.evidenziato {
+	color: red;	
+}
+
+#body td.subtable {
+	padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+input.submit, input.button{
+	-moz-border-radius-bottomleft:3px;
+	-moz-border-radius-bottomright:3px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-topright:3px;
+	
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:#C6D7F3 url(../images/fenicetheme/pulsante.png) repeat-x 5px;
+	color:#003399;
+	font-weight:bold;
+	font-size: 0.8em;
+	border:1px solid #999999;
+	cursor:pointer;
+	text-decoration:none;
+	white-space:nowrap;
+	/*margin-top: 2px;*/
+}
+
+a.button, a.button:visited{
+	-moz-border-radius-bottomleft:3px;
+	-moz-border-radius-bottomright:3px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-topright:3px;
+	
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:#C6D7F3 url(../images/fenicetheme/pulsante.png) repeat-x 5px;
+	color:#003399;
+	font-weight:bold;
+	font-size: 0.8em;
+	border:1px solid #999999;
+	cursor:pointer;
+	text-decoration:none;
+	white-space:nowrap;
+	padding: 2px 3px;
+    vertical-align: middle;
+}
+
+
+
+input.submit:hover, input.button:hover, a.button:hover{
+
+border-color:#666666;
+color:#000000 !important;
+}
+
+
+#bottoni_salva {
+
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 20px;
+}
+
+input.obbligatorio, select.obbligatorio, textarea.obbligatorio, select {
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    -moz-border-radius-bottomleft:4px;
+	-moz-border-radius-bottomright:4px;
+	-moz-border-radius-topleft:4px;
+	-moz-border-radius-topright:4px;
+    padding: 2px 5px;
+	font-size:12px;
+	height:2em;
+	padding:2px;
+}
+
+span.title {
+	position: relative;
+	top: -8pt;
+	background-color: white;
+	font-family: verdana, sans-serif;
+	color: #111166;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+span.obbligatorio {
+	color: red;
+}
+
+span.evidenziato{
+	color: red;
+}
+
+div.sezione {
+	margin-top: 18px;
+	margin-bottom: 12px;
+	padding: 8px;
+	padding-top: 0px;
+	border-style: solid;
+	border-color: #000000;
+	border-width: 1px;
+}
+#content {
+	overflow: auto;
+	height: auto;
+	margin-left: 10px;
+	background-color: #F9F9F9;
+}
+

@@ -1,0 +1,85 @@
+<project name="eprot" default="GenDistDeploy" basedir="..">
+	<description>EProt - build file</description>
+
+	<property name="fenice.base.dir" location="." /> 
+	<property name="webappname" value="feniceWeb" />
+	<property name="workdir.path" location="WebContent" />
+	<property name="metainf.path" location="META-INF" />
+	<property name="lib.webinf" value="${fenice.base.dir}/WebContent/WEB-INF/lib" />
+	<property name="resourceRootURL" value="/${webappname}/resources/" />
+	<property name="src.path" location="JavaSource" />
+	<property name="build.path" location="../temp/build" />
+	<property name="dist.path" location="../temp/dist" />
+	<property name="config.path" location="./conf" /> 
+	
+	<property file="${fenice.base.dir}/WebContent/jboss.properties" />
+	<property name="tomcat.deploy.path" location="${tomcat.home.path}/webapps" />
+	
+	
+	
+	<!-- Define aps classpath -->
+	<path id="classpath">
+		<pathelement location="${build.path}/${webappname}/WEB-INF/classes" />
+		<fileset dir="./lib/">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	
+	<!-- Clean build area -->
+	<target name="clean" description="clean up build and dist directories">
+		<delete dir="${build.path}" />
+		<delete dir="${dist.path}" />
+	</target>
+	
+	<!-- Init build area -->
+	<target name="init" depends="clean">
+		<copy todir="${build.path}/${webappname}">
+			<fileset dir="${workdir.path}" />
+		</copy>
+		<mkdir dir="${build.path}/${webappname}/WEB-INF/classes" />
+		<mkdir dir="${build.path}/${webappname}/META-INF" />
+		<copy todir="${build.path}/${webappname}/META-INF">
+					<fileset dir="${metainf.path}" />
+		</copy>
+		<copy todir="${build.path}/${webappname}/WEB-INF/classes">
+					<fileset dir="${eprot.base.dir}/bin" />
+		</copy>
+	</target>
+	
+	<!-- generate the distribution -->
+	<target name="dist" depends="init" description="generate the distribution">
+		<copy todir="${dist.path}/${webappname}">
+			<fileset dir="${build.path}/${webappname}" />
+		</copy>
+	</target>
+	
+	<target name="WAR build" depends="dist">
+		<echo message="Packaging the WAR...." />
+		<delete file="${dist.path}/${webappname}.war" />
+		<jar jarfile="${dist.path}/${webappname}.war">
+			<fileset dir="${build.path}/${webappname}" />
+		</jar> 		
+	</target>
+	
+	<!-- deploy the distribution -->
+	<target name="deploy">
+		<copy todir="${tomcat.deploy.path}/${webappname}" overwrite="true">
+			<fileset dir="${dist.path}/${webappname}" />
+		</copy>
+		<copy todir="${tomcat.conf.deploy.path}" overwrite="true">
+			<fileset dir="${config.path}" />
+		</copy>
+	</target>
+	
+	<!-- WARNING! Use this task with caution -->
+	<!-- Undeploy the application. Delete web app from container -->
+	<target name="undeploy">
+		<delete dir="${tomcat.deploy.path}/${webappname}" includeEmptyDirs="true"/>
+		<delete file="${tomcat.conf.deploy.path}/${webappname}.xml" />
+	</target>
+	
+	<target name="GenDistDeploy" description="Gen - Dist - Deploy" depends="dist, deploy">
+			<echo message="Generate, dist e deploy done!" />
+	</target>	
+	
+</project>

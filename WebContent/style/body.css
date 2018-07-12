@@ -1,0 +1,34 @@
+#body
+
+.sup {
+	
+	background-color: #afbbe0;
+        font-family: Verdana, Arial; text-align:left; color: white; font-size: 12px;
+
+}
+.center {
+	border-bottom-style: solid;	
+	background-color: #afbbe0;
+	font-family: Verdana, Arial; text-align:right; color: white; font-size: 10px;
+}
+.down {
+	border-bottom-style: solid;	
+	background-color: #afbbe0;
+	font-family: Verdana, Arial; text-align:left; color: white; font-size: 10px;
+}
+
+A:link {
+	TEXT-DECORATION: none
+}
+A:visited {
+	TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #c4df9b
+}
+A:visited {
+	COLOR: #c4df9b
+}
+A:hover {
+	COLOR: #ffffff
+}

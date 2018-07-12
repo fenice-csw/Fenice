@@ -1,0 +1,32 @@
+#sidemenu {
+	background-color: #006666;
+	padding-top: 100px;
+	padding-bottom: 0px;
+	background-image: url("../images/menu/curva_up.gif");
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+
+#sidemenu_aux {
+	background-image: url("../images/menu/curva_down.gif");
+	background-position: bottom left;
+	background-repeat: no-repeat;
+	padding-bottom: 100px;
+}
+
+#sidemenu a {
+	font-family: verdana, sans-serif;
+	font-size: 75%;
+	width: 214px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	text-indent: 6px;
+	display: block;
+	color: #ffffff;
+	white-space: nowrap;
+}
+	
+#sidemenu a:hover {
+	background-color: #FFFFFF;
+	color: #000000;
+}

@@ -1,0 +1,16 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+  
+ <link rel='stylesheet' type='text/css' href='$ctxPath/style/template/bbccaa.css' />
+
+  <title>TEMPLATE ULL</title>
+ 
+</head>
+<body>
+		<div id="testo">$testo</div>
+	
+</body>
+</html>

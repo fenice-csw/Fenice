@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:NotificaEsitoCommittente xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns:ns3="http://www.fatturapa.gov.it/sdi/messaggi/v1.0" versione="1.0">
+  <IdentificativoSdI>$IdentificativoSDI</IdentificativoSdI>
+  <RiferimentoFattura>
+    <NumeroFattura>$fattura</NumeroFattura>
+    <AnnoFattura>$anno</AnnoFattura>
+  </RiferimentoFattura>
+  <Esito>$esito</Esito>
+  <Descrizione>$descrizione</Descrizione>
+</ns3:NotificaEsitoCommittente>
+	

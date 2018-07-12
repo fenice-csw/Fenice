@@ -1,0 +1,26 @@
+#body #navbar {
+	width: 100%;
+	text-align: left;
+	font-weight: bold;
+	font-size: 100%;
+	padding: 2px;
+	border-bottom: 2px solid #006666;
+}
+
+#body #navbar a {
+	font-weight: bold;
+	font-size: 12px;
+	color: #006666;
+}
+
+#body #navbar a:hover {
+	font-weight: bold;
+	font-size: 12px;
+	color: #cc3300;
+}
+
+#body #navbar span {
+	font-weight: normal;
+	font-size: 80%;
+	color: #333333;
+}

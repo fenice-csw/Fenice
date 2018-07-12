@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="StrutsProcess">
+ <PROCESS-ITEM ID="#page#documentale#documentiCondivisi" NAME="action0"
+  PATH="/page/documentale/documentiCondivisi" SHAPE="48,17,0,0"
+  TITLE="documentiCondivisiForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/documentale/documentiCondivisi.jsp"
+   TARGET="page0" TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="visualizzaDocumento" NAME="forward1"
+   PATH="/page/documentale/documentoView.do" TARGET="action2"
+   TITLE="visualizzaDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#documentale#cerca" NAME="action1"
+  PATH="/page/documentale/cerca" SHAPE="48,449,0,0"
+  TITLE="documentoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/documentale/ricerca.jsp" TARGET="page1"
+   TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="tornaFascicolo" NAME="forward1"
+   PATH="/page/fascicolo.do?ricarica=true" TARGET="action7"
+   TITLE="tornaFascicolo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="visualizzaDocumento" NAME="forward2"
+   PATH="/page/documentale/documentoView.do" TARGET="action2"
+   TITLE="visualizzaDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#documentale#documentoView" NAME="action2"
+  PATH="/page/documentale/documentoView" SHAPE="592,17,0,0"
+  TITLE="documentoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward0"
+   PATH="/WEB-INF/pages/documentale/documentoView.jsp" TARGET="page2"
+   TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="protocollazione" NAME="forward1"
+   PATH="/page/protocollo/uscita/archivio/documenti.do" TARGET="action8"
+   TITLE="protocollazione" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="inviaDocumento" NAME="forward2"
+   PATH="/page/documentale/inviaDocumento.do?btnAnnullaAction=true"
+   TARGET="action6" TITLE="inviaDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="visualizzaClassificaDocumento"
+   NAME="forward3"
+   PATH="/WEB-INF/pages/documentale/classificaDocumento.jsp"
+   TARGET="page3" TITLE="visualizzaClassificaDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="viewDocumento" NAME="forward4"
+   PATH="/WEB-INF/pages/documentale/documentoView.jsp" TARGET="page2"
+   TITLE="viewDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="paginaMessaggio" NAME="forward5"
+   PATH="/page/documentale/cartelle.do" TARGET="action5"
+   TITLE="paginaMessaggio" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="visualizzaFascicolaDocumento" NAME="forward6"
+   PATH="/WEB-INF/pages/documentale/fascicolaDocumento.jsp"
+   TARGET="page4" TITLE="visualizzaFascicolaDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit" NAME="forward7"
+   PATH="/WEB-INF/pages/documentale/documento.jsp" TARGET="page5"
+   TITLE="edit" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="storiaDocumento" NAME="forward8"
+   PATH="/WEB-INF/pages/documentale/storia.jsp" TARGET="page6"
+   TITLE="storiaDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="spostaDocumento" NAME="forward9"
+   PATH="/page/documentale/spostaDocumento.do" TARGET="action3"
+   TITLE="spostaDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="modificaDocumento" NAME="forward10"
+   PATH="/page/documentale/documento.do" TARGET="action4"
+   TITLE="modificaDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#documentale#spostaDocumento" NAME="action3"
+  PATH="/page/documentale/spostaDocumento" SHAPE="320,849,0,0"
+  TITLE="cartelleForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="nuova" NAME="forward0"
+   PATH="/WEB-INF/pages/documentale/spostaDocumentoCreaCartella.jsp"
+   TARGET="page7" TITLE="nuova" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward1"
+   PATH="/WEB-INF/pages/documentale/spostaDocumento.jsp" TARGET="page8"
+   TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="visualizzaDocumento" NAME="forward2"
+   PATH="/page/documentale/documentoView.do" TARGET="action2"
+   TITLE="visualizzaDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#documentale#documento" NAME="action4"
+  PATH="/page/documentale/documento" SHAPE="48,833,0,0"
+  TITLE="documentoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="erroreDownload" NAME="forward0"
+   PATH="/WEB-INF/page/errore.jsp" TARGET="page9" TITLE="erroreDownload"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="paginaMessaggio" NAME="forward1"
+   PATH="/page/documentale/cartelle.do" TARGET="action5"
+   TITLE="paginaMessaggio" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="edit" NAME="forward2"
+   PATH="/WEB-INF/pages/documentale/documento.jsp" TARGET="page5"
+   TITLE="edit" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="visualizzaDocumento" NAME="forward3"
+   PATH="/page/documentale/documentoView.do?documentoRegistrato=true"
+   TARGET="action2" TITLE="visualizzaDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="cercaFascicolo" NAME="forward4"
+   PATH="/page/fascicoli.do?btnAnnullaRicerca=true" TARGET="action9"
+   TITLE="cercaFascicolo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuovoFascicolo" NAME="forward5"
+   PATH="/page/fascicolo.do?btnNuovo=true" TARGET="action10"
+   TITLE="nuovoFascicolo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="fascicolaDocumento" NAME="forward6"
+   PATH="/WEB-INF/pages/documentale/fascicolaDocumento.jsp"
+   TARGET="page4" TITLE="fascicolaDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward7"
+   PATH="/WEB-INF/pages/documentale/documento.jsp" TARGET="page5"
+   TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="classificaDocumento" NAME="forward8"
+   PATH="/WEB-INF/pages/documentale/classificaDocumento.jsp"
+   TARGET="page3" TITLE="classificaDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="annullaAction" NAME="forward9"
+   PATH="/page/documentale/documentoView.do" TARGET="action2"
+   TITLE="annullaAction" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="viewDocumento" NAME="forward10"
+   PATH="/WEB-INF/pages/documentale/documentoView.jsp" TARGET="page2"
+   TITLE="viewDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="ripetiDati" NAME="forward11"
+   PATH="/page/protocollo/ripetiDati.do" TARGET="action11"
+   TITLE="ripetiDati" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="spostaDocumento" NAME="forward12"
+   PATH="/page/documentale/spostaDocumento.do" TARGET="action3"
+   TITLE="spostaDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="tornaFascicolo" NAME="forward13"
+   PATH="/page/fascicolo.do?ricarica=true" TARGET="action15"
+   TITLE="tornaFascicolo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#documentale#cartelle" NAME="action5"
+  PATH="/page/documentale/cartelle" SHAPE="864,849,0,0"
+  TITLE="cartelleForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="rinominaCartella" NAME="forward0"
+   PATH="/WEB-INF/pages/documentale/aggiornaCartella.jsp"
+   TARGET="page10" TITLE="rinominaCartella" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuova" NAME="forward1"
+   PATH="/WEB-INF/pages/documentale/creaCartella.jsp" TARGET="page11"
+   TITLE="nuova" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward2"
+   PATH="/WEB-INF/pages/documentale/cartelle.jsp" TARGET="page12"
+   TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuovoDocumento" NAME="forward3"
+   PATH="/page/documentale/documento.do?annullaAction=true"
+   TARGET="action4" TITLE="nuovoDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="visualizzaDocumento" NAME="forward4"
+   PATH="/page/documentale/documentoView.do" TARGET="action2"
+   TITLE="visualizzaDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#page#documentale#inviaDocumento" NAME="action6"
+  PATH="/page/documentale/inviaDocumento" SHAPE="48,625,0,0"
+  TITLE="documentoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="cercaPersonaGiuridica" NAME="forward0"
+   PATH="/page/protocollo/anagrafica/persona-giuridica/cerca.do"
+   TARGET="action12" TITLE="cercaPersonaGiuridica" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="input" NAME="forward1"
+   PATH="/WEB-INF/pages/documentale/invioProtocollo.jsp" TARGET="page13"
+   TITLE="input" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="cercaPersonaFisica" NAME="forward2"
+   PATH="/page/protocollo/anagrafica/persona-fisica/cerca.do"
+   TARGET="action13" TITLE="cercaPersonaFisica" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="visualizzaDocumento" NAME="forward3"
+   PATH="/page/documentale/documentoView.do" TARGET="action2"
+   TITLE="visualizzaDocumento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page0"
+  PATH="/WEB-INF/pages/documentale/documentiCondivisi.jsp"
+  SHAPE="320,34,0,0" SUBTYPE="jsp" TITLE="documentiCondivisi.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page1"
+  PATH="/WEB-INF/pages/documentale/ricerca.jsp" SHAPE="320,466,0,0"
+  SUBTYPE="jsp" TITLE="ricerca.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page2"
+  PATH="/WEB-INF/pages/documentale/documentoView.jsp"
+  SHAPE="864,466,0,0" SUBTYPE="jsp" TITLE="documentoView.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#page#protocollo#uscita#archivio#documenti"
+  NAME="action8" PATH="/page/protocollo/uscita/archivio/documenti"
+  SHAPE="864,33,0,0" SUBTYPE="unknown" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page3"
+  PATH="/WEB-INF/pages/documentale/classificaDocumento.jsp"
+  SHAPE="864,1458,0,0" SUBTYPE="jsp" TITLE="classificaDocumento.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page4"
+  PATH="/WEB-INF/pages/documentale/fascicolaDocumento.jsp"
+  SHAPE="864,642,0,0" SUBTYPE="jsp" TITLE="fascicolaDocumento.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page5"
+  PATH="/WEB-INF/pages/documentale/documento.jsp" SHAPE="864,1346,0,0"
+  SUBTYPE="jsp" TITLE="documento.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page6" PATH="/WEB-INF/pages/documentale/storia.jsp"
+  SHAPE="864,1570,0,0" SUBTYPE="jsp" TITLE="storia.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page7"
+  PATH="/WEB-INF/pages/documentale/spostaDocumentoCreaCartella.jsp"
+  SHAPE="592,834,0,0" SUBTYPE="jsp"
+  TITLE="spostaDocumentoCreaCartella.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page8"
+  PATH="/WEB-INF/pages/documentale/spostaDocumento.jsp"
+  SHAPE="592,1330,0,0" SUBTYPE="jsp" TITLE="spostaDocumento.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page9" PATH="/WEB-INF/page/errore.jsp"
+  SHAPE="320,1346,0,0" SUBTYPE="jsp" TITLE="errore.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#page#fascicoli" NAME="action9"
+  PATH="/page/fascicoli" SHAPE="320,1457,0,0" SUBTYPE="unknown"
+  TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#page#protocollo#ripetiDati" NAME="action11"
+  PATH="/page/protocollo/ripetiDati" SHAPE="320,1681,0,0"
+  SUBTYPE="unknown" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page10"
+  PATH="/WEB-INF/pages/documentale/aggiornaCartella.jsp"
+  SHAPE="1136,834,0,0" SUBTYPE="jsp" TITLE="aggiornaCartella.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page11"
+  PATH="/WEB-INF/pages/documentale/creaCartella.jsp"
+  SHAPE="1136,1330,0,0" SUBTYPE="jsp" TITLE="creaCartella.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page12"
+  PATH="/WEB-INF/pages/documentale/cartelle.jsp" SHAPE="1136,626,0,0"
+  SUBTYPE="jsp" TITLE="cartelle.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#page#protocollo#anagrafica#persona-giuridica#cerca"
+  NAME="action12"
+  PATH="/page/protocollo/anagrafica/persona-giuridica/cerca"
+  SHAPE="320,1793,0,0" SUBTYPE="unknown" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page13"
+  PATH="/WEB-INF/pages/documentale/invioProtocollo.jsp"
+  SHAPE="320,1906,0,0" SUBTYPE="jsp" TITLE="invioProtocollo.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#page#protocollo#anagrafica#persona-fisica#cerca"
+  NAME="action13"
+  PATH="/page/protocollo/anagrafica/persona-fisica/cerca"
+  SHAPE="320,2017,0,0" SUBTYPE="unknown" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#page#fascicolo" NAME="action10"
+  PATH="/page/fascicolo" SHAPE="256,1057,0,0" SUBTYPE="unknown"
+  TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#page#fascicolo" NAME="action15"
+  PATH="/page/fascicolo" SHAPE="464,945,0,0" SUBTYPE="unknown"
+  TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#page#fascicolo" NAME="action7"
+  PATH="/page/fascicolo" SHAPE="256,561,0,0" SUBTYPE="unknown"
+  TYPE="action" model-entity="StrutsProcessItem"/>
+</PROCESS>

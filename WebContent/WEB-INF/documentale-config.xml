@@ -1,0 +1,244 @@
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+	<!--
+		This is the Struts configuration file for the example application,
+		using the proposed new syntax.
+	-->
+<struts-config>
+	<!--
+		========== Form Bean Definitions ===================================
+	-->
+	<form-beans>
+		<!-- Logon form bean -->
+
+		<form-bean name="cartelleForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.documentale.CartelleForm" />
+		<form-bean name="documentiCondivisiForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.documentale.DocumentiCondivisiForm" />
+		<form-bean name="documentoForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.documentale.DocumentoForm" />
+		<form-bean name="destinatariInvioForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.documentale.DestinatariInvioForm" />
+		<form-bean name="editorForm"
+			type="it.compit.fenice.mvc.presentation.actionform.documentale.EditorForm" />
+		<form-bean name="storiaEditorForm"
+			type="it.compit.fenice.mvc.presentation.actionform.documentale.StoriaEditorForm" />
+		<form-bean name="avvocatoGeneraleForm"
+			type="it.compit.fenice.mvc.presentation.actionform.documentale.AvvocatoGeneraleForm" />
+	</form-beans>
+
+	<!-- Documentale -->
+	<action-mappings>
+
+		<action path="/page/documentale/cartelle"
+			type="it.finsiel.siged.mvc.presentation.action.documentale.CartelleAction"
+			name="cartelleForm" scope="session" validate="false">
+			<forward name="input" path="/WEB-INF/pages/documentale/cartelle.jsp" />
+			<forward name="nuova" path="/WEB-INF/pages/documentale/creaCartella.jsp" />
+			<forward name="nuovoDocumento"
+				path="/page/documentale/documento.do?annullaAction=true" />
+			<forward name="nuovoDocumentoEditor"
+				path="/page/documentale/editor.do?annullaAction=true" />
+			<forward name="visualizzaDocumento" path="/page/documentale/documentoView.do" />
+			<forward name="rinominaCartella"
+				path="/WEB-INF/pages/documentale/aggiornaCartella.jsp" />
+		</action>
+		
+		<!-- EDITOR -->
+		<action path="/page/documentale/editor"
+			type="it.compit.fenice.mvc.presentation.action.documentale.EditorAction"
+			name="editorForm" input="input" scope="session" validate="false">
+			<forward name="input" path="/WEB-INF/pages/documentale/editor/listaEditor.jsp" />
+			<forward name="edit" path="/WEB-INF/pages/documentale/editor/editor.jsp" />
+			<forward name="indietro" path="/page/documentale/editor.do" redirect="true"/>
+			<forward name="inviaDocumento" path="/page/documentale/inviaDocumentoEditor.do" />
+			<forward name="protocollazioneUscita"
+				path="/page/protocollo/uscita/documento.do?protocolla=true" />
+			<forward name="protocollazionePostaInterna"
+				path="/page/protocollo/posta_interna/documento.do" />
+			<forward name="storiaEditor" path="/page/editor/storia.do" />
+			<forward name="template" path="/page/documentale/daTemplate.do" />
+		</action>
+		
+		<action path="/page/documentale/letteraRicorsoULL"
+			type="it.compit.fenice.mvc.presentation.action.documentale.EditorAction"
+			name="editorForm" input="input" scope="session" validate="false">
+			<forward name="input" path="/page/documentale/letteraRicorsoULL.do?btnNuovoDocumentoAction=true" />
+			<forward name="edit" path="/WEB-INF/pages/documentale/editor/letteraRicorsoULL.jsp" />
+			<forward name="indietro" path="/page/procedimento.do"/>
+			<forward name="inviaDocumento" path="/page/documentale/inviaDocumentoEditor.do?btnInvioProtocollo=true" />
+			<forward name="protocollazioneUscita"
+				path="/page/protocollo/uscita/documento.do?protocolla=true" />
+			<forward name="storiaEditor" path="/page/editor/storia.do" />
+		</action>
+		
+		<action path="/page/documentale/inviaDocumentoEditor"
+			type="it.compit.fenice.mvc.presentation.action.documentale.InvioDocumentoEditorAction"
+			name="editorForm" input="input" scope="session" validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/documentale/editor/invioEditorToProtocollo.jsp" />
+			<forward name="cercaPersonaFisica"
+				path="/page/protocollo/anagrafica/persona-fisica/cerca.do" />
+			<forward name="cercaPersonaGiuridica"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do" />
+			<forward name="indietro" path="/page/documentale/editor.do" redirect="true"/>
+			<forward name="indietroProcedimento" path="/page/procedimento.do"/>
+			<forward name="cercaFascicolo" path="/page/fascicoli.do?btnCercaFascicoli=true" />
+			<forward name="nuovoFascicolo" path="/page/fascicolo.do?btnNuovo=true" />
+		</action>
+		
+		<action path="/page/documentale/daTemplate"
+			type="it.compit.fenice.mvc.presentation.action.documentale.CreaDocumentoDaTemplateAction"
+			name="editorForm" input="input" scope="session" validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/documentale/editor/daTemplate.jsp" />
+			<forward name="cercaPersonaFisica"
+				path="/page/protocollo/anagrafica/persona-fisica/cerca.do" />
+			<forward name="cercaPersonaGiuridica"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do" />
+			<forward name="indietro" path="/page/documentale/daTemplate.do"/>
+			<forward name="indietroProcedimento" path="/page/procedimento.do"/>
+
+			<forward name="lista" path="/page/protocollo/dashboard/showDocumentiFirma.do" />
+			<forward name="protocollazioneUscita" path="/page/protocollo/uscita/documento.do?protocolla=true" />
+			<forward name="postaInterna" path="/page/protocollo/posta_interna/documento.do?protocolla=true" />
+			<forward name="cercaFascicolo" path="/page/fascicoli.do?btnCercaFascicoli=true" />
+			<forward name="nuovoFascicolo" path="/page/fascicolo.do?btnNuovo=true" />
+			<forward name="success" path="/WEB-INF/pages/documentale/editor/success.jsp" />
+			<forward name="lavoratoAvvocatoGenerale" path="/WEB-INF/pages/documentale/editor/listaAvvocatoGenerale.jsp" />
+		</action>
+		
+		
+		<action path="/page/documentale/avvocatoGenerale"
+			type="it.compit.fenice.mvc.presentation.action.documentale.AvvocatoGeneraleAction"
+			name="avvocatoGeneraleForm" input="input" scope="session" validate="false">
+			<forward name="lista" path="/WEB-INF/pages/documentale/editor/listaAvvocatoGenerale.jsp" />
+		</action>
+		
+		
+		
+		<action input="input" name="storiaEditorForm" path="/page/editor/storia"
+			scope="request"
+			type="it.compit.fenice.mvc.presentation.action.documentale.StoriaEditorAction">
+			<forward name="input" path="/WEB-INF/pages/documentale/editor/storiaEditor.jsp" />
+		</action>
+		<!--  -->
+		
+		
+
+
+		<action path="/page/documentale/spostaDocumento"
+			type="it.finsiel.siged.mvc.presentation.action.documentale.SpostaCartelleAction"
+			name="cartelleForm" scope="session" validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/documentale/spostaDocumento.jsp" />
+			<forward name="nuova"
+				path="/WEB-INF/pages/documentale/spostaDocumentoCreaCartella.jsp" />
+			<forward name="visualizzaDocumento" path="/page/documentale/documentoView.do" />
+		</action>
+
+		<action path="/page/documentale/inviaDocumentoUtente"
+			type="it.finsiel.siged.mvc.presentation.action.documentale.SpostaCartelleAction"
+			name="cartelleForm" scope="session" validate="false">
+			<forward name="input" path="/WEB-INF/pages/documentale/inviaDocumento.jsp" />
+			<forward name="visualizzaDocumento" path="/page/documentale/documentoView.do" />
+			<forward name="success" path="/WEB-INF/pages/documentale/success.jsp" />
+		</action>
+
+
+
+
+		<action path="/page/documentale/documentiCondivisi"
+			type="it.finsiel.siged.mvc.presentation.action.documentale.DocumentiCondivisiAction"
+			name="documentiCondivisiForm" scope="request" validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/documentale/documentiCondivisi.jsp" />
+			<forward name="visualizzaDocumento" path="/page/documentale/documentoView.do" />
+		</action>
+
+		<action path="/page/documentale/documento"
+			type="it.finsiel.siged.mvc.presentation.action.documentale.DocumentoAction"
+			name="documentoForm" input="input" scope="session" validate="false">
+			<forward name="input" path="/WEB-INF/pages/documentale/documento.jsp" />
+			<forward name="edit" path="/WEB-INF/pages/documentale/documento.jsp" />
+			<forward name="paginaMessaggio" path="/page/documentale/cartelle.do" />
+			<forward name="viewDocumento" path="/WEB-INF/pages/documentale/documentoView.jsp" />
+			<forward name="classificaDocumento"
+				path="/WEB-INF/pages/documentale/classificaDocumento.jsp" />
+			<forward name="fascicolaDocumento"
+				path="/WEB-INF/pages/documentale/fascicolaDocumento.jsp" />
+			<forward name="tornaArchivio"
+				path="/page/ricerca_deposito.do" />
+			<forward name="annullaAction" path="/page/documentale/documentoView.do" />
+			<forward name="erroreDownload" path="/WEB-INF/page/errore.jsp" />
+			<forward name="visualizzaDocumento"
+				path="/page/documentale/documentoView.do?documentoRegistrato=true"
+				redirect="true" />
+			<forward name="cercaFascicolo" path="/page/fascicoli.do?btnAnnullaRicerca=true" />
+			<forward name="nuovoFascicolo" path="/page/fascicolo.do?btnNuovo=true" />
+			<forward name="tornaFascicolo" path="/page/fascicolo.do?ricarica=true" />
+			<forward name="inviaDocumentoUtente" path="/page/documentale/inviaDocumentoUtente.do" />
+			<forward name="spostaDocumento" path="/page/documentale/spostaDocumento.do" />
+			<forward name="ripetiDati" path="/page/protocollo/ripetiDati.do" />
+			<forward name="viewDocumentoProcedimento" path="/page/documentale/documentoView.do" />
+		</action>
+
+
+		<action path="/page/documentale/documentoView"
+			type="it.finsiel.siged.mvc.presentation.action.documentale.DocumentoAction"
+			name="documentoForm" input="input" scope="session" validate="false">
+			<forward name="input" path="/WEB-INF/pages/documentale/documentoView.jsp" />
+			<forward name="edit" path="/WEB-INF/pages/documentale/documento.jsp" />
+			<forward name="paginaMessaggio" path="/page/documentale/cartelle.do" />
+			<forward name="viewDocumento" path="/WEB-INF/pages/documentale/documentoView.jsp" />
+			<forward name="storiaDocumento" path="/WEB-INF/pages/documentale/storia.jsp" />
+			<forward name="modificaDocumento" path="/page/documentale/documento.do"
+				redirect="true" />
+			<forward name="fascicolaDocumento"
+				path="/WEB-INF/pages/documentale/fascicolaDocumento.jsp" />
+			<forward name="visualizzaClassificaDocumento"
+				path="/WEB-INF/pages/documentale/classificaDocumento.jsp" />
+			<forward name="visualizzaFascicolaDocumento"
+				path="/WEB-INF/pages/documentale/fascicolaDocumento.jsp" />
+			<forward name="spostaDocumento" path="/page/documentale/spostaDocumento.do" />
+			<forward name="inviaDocumentoUtente" path="/page/documentale/inviaDocumentoUtente.do" />
+			<forward name="inviaDocumento"
+				path="/page/documentale/inviaDocumento.do?btnAnnullaAction=true" />
+			<forward name="inviaRepertorio"
+				path="/page/documentale/inviaRepertorio.do" />
+			<forward name="protocollazione" path="/page/protocollo/uscita/archivio/documenti.do" />
+		</action>
+
+		<action path="/page/documentale/cerca"
+			type="it.finsiel.siged.mvc.presentation.action.documentale.RicercaAction"
+			name="documentoForm" input="input" scope="session" validate="false">
+			<forward name="input" path="/WEB-INF/pages/documentale/ricerca.jsp" />
+			<forward name="visualizzaDocumento" path="/page/documentale/documentoView.do" />
+			<forward name="tornaFascicolo" path="/page/fascicolo.do?ricarica=true" />
+		</action>
+
+		<action path="/page/documentale/inviaDocumento"
+			type="it.finsiel.siged.mvc.presentation.action.documentale.InvioDocumentoAction"
+			name="documentoForm" input="input" scope="session" validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/documentale/invioProtocollo.jsp" />
+			<forward name="visualizzaDocumento" path="/page/documentale/documentoView.do" />
+			<forward name="cercaPersonaFisica"
+				path="/page/protocollo/anagrafica/persona-fisica/cerca.do" />
+			<forward name="cercaPersonaGiuridica"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do" />
+		</action>
+
+		<action path="/page/documentale/inviaRepertorio"
+			type="it.compit.fenice.mvc.presentation.action.documentale.InvioRepertorioAction"
+			name="documentoForm" input="input" scope="session" validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/documentale/inviaRepertorio.jsp" />
+			<forward name="visualizzaDocumento" path="/page/documentale/documentoView.do" />
+		    <forward name="visualizzaCartella" path="/page/documentale/cartelle.do" />
+		</action>
+
+	</action-mappings>
+
+
+
+</struts-config>

@@ -1,0 +1,396 @@
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+	<!--
+		This is the Struts configuration file for the example application,
+		using the proposed new syntax.
+	-->
+<struts-config>
+	<!--
+		========== Form Bean Definitions ===================================
+	-->
+	<form-beans>
+		<!-- Logon form bean -->
+
+		<form-bean name="spedizioneForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.SpedizioneForm" />
+		<form-bean name="profiloForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.ProfiloForm" />
+		<form-bean name="profiloUtenteForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.org.utenti.ProfiloUtenteForm" />
+		<form-bean name="cercaUtentiForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.org.utenti.CercaUtentiForm" />
+		<form-bean name="ufficioForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.org.utenti.UfficioForm" />
+		<form-bean name="areaOrganizzativaForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.org.aoo.AreaOrganizzativaForm" />
+		<form-bean name="tipoDocumentoForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.TipoDocumentoForm" />
+		<form-bean name="tipoProcedimentoForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.TipoProcedimentoForm" />
+		<form-bean name="casellaEmailForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.CasellaEmailForm" />
+		<form-bean name="registroForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.registro.RegistroForm" />
+		<form-bean name="amministrazioneForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.AmministrazioneForm" />
+		<form-bean name="scartoProtocolliForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.ScartoProtocolliForm" />
+		<form-bean name="archivioScartoProtocolliForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.RicercaScartoProtocolliForm" />
+		<form-bean name="aggiornaCRLForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.firmadigitale.AggiornaCRLForm" />
+		<form-bean name="listaCAForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.firmadigitale.ListaCAForm" />
+		<form-bean name="certificateAuthorityForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.firmadigitale.CertificateAuthorityForm" />
+		<form-bean name="acquisizioneMassivaForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.AcquisizioneMassivaForm" />
+		<form-bean name="titoloDestinatarioForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.TitoloDestinatarioForm" />
+		<form-bean name="protocolloDaScartareForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.ReportProtocolliDaScartareForm" />
+		<form-bean name="migrazioneDatiForm"
+			type="it.finsiel.siged.mvc.presentation.actionform.amministrazione.migrazionedati.MigrazioneDatiForm" />
+		<form-bean name="oggettiForm"
+			type="it.flosslab.mvc.presentation.actionform.amministrazione.OggettiActionForm" />
+		<form-bean name="importTitolarioForm"
+			type="it.flosslab.mvc.presentation.actionform.amministrazione.ImportTitolarioActionForm" />
+		<form-bean name="caricaForm"
+			type="it.compit.fenice.mvc.presentation.actionform.amministrazione.org.utenti.CaricaForm" />
+	</form-beans>
+
+	<!--
+		========== Action Mapping Definitions ==============================
+	-->
+	<action-mappings>
+
+		<action path="/page/amministrazione/carica"
+			type="it.compit.fenice.mvc.presentation.action.amministrazione.org.utenti.CaricaAction"
+			name="caricaForm" validate="true" input="input" scope="session">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/organizzazione/utenti/carica.jsp" />
+			<forward name="storia"
+				path="/WEB-INF/pages/amministrazione/organizzazione/utenti/storiaCarica.jsp" />
+			<forward name="success"
+				path="/page/amministrazione/organizzazione/ufficio.do?indietroCaricaAction=true" />
+		</action>
+
+		<action path="/page/amministrazione/titolario"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.TitolarioAction"
+			name="titolarioForm" validate="true" input="aggiorna" scope="session">
+			<forward name="edit" path="/page/amministrazione/titolario.do" />
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/titolario/titolario.jsp" />
+			<forward name="aggiorna"
+				path="/WEB-INF/pages/amministrazione/titolario/formAggiornamento.jsp" />
+			<forward name="associa"
+				path="/WEB-INF/pages/amministrazione/titolario/associaUffici.jsp" />
+			<forward name="sposta"
+				path="/WEB-INF/pages/amministrazione/titolario/sposta.jsp" />
+			<forward name="storia"
+				path="/WEB-INF/pages/amministrazione/titolario/storiaTitolario.jsp" />
+			<forward name="uffici"
+				path="/page/amministrazione/titolario.do?btnAssocia=true" />
+			<forward name="cercaAmministrazione"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do" />
+		</action>
+
+		<action path="/page/amministrazione/spostaTitolario"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.TitolarioAction"
+			name="titolarioForm" validate="true" input="input" scope="session">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/titolario/sposta.jsp" />
+			<forward name="annulla"
+				path="/page/amministrazione/titolario.do?impostaTitolarioAction=true" />
+		</action>
+
+		<action path="/page/amministrazione/titoliDestinatario"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.TitoloDestinatarioAction"
+			name="titoloDestinatarioForm" input="input" scope="request" validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/destinatarioTitoli/titoliDestinatarioElenco.jsp" />
+			<forward name="titolo"
+				path="/WEB-INF/pages/amministrazione/destinatarioTitoli/titoloDestinatario.jsp" />
+		</action>
+
+		<action path="/page/amministrazione/scarto"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.ScartoProtocolliAction"
+			name="scartoProtocolliForm" input="input" scope="request" validate="false">
+			<forward name="input" path="/WEB-INF/pages/amministrazione/scarto.jsp" />
+		</action>
+
+		<!-- Amministrazione -->
+
+		<action path="/page/amministrazione/mezzispedizione/spedizione"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.SpedizioneAction"
+			name="spedizioneForm" input="input" scope="request" validate="false">
+			<forward name="edit"
+				path="/WEB-INF/pages/amministrazione/mezzispedizione/formAggiornamento.jsp" />
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/mezzispedizione/spedizione.jsp" />
+		</action>
+
+		<action path="/page/amministrazione/profilo"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.ProfiloAction"
+			name="profiloForm" input="input" scope="session" validate="true">
+			<forward name="edit"
+				path="/WEB-INF/pages/amministrazione/organizzazione/profili/profili.jsp" />
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/organizzazione/profili/profili.jsp" />
+		</action>
+
+		<action path="/page/amministrazione/tipidocumento"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.TipoDocumentoAction"
+			name="tipoDocumentoForm" input="edit" scope="request" validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/tipidocumento/tipoDocumento.jsp" />
+			<forward name="edit"
+				path="/WEB-INF/pages/amministrazione/tipidocumento/formAggiornamento.jsp" />
+		</action>
+
+		<action path="/page/amministrazione/tipiProcedimento"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.TipoProcedimentoAction"
+			name="tipoProcedimentoForm" input="edit" scope="session" validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/tipiProcedimento/cerca.jsp" />
+			<forward name="edit"
+				path="/WEB-INF/pages/amministrazione/tipiProcedimento/formAggiornamento.jsp" />
+			<forward name="cercaAmministrazione"
+				path="/page/protocollo/anagrafica/persona-giuridica/cerca.do" />
+		</action>
+
+		<action path="/page/amministrazione/organizzazione/utenti/profilo"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.org.utenti.ProfiloUtenteAction"
+			name="profiloUtenteForm" input="input" scope="session" validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/organizzazione/utenti/profilo.jsp" />
+			<forward name="success"
+				path="/page/amministrazione/organizzazione/utenti/cerca.do?btnAnnulla=true" />
+			<forward name="permessi"
+				path="/WEB-INF/pages/amministrazione/organizzazione/utenti/permessi.jsp" />
+			<forward name="indietro"
+				path="/page/amministrazione/organizzazione/utenti/cerca.do" />
+			<forward name="storia"
+				path="/WEB-INF/pages/amministrazione/organizzazione/utenti/storiaUtenteCarica.jsp" />
+		</action>
+
+		<action path="/page/amministrazione/organizzazione/utenti/cerca"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.org.utenti.CercaUtentiAction"
+			name="cercaUtentiForm" input="input" scope="request" validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/organizzazione/utenti/cerca.jsp" />
+			<forward name="nuovo"
+				path="/page/amministrazione/organizzazione/utenti/profilo.do?btnAnnulla=true" />
+		</action>
+
+		<action path="/page/amministrazione/organizzazione/selezionaUfficio"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.org.utenti.UfficioAction"
+			name="ufficioForm" input="input" scope="session" validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/organizzazione/uffici/cerca.jsp" />
+			<forward name="sposta"
+				path="/WEB-INF/pages/amministrazione/organizzazione/uffici/sposta.jsp" />
+			<forward name="edit"
+				path="/WEB-INF/pages/amministrazione/organizzazione/uffici/cerca.jsp" />
+			<forward name="aggiorna"
+				path="/WEB-INF/pages/amministrazione/organizzazione/uffici/ufficio.jsp" />
+			<forward name="storia"
+				path="/WEB-INF/pages/amministrazione/organizzazione/uffici/storicoOrganigramma.jsp" />
+		</action>
+		
+		<action path="/page/amministrazione/organizzazione/spostaUfficio"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.org.utenti.UfficioAction"
+			name="ufficioForm" input="input" scope="session" validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/organizzazione/uffici/sposta.jsp" />
+			<forward name="annulla"
+				path="/WEB-INF/pages/amministrazione/organizzazione/uffici/cerca.jsp" />
+		</action>
+
+		<action path="/page/amministrazione/organizzazione/ufficio"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.org.utenti.UfficioAction"
+			name="ufficioForm" input="aggiorna" scope="session" validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/organizzazione/uffici/cerca.jsp" />
+			<forward name="edit"
+				path="/WEB-INF/pages/amministrazione/organizzazione/uffici/cerca.jsp" />
+			<forward name="success"
+				path="/WEB-INF/pages/amministrazione/organizzazione/uffici/success.jsp" />
+			<forward name="aggiorna"
+				path="/WEB-INF/pages/amministrazione/organizzazione/uffici/ufficio.jsp" />
+			<forward name="carica"
+				path="/page/amministrazione/carica.do?btnNuovaCarica=true" />
+		</action>
+
+		<action path="/page/amministrazione/organizzazione"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.org.RicaricaOrganizzazioneAction"
+			name="profiloUtenteForm" input="input" scope="request" validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/organizzazione/ricaricaOrganizzazione.jsp" />
+			<forward name="edit"
+				path="/WEB-INF/pages/amministrazione/organizzazione/ricaricaOrganizzazione.jsp" />
+			<forward name="logon" path="/logon.do" />
+		</action>
+
+		<action path="/page/amministrazione/organizzazione/aoo/aoo"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.org.aoo.AreaOrganizzativaAction"
+			name="areaOrganizzativaForm" input="input" scope="request" validate="false">
+
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/organizzazione/aoo/aoo.jsp" />
+
+			<forward name="edit"
+				path="/WEB-INF/pages/amministrazione/organizzazione/aoo/editAoo.jsp" />
+
+			<forward name="success"
+				path="/WEB-INF/pages/amministrazione/organizzazione/aoo/success.jsp" />
+
+		</action>
+
+		<action path="/page/amministrazione/registri"
+			type="it.finsiel.siged.mvc.presentation.action.registro.ListaRegistriAction"
+			name="registroForm" input="input" scope="request">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/registro/registri.jsp" />
+			<forward name="registro" path="/page/amministrazione/registro.do" />
+
+		</action>
+
+		<action path="/page/amministrazione/registro"
+			type="it.finsiel.siged.mvc.presentation.action.registro.RegistroAction"
+			name="registroForm" input="input" scope="request" validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/registro/registro.jsp" />
+			<forward name="registri" path="/page/amministrazione/registri.do" />
+		</action>
+
+		<action path="/page/amministrazione"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.AmministrazioneAction"
+			name="amministrazioneForm" input="input" scope="request" validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/amministrazione.jsp" />
+		</action>
+
+		<action path="/page/amministrazione/scarto"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.ScartoProtocolliAction"
+			name="scartoProtocolliForm" input="input" scope="request" validate="false">
+			<forward name="input" path="/WEB-INF/pages/amministrazione/scarto.jsp" />
+		</action>
+
+		<action path="/page/amministrazione/archivioScarto"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.RicercaScartoProtocolliAction"
+			name="archivioScartoProtocolliForm" input="input" scope="request"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/scarto/ricerca.jsp" />
+			<forward name="risultati"
+				path="/WEB-INF/pages/amministrazione/scarto/protocolliScartati.jsp" />
+			<forward name="visualizzaProtocolloIngresso" path="/page/protocollo/ingresso/documentoview.do" />
+			<forward name="visualizzaProtocolloUscita" path="/page/protocollo/uscita/documentoview.do" />
+		</action>
+
+		<action path="/page/amministrazione/report/protocolliDaScartare"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.ReportProtocolliDaScartareAction"
+			name="protocolloDaScartareForm" input="input" scope="request"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/report/protocolliDaScartare.jsp" />
+		</action>
+
+		<action path="/page/amministrazione/firmadigitale/aggiorna_crl"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.firmadigitale.AggiornaCRLAction"
+			name="aggiornaCRLForm" input="input" scope="request" validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/firmadigitale/aggiorna_crl.jsp" />
+		</action>
+
+		<action path="/page/amministrazione/firmadigitale/lista_ca"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.firmadigitale.ListaCAAction"
+			name="listaCAForm" input="input" scope="request" validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/firmadigitale/lista_ca.jsp" />
+		</action>
+
+		<action path="/page/amministrazione/firmadigitale/edit_ca"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.firmadigitale.CertificateAuthorityAction"
+			name="certificateAuthorityForm" input="input" scope="session"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/firmadigitale/edit_ca.jsp" />
+		</action>
+
+		<action path="/page/amministrazione/acquisizioneMassiva"
+			type="it.finsiel.siged.mvc.presentation.action.amministrazione.AcquisizioneMassivaAction"
+			name="acquisizioneMassivaForm" input="input" scope="request"
+			validate="false">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/acquisizioneMassiva.jsp" />
+			<forward name="logs"
+				path="/WEB-INF/pages/amministrazione/logsAcquisizioneMassiva.jsp" />
+			<forward name="listaDocumenti"
+				path="/WEB-INF/pages/amministrazione/acquisizioneMassiva.jsp" />
+		</action>
+
+		
+		<!-- SEZIONE FLOSSLAB -->
+
+		<!-- OGGETTARIO -->
+		<action path="/page/amministrazione/oggettario"
+			type="it.flosslab.mvc.presentation.action.amministrazione.OggettarioAction"
+			scope="session" parameter="NEW" name="oggettiForm">
+			<forward name="success" path="/WEB-INF/pages/amministrazione/oggettario.jsp" />
+			<forward name="nuovoOggetto" path="/page/amministrazione/oggettarioAdd.do" />
+			<forward name="modificaOggetto" path="/page/amministrazione/oggettarioAdd.do" />
+		</action>
+
+		<action path="/page/amministrazione/oggettarioAdd"
+			type="it.compit.fenice.mvc.presentation.action.amministrazione.OggettoAction"
+			scope="session" name="oggettiForm" input="input" validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/oggetto/oggettario.jsp" />
+			<forward name="success" path="/page/amministrazione/oggettario.do" />
+		</action>
+
+		<action path="/page/amministrazione/oggettarioDelete"
+			type="it.flosslab.mvc.presentation.action.amministrazione.OggettarioAction"
+			scope="session" parameter="DELETE" name="oggettiForm">
+			<forward name="success" path="/page/amministrazione/oggettario.do" />
+		</action>
+		<!--
+			======================MODIFICHE FLOSSLAB =========================
+		-->
+		<!-- IMPORT TITOLARIO -->
+
+		<action path="/page/amministrazione/importTitolario"
+			type="it.flosslab.mvc.presentation.action.amministrazione.ImportTitolarioAction"
+			scope="request" parameter="NEW">
+			<forward name="success"
+				path="/WEB-INF/pages/amministrazione/importTitolario.jsp" />
+		</action>
+
+		<action path="/page/amministrazione/executeImport"
+			type="it.flosslab.mvc.presentation.action.amministrazione.ImportTitolarioAction"
+			scope="session" parameter="EXECUTE" name="importTitolarioForm" input="input"
+			validate="true">
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/importTitolario.jsp" />
+			<forward name="success" path="/page/amministrazione/titolario.do" />
+			<forward name="notImported"
+				path="/WEB-INF/pages/amministrazione/importTitolario.jsp" />
+		</action>
+
+		<action path="/page/amministrazione/forcedImport" name="importTitolarioForm"
+			type="it.flosslab.mvc.presentation.action.amministrazione.ImportTitolarioAction"
+			scope="session" parameter="FORCE">
+
+			<forward name="input"
+				path="/WEB-INF/pages/amministrazione/importTitolario.jsp" />
+			<forward name="success" path="/page/amministrazione/titolario.do" />
+			<forward name="notImported"
+				path="/WEB-INF/pages/amministrazione/importTitolario.jsp" />
+		</action>
+
+	</action-mappings>
+
+
+
+</struts-config>

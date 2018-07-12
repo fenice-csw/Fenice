@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    *
+    *
+    * Autorita` per l'Informatica nella Pubblica Amministrazione
+    * 
+    * Segnatura.dtd
+    * 
+    * 2000-10-18
+
+-->
+<!--
+
+    * Data di pubblicazione del DTD
+-->
+<!ENTITY % dataPubblicazione "2000-10-18">
+<!--
+
+    * Root ELEMENT
+    *
+    * Il DTD prevede tre possibili "root ELEMENT":
+    * - Segnatura
+    * - ConfermaRicezione
+    * - Ripudio
+
+-->
+<!--
+   
+
+    * Segnatura
+    *
+    * Si compone di tre sezioni, di cui la prima obbligatoria e le altre due opzionali:
+    * - la sezione Intestazione contiene i dati identificativi e le informazioni
+    *   fondamentali del messaggio;
+    * - la sezione Riferimenti contiene le informazioni relative al contesto generale
+    *   di cui il messaggio fa parte;
+    * - la sezione Descrizione contiene le informazioni descrittve riguardanti il
+    *   contenuto del messaggio. 
+-->
+<!ELEMENT Segnatura (Intestazione, Riferimenti?, Descrizione?)>
+<!ATTLIST Segnatura
+	versione NMTOKEN #FIXED "%dataPubblicazione;"
+	xml:lang NMTOKEN #FIXED "it"
+>
+<!--
+
+
+    * Intestazione
+    *
+    * La sezione Intestazione contiene:
+    * - l'Identificatore di protocollo attribuito dalla AOO mittente, eventualmente
+    *   accompagnato dall'Identificatore di PrimaRegistrazione, qualora i due 
+    *   Identificatori non coincidano;
+    * - gli indirizzi che caratterizzano la trasmissione telematica del messaggio;
+    * - alcuni flag di specifica delle caratteristiche del messaggio;
+    * - l'inquadramento formale del messaggio in termini di oggetto e classifica.
+-->
+<!ELEMENT Intestazione (Identificatore, PrimaRegistrazione?, OraRegistrazione?, Origine, Destinazione+, PerConoscenza*, Risposta?, Riservato?, InterventoOperatore?, RiferimentoDocumentiCartacei?, Oggetto, Classifica*, Note?)>
+<!--
+
+    * Identificatore di una registrazione di protocollo
+    *
+    * Gli elementi che identificano una registrazione di protocollo sono:
+    * -  codice identificativo della pubblica amministrazione, come riportato nell'indice
+    *    delle pubbliche amministrazioni (DPR 428/98)
+    * -  codice identificativo dell'Area Organizzativa Omogenea, come riportato
+    *    nell'indice delle pubbliche amministrazioni (DPR 428/98);
+    * -  numero della registrazione di protocollo (sette cifre decimali, ddddddd);
+    * -  data della registrazione, in formato ISO 8601 esteso (aaaa-mm-gg).
+-->
+<!ELEMENT Identificatore (CodiceAmministrazione, CodiceAOO, NumeroRegistrazione, DataRegistrazione)>
+<!ELEMENT CodiceAmministrazione (#PCDATA)>
+<!ELEMENT CodiceAOO (#PCDATA)>
+<!ELEMENT NumeroRegistrazione (#PCDATA)>
+<!ELEMENT DataRegistrazione (#PCDATA)>
+<!--
+
+    * Identificatore della prima registrazione di protocollo, da specificare
+    * solo se non coincidente con l'Identificatore 
+-->
+<!ELEMENT PrimaRegistrazione (Identificatore)>
+<!--
+
+    * L'ora di registrazione, in formato ISO 8601 esteso (hh:mm:ss[,ddd])  
+-->
+<!ELEMENT OraRegistrazione (#PCDATA)>
+<!ATTLIST OraRegistrazione
+	tempo (locale | rupa | CDATA) "locale"
+>
+<!--
+
+    * Gli Indirizzi che caratterizzano la trasmissione del messaggio
+    * in formato telematico e amministrativo
+-->
+<!ELEMENT Origine (IndirizzoTelematico, Mittente)>
+<!ELEMENT Destinazione (IndirizzoTelematico, Destinatario*)>
+<!ATTLIST Destinazione
+	confermaRicezione (si | no) "no"
+>
+<!ELEMENT PerConoscenza (IndirizzoTelematico, Destinatario*)>
+<!ATTLIST PerConoscenza
+	confermaRicezione (si | no) "no"
+>
+<!--
+
+    * L'elemento Risposta indica un indirizzo da utilizzarsi per le risposte
+    * automatiche (i.e. conferma, ripudio).
+    * Da specificiare sole se diverso dall'indirizzo di origine
+-->
+<!ELEMENT Risposta (IndirizzoTelematico)>
+<!--
+
+    * Indirizzo telematico, tipicamente un indirizzo smtp
+    * Qualunque sia il protocollo utilizzato per il trasporto, l'IndirizzoTelematico
+    * deve contenere informazioni sufficienti per identificare il corrispondente
+    * indirizzo in modo univoco.
+-->
+<!ELEMENT IndirizzoTelematico (#PCDATA)>
+<!ATTLIST IndirizzoTelematico
+	tipo (smtp | url | CDATA) "smtp"
+	note CDATA #IMPLIED
+>
+<!--
+
+    * Flag di richiesta intervento operatore (i.e. il messaggio non puo` essere
+    * protocollato e/o smistato in modo automatico).
+    * Puo` contenere una descrizione testuale del motivo della richiesta.
+-->
+<!ELEMENT InterventoOperatore (#PCDATA)>
+<!--
+
+    * Flag di richiesta trattamento riservato.
+    * Puo` contenere una descrizione testuale del motivo della richiesta.
+-->
+<!ELEMENT Riservato (#PCDATA)>
+<!--
+
+    * Flag di avvertimento della presenza di riferimenti a documenti cartacei
+    * (il messaggio non puo` quindi essere protocollato in modo automatico).
+-->
+<!ELEMENT RiferimentoDocumentiCartacei EMPTY>
+<!--
+
+    * Oggetto del messaggio
+    * Si raccomanda l'uso di descrizioni significative (>= 30 caratteri)
+-->
+<!ELEMENT Oggetto (#PCDATA)>
+<!--
+
+    * La specifica strutturata di una Classifica
+-->
+<!ELEMENT Classifica (CodiceAmministrazione?, CodiceAOO?, Denominazione?, Livello+)>
+<!ELEMENT Denominazione (#PCDATA)>
+<!ELEMENT Livello (#PCDATA)>
+<!ATTLIST Livello
+	nome CDATA #IMPLIED
+>
+<!--
+
+    * Note testuali esplicative
+-->
+<!ELEMENT Note (#PCDATA)>
+<!--
+
+    * Mittente e Destinatario
+-->
+<!ELEMENT Mittente (Amministrazione, AOO)>
+<!ELEMENT Destinatario (((Amministrazione, AOO?) | (Denominazione, Persona*) | Persona+), IndirizzoTelematico?, Telefono*, Fax*, IndirizzoPostale?)>
+<!--
+
+    * Indirizzo amministrativo in forma estesa e strutturata.
+-->
+<!ELEMENT Amministrazione (Denominazione, CodiceAmministrazione?, (UnitaOrganizzativa | (Persona*, IndirizzoPostale, IndirizzoTelematico*, Telefono*, Fax*)))?>
+<!ELEMENT UnitaOrganizzativa (Denominazione, (UnitaOrganizzativa | (Persona*, IndirizzoPostale, IndirizzoTelematico*, Telefono*, Fax*)))>
+<!ATTLIST UnitaOrganizzativa
+	tipo (permanente | temporanea) "permanente"
+>
+<!--
+
+    * Nome esteso e codice di identificazione dell'area organizzativa
+    * omogenea
+-->
+<!ELEMENT AOO (Denominazione, CodiceAOO?)>
+<!--
+
+    * Persona fisica
+-->
+<!ELEMENT Persona (Denominazione | ((Nome?, Cognome, Titolo?, CodiceFiscale?, Ruolo?) | Ruolo))>
+<!ATTLIST Persona
+	id ID #IMPLIED
+	rife IDREF #IMPLIED
+>
+<!ELEMENT Nome (#PCDATA)>
+<!ELEMENT Cognome (#PCDATA)>
+<!ELEMENT Titolo (#PCDATA)>
+<!ELEMENT CodiceFiscale (#PCDATA)>
+<!ELEMENT Ruolo (#PCDATA)>
+<!--
+
+    * Indirizzo postale
+-->
+<!ELEMENT IndirizzoPostale (Denominazione | (Toponimo, Civico, CAP, Comune, Provincia))>
+<!ELEMENT Toponimo (#PCDATA)>
+<!ATTLIST Toponimo
+	dug CDATA #IMPLIED
+>
+<!ELEMENT Civico (#PCDATA)>
+<!ELEMENT CAP (#PCDATA)>
+<!ELEMENT Comune (#PCDATA)>
+<!ATTLIST Comune
+	codiceISTAT CDATA #IMPLIED
+>
+<!ELEMENT Provincia (#PCDATA)>
+<!--
+-->
+<!ELEMENT Telefono (#PCDATA)>
+<!ATTLIST Telefono
+	note CDATA #IMPLIED
+>
+<!ELEMENT Fax (#PCDATA)>
+<!ATTLIST Fax
+	note CDATA #IMPLIED
+>
+<!--
+
+    * Riferimenti
+    *
+    * La sezione Riferimenti contiene:
+    * - riferimenti ad altri messaggi scambiati in precedenza;
+    * - riferimenti a specifici contesti procedurali o procedimenti
+-->
+<!ELEMENT Riferimenti (Messaggio | ContestoProcedurale | Procedimento)+>
+<!--
+-->
+<!ELEMENT Messaggio ((Identificatore | DescrizioneMessaggio), PrimaRegistrazione?)>
+<!ELEMENT DescrizioneMessaggio (#PCDATA)>
+<!--
+    
+    * Un ContestoProcedurale e` un qualsiasi complesso di attivita` identificabile
+    * in modo esplicito (e.g. tramite un codice). Un riferimento a ContestoProcedurale
+    * puo` descrivere il legame tra messaggi diversi, anche aventi diverse destinazioni
+-->
+<!ELEMENT ContestoProcedurale (CodiceAmministrazione, CodiceAOO, Identificativo, TipoContestoProcedurale?, Oggetto?, Classifica*, DataAvvio?, Note?)>
+<!ATTLIST ContestoProcedurale
+	id ID #IMPLIED
+	rife IDREF #IMPLIED
+>
+<!ELEMENT Identificativo (#PCDATA)>
+<!ELEMENT TipoContestoProcedurale (#PCDATA)>
+<!ELEMENT DataAvvio (#PCDATA)>
+<!--
+
+	 * Un Procedimento e` un ContestoProcedurale che ha dignita` di procedimento
+	 * amministrativoai sensi della l. 241/90
+-->
+<!ELEMENT Procedimento (CodiceAmministrazione, CodiceAOO, Identificativo, TipoProcedimento?, Oggetto?, Classifica*, Responsabile?, DataAvvio?, DataTermine?, Note?)>
+<!ATTLIST Procedimento
+	id ID #IMPLIED
+	rife IDREF #IMPLIED
+>
+<!ELEMENT TipoProcedimento (#PCDATA)>
+<!ELEMENT Responsabile (Persona)>
+<!ELEMENT DataTermine (#PCDATA)>
+<!--
+
+
+    * Descrizione
+    *
+    * Ogni messaggio contiene in generale:
+    * - un documento primario, rappresentato dal testo del messaggio o da altro
+    *   documento;
+    * - un numero qualsiasi di documenti informatici allegati.
+-->
+<!ELEMENT Descrizione ((Documento | TestoDelMessaggio), Allegati?, Note?)>
+<!--
+
+    * Riferimento ad un documento
+    *
+    * Un riferimento puo` essere di tre tipi:
+    * - riferimento interno ad un documento informatico incluso nel messaggio
+    *   (i.e. in una struttura MIME);
+    * - riferimento esterno ad un documento informatico reperibile in modo
+    *   automatico (all'atto della protocollazione del messaggio) oppure a documento
+    *   cartaceo trasmesso con modalita` tradizionali;
+    * - riferimento esterno ad un documento cartaceo trasmesso con modalita`
+    *   tradizionali;
+-->
+<!ELEMENT Documento ((URI, Impronta?)?, TitoloDocumento?, PrimaRegistrazione?, TipoDocumento?, Oggetto?, Classifica*, NumeroPagine?, Note?)>
+<!ATTLIST Documento
+	id ID #IMPLIED
+	rife IDREF #IMPLIED
+	nome CDATA #IMPLIED
+	tipoMIME CDATA #IMPLIED
+	tipoRiferimento (MIME | informatico | cartaceo) "MIME"
+>
+<!ELEMENT TitoloDocumento (#PCDATA)>
+<!ELEMENT TipoDocumento (#PCDATA)>
+<!ELEMENT NumeroPagine (#PCDATA)>
+<!--
+
+    * Impronta di un documento informatico
+    * (usata solo per i riferimenti esterni)
+-->
+<!ELEMENT URI (#PCDATA)>
+<!ELEMENT Impronta (#PCDATA)>
+<!ATTLIST Impronta
+	algoritmo CDATA #FIXED "SHA-1"
+	codifica CDATA #FIXED "base64"
+>
+<!--
+
+    * Riferimento al testo del messaggio, inteso come documento
+    * In generale, in una struttura MIME il testo del messaggio coincide
+    * con una body part priva di nome.
+-->
+<!ELEMENT TestoDelMessaggio EMPTY>
+<!ATTLIST TestoDelMessaggio
+	id CDATA #IMPLIED
+	tipoMIME CDATA #IMPLIED
+	tipoRiferimento NMTOKEN #FIXED "MIME"
+>
+<!--
+
+    * Lista di documenti allegati, eventualmente aggregati in fascicoli
+-->
+<!ELEMENT Allegati ((Documento | Fascicolo)+)>
+<!--
+
+    * Aggregazione di documenti in un fascicolo
+-->
+<!ELEMENT Fascicolo (CodiceAmministrazione?, CodiceAOO?, Oggetto?, Identificativo?, Classifica*, Note?, (Documento | Fascicolo)+)>
+<!ATTLIST Fascicolo
+	id ID #IMPLIED
+	rife IDREF #IMPLIED
+>
+<!--
+
+
+    * ConfermaRicezione
+    *
+    * Contiene la descrizione del messaggio di cui si conferma la avvenuta ricezione.
+    * L'Identificatore corrisponde alla registrazione di protocollo in ingresso da
+    * parte del ricevente.
+-->
+<!ELEMENT ConfermaRicezione (Identificatore, MessaggioRicevuto, Note?)>
+<!ATTLIST ConfermaRicezione
+	versione NMTOKEN #FIXED "%dataPubblicazione;"
+	xml:lang NMTOKEN #FIXED "it"
+	tipoAccettazione (provvisoria | definitiva) "definitiva"
+>
+<!--
+
+    * La descrizione del messaggio ricevuto. L'identificatore corrisponde alla registrazione
+    * di protocollo in uscita da parte del mittente.
+    * Si rammenta che una conferma di ricezione deve poter essere prodotta anche per un
+    * messaggio non protocollato.
+-->
+<!ELEMENT MessaggioRicevuto ((Identificatore, PrimaRegistrazione?) | DescrizioneMessaggio)>
+<!--
+
+
+    * Ripudio
+    *
+    * Contiene la descrizione del messaggio ripudiato. Qualora possibile, e` opportuno
+    * includere l'Identificatore di registrazione del messaggio ripudiato. In questo caso
+    * l'identificatore corrisponde alla registrazione in uscita da parte del mittente.
+    * I DatiTrasmssione devono essere utilizzati solo in caso contrario (e.g. se il messaggio
+    * o la Segnatura sono indecifrabili).
+-->
+<!ELEMENT Ripudio ((Identificatore | DescrizioneMessaggio), Motivo)>
+<!ATTLIST Ripudio
+	versione NMTOKEN #FIXED "%dataPubblicazione;"
+	xml:lang NMTOKEN #FIXED "it"
+>
+<!ELEMENT Motivo (#PCDATA)>
